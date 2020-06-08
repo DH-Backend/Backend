@@ -1,0 +1,938 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #ebebeb;
+    width: 1349px;
+}
+.contenido {
+    margin: 0 auto;
+}
+header {
+    background-color: #023750;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+    font-family: 'Inter';
+}
+.hidden {
+    margin: 0 0 15px 0;
+    display: none;
+    visibility: visible;
+}
+.hidden i{
+    font-size: 100px;
+    color: white;
+}
+.ver {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Inter';
+    color: brown;
+    text-transform: none;
+}
+.logo {
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+    margin: 10px 0 10px 30px;
+}
+li {
+    display: inline;
+}
+a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+}
+.ul2 {
+    margin-right: 30px;
+}
+.ul1 a:hover {
+    color: rgb(223, 217, 217);
+}
+.ul2 a:hover {
+    color: rgb(223, 217, 217);
+}
+.buscador {
+    border-radius: 3px;
+    border: none;
+}
+button {
+    position: relative;
+    right: 35px;
+    border: none;
+    border-left: 1px solid gray;
+    padding-left: 5px;
+    background-color: white;
+}
+.fixed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 30px;
+    bottom: 10px;
+    height: 60px;
+    width: 60px;
+    background-color: brown;
+    border-radius: 30px;
+    font-size: 30px;
+    color: white;
+}
+.fixed:hover {
+    background-color: black;
+    transform: scale(1.15,1.15);
+}
+.carrusel {
+    width: 100%;
+}
+input {
+    width: 400px;
+    height: 30px;
+}
+footer {
+    background-color: #023750;
+    font-family: 'Inter';
+    height: 120px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.phone {
+    text-transform: uppercase;
+    color: white;
+}
+.todocarro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 40px 60px;
+    align-items: center;
+}
+.carrito {
+    font-size: 40px;
+    font-family: 'Josefin Sans';
+    font-weight: bold;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 150px;
+}
+.vercursos {
+    text-transform: none;
+    color: black;
+    font-family: 'Josefin Sans';
+    text-align: center;
+    align-self: center;
+}
+.vercursos:hover {
+    font-size: 18px;
+}
+.verpromos:hover {
+    background-color: black;
+    color: white;
+}
+.verpromos {
+    color: white;
+    font-size: 20px;
+    font-family: 'Josefin Sans';
+    text-transform: none;
+    padding: 10px 30px;
+    background-color: brown;
+    border-radius: 10px;
+    text-align: center;
+}
+.cajas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 40px 0;
+    background-color: #c7d0d8;
+}
+.nameyplata {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.articulo {
+    border: gray 1px solid;
+    border-radius: 5px;
+    position: relative;
+    width: 600px;
+    height: 170px;
+    background-color: white;
+    margin: 20px 0;
+    box-shadow: 5px 5px 5px  #666;
+}
+.curso {
+    margin: 10px;
+}
+.enlinea {
+    display: block;
+    font-family: 'josefin sans';
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+.eliminar {
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+    color: white;
+    font-family: 'Josefin Sans';
+    text-transform: none;
+    padding: 7px 15px;
+    background-color: brown;
+    border-radius: 10px;
+}
+.eliminar:hover {
+    background-color: black;
+}
+.aarticulo {
+    color: black;
+    text-transform: none;
+}
+.name {
+    font-size: 20px;
+    font-family: 'Inter';
+    padding-bottom: 5px;
+    width: 450px;
+    border-bottom: 2px gray solid;
+}
+.pollo {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.moni {
+    color: brown;
+    font-weight: bold;
+    margin-right: 15px;
+    margin-top: 5px;
+    font-size: 17px;
+    font-family: 'Inter';
+}
+.articulo2 {
+    margin: 20px 0;
+    border: 2px solid brown;
+    border-radius: 5px;
+    background-color: white;
+}
+.interno {
+    margin: 10px;
+}
+.resumen {
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+.cursocarrito {
+    display: block;
+    margin-bottom: 30px;
+    font-family: 'Inter';
+    font-size: 15px;
+    padding-bottom: 5px;
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.soloborde {
+    border-bottom: 1px black solid;
+    width: 300px;
+    padding-bottom: 3px;
+}
+.solomargin {
+    margin-top: 5px;
+}
+.descuento {
+    text-align: center;
+    margin-top: 20px;
+    text-transform: uppercase;
+    width: 400px;
+    height: 30px;
+}
+.flex2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-top: 30px;
+    align-items: center;
+}
+.total {
+    font-size: 30px;
+    font-family: 'Josefin Sans';
+}
+.ultimo {
+    font-size: 20px;
+    font-family: 'Josefin Sans';
+    margin-left: 30px;
+}
+.ultimo2 {
+    margin: 30px 0 20px 0;
+    text-align: center;
+}
+.comprar {
+    color: white;
+    text-transform: none;
+    padding: 10px 15px;
+    background-color: black;
+    font-family: 'Josefin Sans';
+    font-size: 20px;
+}
+.ultimo2:hover {
+    transform: scale(1.1,1.1);
+}
+@media (max-width: 1024px) {
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #ebebeb;
+    width: 1349px;
+}
+.contenido {
+    margin: 0 auto;
+}
+header {
+    background-color: #023750;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+    font-family: 'Inter';
+}
+.hidden {
+    margin: 0 0 15px 0;
+    display: none;
+    visibility: visible;
+}
+.hidden i{
+    font-size: 100px;
+    color: white;
+}
+.ver {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Inter';
+    color: brown;
+    text-transform: none;
+}
+.logo {
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+    margin: 10px 0 10px 30px;
+}
+li {
+    display: inline;
+}
+a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+.ul2 {
+    margin-right: 30px;
+}
+.ul1 a:hover {
+    color: rgb(223, 217, 217);
+}
+.ul2 a:hover {
+    color: rgb(223, 217, 217);
+}
+.buscador {
+    border-radius: 3px;
+    border: none;
+}
+button {
+    position: relative;
+    right: 35px;
+    border: none;
+    border-left: 1px solid gray;
+    padding-left: 5px;
+    background-color: white;
+}
+.fixed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 30px;
+    bottom: 10px;
+    height: 60px;
+    width: 60px;
+    background-color: brown;
+    border-radius: 30px;
+    font-size: 30px;
+    color: white;
+}
+.fixed:hover {
+    background-color: black;
+    transform: scale(1.15,1.15);
+}
+.carrusel {
+    width: 100%;
+}
+input {
+    width: 400px;
+    height: 30px;
+}
+footer {
+    background-color: #023750;
+    font-family: 'Inter';
+    height: 120px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 50px;
+    font-size: 20px;
+}
+footer p {
+    font-size: 20px;
+}
+footer a {
+    font-size: 20px;
+}
+.phone {
+    text-transform: uppercase;
+    color: white;
+}
+.todocarro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 40px 60px;
+    align-items: center;
+}
+.carrito {
+    font-size: 40px;
+    font-family: 'Josefin Sans';
+    font-weight: bold;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 150px;
+}
+.vercursos {
+    text-transform: none;
+    color: black;
+    font-family: 'Josefin Sans';
+    text-align: center;
+    align-self: center;
+    font-size: 23px;
+}
+.vercursos:hover {
+    font-size: 18px;
+}
+.verpromos:hover {
+    background-color: black;
+    color: white;
+}
+.verpromos {
+    color: white;
+    font-size: 25px;
+    font-family: 'Josefin Sans';
+    text-transform: none;
+    padding: 10px 30px;
+    background-color: brown;
+    border-radius: 10px;
+    text-align: center;
+}
+.cajas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 40px 0;
+    background-color: #c7d0d8;
+}
+.nameyplata {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.articulo {
+    border: gray 1px solid;
+    border-radius: 5px;
+    position: relative;
+    width: 700px;
+    height: 200px;
+    background-color: white;
+    margin: 20px 0;
+    box-shadow: 5px 5px 5px  #666;
+}
+.curso {
+    margin: 10px;
+}
+.enlinea {
+    display: block;
+    font-family: 'josefin sans';
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+.eliminar {
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+    color: white;
+    font-family: 'Josefin Sans';
+    font-size: 22px;
+    text-transform: none;
+    padding: 7px 15px;
+    background-color: brown;
+    border-radius: 10px;
+}
+.eliminar:hover {
+    background-color: black;
+}
+.aarticulo {
+    color: black;
+    text-transform: none;
+}
+.name {
+    font-size: 25px;
+    font-family: 'Inter';
+    padding-bottom: 5px;
+    width: 450px;
+    border-bottom: 2px gray solid;
+}
+.pollo {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.moni {
+    color: brown;
+    font-weight: bold;
+    margin-right: 15px;
+    margin-top: 5px;
+    font-size: 22px;
+    font-family: 'Inter';
+}
+.articulo2 {
+    margin: 20px 0;
+    border: 2px solid brown;
+    border-radius: 5px;
+    background-color: white;
+}
+.interno {
+    margin: 10px;
+}
+.resumen {
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 25px;
+    margin-bottom: 50px;
+}
+.cursocarrito {
+    display: block;
+    margin-bottom: 30px;
+    font-family: 'Inter';
+    font-size: 15px;
+    padding-bottom: 5px;
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.soloborde {
+    border-bottom: 1px black solid;
+    width: 300px;
+    padding-bottom: 3px;
+    font-size: 20px;
+}
+.solomargin {
+    margin-top: 5px;
+    font-size: 18px;
+}
+.descuento {
+    text-align: center;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 15px;
+    width: 400px;
+    height: 30px;
+}
+.flex2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-top: 30px;
+    align-items: center;
+}
+.total {
+    font-size: 35px;
+    font-family: 'Josefin Sans';
+}
+.ultimo {
+    font-size: 25px;
+    font-family: 'Josefin Sans';
+    margin-left: 30px;
+}
+.ultimo2 {
+    margin: 30px 0 20px 0;
+    text-align: center;
+}
+.comprar {
+    color: white;
+    text-transform: none;
+    padding: 10px 15px;
+    background-color: black;
+    font-family: 'Josefin Sans';
+    font-size: 25px;
+}
+.ultimo2:hover {
+    transform: scale(1.1,1.1);
+}
+}
+
+@media (max-width: 480px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #ebebeb;
+        width: 1300px;
+    }
+    .contenido {
+        margin: 0 auto;
+    }
+    header {
+        background-color: #023750;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        font-family: 'Inter';
+    }
+    .ver {
+        font-size: 40px;
+        font-weight: bold;
+        font-family: 'Inter';
+        color: brown;
+        text-transform: none;
+    }
+    .logo {
+        margin: 30px 0 0 0;
+        height: 200px;
+        width: 200px;
+        border-radius: 100px;
+    }
+    .loggo {
+        align-items: center;
+    }
+    .elegi {
+        display: flex;
+        font-size: 50px;
+        font-weight: bold;
+        font-family: 'Inter';
+        margin: 60px 20px 30px 20px;
+        justify-content: space-between;
+    }
+    li {
+        display: inline;
+    }
+    a {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: white;
+    }
+    .hidden {
+        margin: 0 0 15px 0;
+        display: inline;
+        visibility: visible;
+    }
+    .hidden i{
+        font-size: 100px;
+        color: white;
+    }
+    .ul2 {
+        font-size: 40px;
+        margin: 0;
+        display: none;
+    }
+    .ul1 {
+        display: none;
+    }
+    .ul1 a:hover {
+        color: rgb(223, 217, 217);
+    }
+    .ul2 a:hover {
+        color: rgb(223, 217, 217);
+    }
+    .buscador {
+        margin: 30px 0;
+        border-radius: 3px;
+        border: none;
+        width: 100%;
+        font-size: 40px;
+    }
+    .leon {
+        width: 900px;
+        position: relative;
+    }
+    .leon input {
+        height: 80px;
+    }
+    button {
+        position: absolute;
+        top: 40px;
+        border: none;
+        border-left: 1px solid gray;
+        padding-left: 5px;
+        background-color: white;
+        font-size: 50px;
+    }
+    .fixed {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        right: 30px;
+        bottom: 10px;
+        height: 90px;
+        width: 90px;
+        background-color: brown;
+        border-radius: 45px;
+        font-size: 50px;
+        color: white;
+    }
+    .fixed:hover {
+        background-color: black;
+        transform: scale(1.15,1.15);
+    }
+    .carrusel {
+        width: 100%;
+    }
+    footer {
+        background-color: #023750;
+        font-family: 'Inter';
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding-bottom: 50px;
+        margin-top: 20px;
+    }
+    footer a {
+        font-size: 40px;
+        margin: 15px 0;
+    }
+    footer p {
+        font-size: 40px;
+        margin: 15px 0;
+    }
+    .phone {
+        text-transform: uppercase;
+        color: white;
+    }
+    .todocarro {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 40px 60px;
+        align-items: center;
+    }
+    .carrito {
+        font-size: 60px;
+        font-family: 'Josefin Sans';
+        font-weight: bold;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 150px;
+    }
+    .vercursos {
+        text-transform: none;
+        color: black;
+        font-family: 'Josefin Sans';
+        font-size: 35px;
+        text-align: center;
+        align-self: center;
+    }
+    .vercursos:hover {
+        font-size: 18px;
+    }
+    .verpromos:hover {
+        background-color: black;
+        color: white;
+    }
+    .verpromos {
+        color: white;
+        font-size: 40px;
+        font-family: 'Josefin Sans';
+        text-transform: none;
+        padding: 10px 30px;
+        background-color: brown;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .cajas {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin: 40px 0;
+        background-color: #c7d0d8;
+    }
+    .nameyplata {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .probar {
+        margin: 0 20px;
+    }
+    .articulo {
+        border: gray 1px solid;
+        border-radius: 5px;
+        position: relative;
+        width: 100%;
+        height: 300px;
+        background-color: white;
+        margin: 30px 0;
+        box-shadow: 5px 5px 5px  #666;
+    }
+    .curso {
+        margin: 10px;
+    }
+    .enlinea {
+        display: block;
+        font-family: 'josefin sans';
+        font-size: 35px;
+        margin-bottom: 5px;
+    }
+    .eliminar {
+        position: absolute;
+        right: 15px;
+        bottom: 10px;
+        color: white;
+        font-family: 'Josefin Sans';
+        text-transform: none;
+        padding: 7px 15px;
+        background-color: brown;
+        border-radius: 10px;
+        font-size: 35px;
+    }
+    .eliminar:hover {
+        background-color: black;
+    }
+    .aarticulo {
+        color: black;
+        text-transform: none;
+    }
+    .name {
+        font-size: 40px;
+        font-family: 'Inter';
+        padding-bottom: 5px;
+        width: 1000px;
+        border-bottom: 2px gray solid;
+    }
+    .pollo {
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+    .moni {
+        color: brown;
+        font-weight: bold;
+        margin-right: 15px;
+        margin-top: 5px;
+        font-size: 30px;
+        font-family: 'Inter';
+    }
+    .articulo2 {
+        margin: 20px 0;
+        border: 2px solid brown;
+        border-radius: 5px;
+        background-color: white;
+    }
+    .interno {
+        margin: 10px;
+    }
+    .probar2 {
+        margin: 0 20px;
+    }
+    .resumen {
+        text-align: center;
+        font-family: 'Inter';
+        font-size: 45px;
+        margin-bottom: 50px;
+    }
+    .cursocarrito {
+        display: block;
+        margin-bottom: 30px;
+        font-family: 'Inter';
+        padding-bottom: 5px;
+    }
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .soloborde {
+        border-bottom: 1px black solid;
+        width: 1000px;
+        padding-bottom: 3px;
+        font-size: 35px;
+    }
+    .solomargin {
+        margin-top: 5px;
+        font-size: 30px;
+    }
+    form {
+        text-align: center;
+        margin: 40px 0;
+    }
+    .descuento {
+        margin: 0;
+        text-transform: uppercase;
+        width: 500px;
+        height: 50px;
+        font-size: 20px;
+    }
+    .flex2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin-top: 30px;
+        align-items: center;
+    }
+    .total {
+        font-size: 60px;
+        font-family: 'Josefin Sans';
+    }
+    .ultimo {
+        font-size: 40px;
+        font-family: 'Josefin Sans';
+        margin-left: 30px;
+    }
+    .ultimo2 {
+        margin: 30px 0 30px 0;
+        text-align: center;
+    }
+    .comprar {
+        color: white;
+        text-transform: none;
+        padding: 10px 15px;
+        background-color: black;
+        font-family: 'Josefin Sans';
+        font-size: 50px;
+    }
+    .ultimo2:hover {
+        transform: scale(1.1,1.1);
+    }
+}

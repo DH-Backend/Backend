@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/productAdd.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans&family=Trocchi&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+    <title>Admin</title>
+</head>
+<body>
+    <header>
+        <a href=""><img class="logo" src="/img/Copia de Absolute Fashion.png" alt="logo"></a>
+
+        <ul class="ul2">
+            <li><a href=""><i class="fas fa-home"></i> home |</a></li>
+            <li><a href=""><i class="fas fa-book"></i> cursos |</a></li>
+            <li><a href=""><i class="fas fa-shopping-cart"></i> carrito</a></li>
+        </ul>
+
+    </header>
+
+    <section class="sess">
+        <p class="carga">Carga de productos</p>
+
+        <form class="formulario" action="/products/create" method="POST">
+            <p class="campos">Todos los campos son obligatorios</p>
+        <article>
+            <label for="lenguaje">Lenguaje</label>
+            <input type="text" name="lenguaje" id="lenguaje">
+        </article>
+        <article>
+            <label for="lenguaje">Id</label>
+            <input type="text" name="lenguaje" id="lenguaje">
+        </article>
+
+        <article>
+                <label for="nombrecurso">Nombre del curso</label>
+                <input type="text" name="nombre_curso" id="nombrecurso">
+                <label class="solo2" for="valor">Valor</label>
+                <input type="text" name="valor" id="valor" value="$">
+                <label class="solo2" for="duracion">Duración</label>
+                <input type="text" name="duracion" id="duracion">
+                <div class="textarea1">
+                    <label for="brevdesc">Breve descripción</label>
+                    <textarea name="brevedesc" id="brevedesc" cols="30" rows="10"></textarea>
+                </div>
+        </article>
+
+        <article>
+            <div class="textarea2">
+                <label for="contenido">Contenido</label>
+                <textarea name="contenido" id="contenido" cols="30" rows="10"></textarea>
+            </div>
+            <label for="pdf">PDF</label>
+            <input class="pdf" type="file" name="pdf" id="pdf">
+        </article>
+
+        <article>
+            <div class="textarea3">
+                <label for="plan">Plan</label>
+                <textarea name="plan" id="plan" cols="30" rows="10"></textarea>
+            </div>
+                <label for="fechainicio">Fecha de inicio</label>
+                <input class="fecha" type="date" name="fechainicio" id="fechainicio">
+            <div class="divmodalidad">
+                <label for="">Modalidad</label>
+                <div class="modalidades">
+                    <div>
+                        <input type="radio" name="modalidad1" id="modalidad1">
+                        <label for="modalidad1">Online</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="modalidad2" id="modalidad2">
+                        <label for="modalidad1">Presencial</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="modalidad3" id="modalidad3">
+                        <label for="modalidad3">Blend</label>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="articulo5">
+            <input type="submit" value="Guardar">
+            <input type="reset" value="Reiniciar">
+        </article>
+
+    </form>
+    </section>
+
+    <footer>
+    </footer>
+</body>
+</html>

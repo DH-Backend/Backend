@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/productDetail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans&family=Trocchi&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <title>Producto</title>
+</head>
+<body>
+    <header>
+
+        <a href="/"><img class="logo" src="/img/Copia de Absolute Fashion.png" alt="logo"> </a>
+
+        <ul class="ul11111">
+            <li class="tigre"><a href="/login">Log in <i class="fas fa-sign-in-alt"></i> | </a></li>
+            <li class="tigre"><a href="/register"> Sign up <i class="fas fa-user"></i></a></li>
+        </ul>
+
+        <div class="leon">
+        <label for="buscador"></label>
+        <input class="buscador" type="search" id="buscador" name="buscador" placeholder="Buscar">
+        <button><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="hidden"><i class="fas fa-bars"></i></div>
+
+        <ul class="ul2">
+            <li class="tigre"><a href=""><i class="fas fa-home"></i> home |</a></li>
+            <li class="tigre"><a href="/products"><i class="fas fa-book"></i> cursos |</a></li>
+            <li class="tigre"><a href="/products/cart"><i class="fas fa-shopping-cart"></i> carrito |</a></li>
+            <li class="tigre"><a href=""><i class="fas fa-network-wired"></i> sedes |</a></li>
+            <li class="tigre"><a href=""><i class="fas fa-address-card"></i> contacto</a></li>
+        </ul>
+    </header>
+
+    <section class="section1">
+        <div>
+            <div><p class="js"><%= filter.lenguaje %></p></div>
+        </div>
+        <div class="ul1">
+            <a class="asection1" href="">Comprar</a>
+            <a class="asection1" href="">Más información</a>
+        </div>
+    </section>
+    <section class="section2">
+        <div class="div">
+            <ul class="ul3">
+                <li class="li33"><i class="fas fa-chevron-right"></i> <%= filter.nombre_curso %></li>
+                <li class="li2"><%= filter.descripcion %></li>
+                <li class="li4"><a class="li44" href="">Más info</a></li>
+            </ul>
+            <ul class="ul4">
+                <li>Duración: <%= filter.duracion %></li>
+                <li>Valor: <%= filter.valor %></li>
+            </ul>
+            </div>
+    </section>
+    <section class="section3">
+        <div>
+            <p class="contenido0">Contenido</p>
+            <ul class="contenido">
+                <li>- <%= filter.contenido %></li>
+                <li>- <%= filter.contenido %></li>
+                <li>- <%= filter.contenido %></li>
+                <li>- <%= filter.contenido %></li>
+                <li>- <%= filter.contenido %></li>
+                <li>- <%= filter.contenido %></li>
+                <li>- <%= filter.contenido %></li>
+            </ul>
+        </div>
+        <div class="pdf1">
+            <a href="" class="pdf2"><i class="far fa-file-pdf"></i> Descargar programa en PDF</a>
+        </div>
+    </section>
+    <section class="fondo">
+            <ul class="nose">
+                <li><i class="fas fa-chevron-down"></i><a class="otros" href="">Plan de estudios</a></li>
+                <li><i class="fas fa-chevron-down"></i><a class="otros" href="">Descripción</a></li>
+                <li><i class="fas fa-chevron-down"></i><a class="otros" href="">Fechas de inicio</a></li>
+                <li><i class="fas fa-chevron-down"></i><a class="otros" href="">Modalidad de cursada</a></li>
+                <li><i class="fas fa-chevron-down"></i><a class="otros" href="">Requisitos</a></li>
+            </ul>
+    </section>
+    
+    <section>
+        <img class="carrusel" src="/img/img-home-banner.jpg" alt="carrusel">
+    </section>
+
+    <a class="fixed" href="mailto:user@server.com"><i class="far fa-envelope"></i></a>
+
+    <footer>
+        <a href=""><i class="fas fa-question-circle"></i> Preguntas frecuentes</a>
+        <a href=""><i class="fas fa-address-card"></i> Nosotros</a>
+        <a href=""><i class="fas fa-comments"></i> Comentarios</a>
+        <a href=""><i class="fas fa-language"></i> Idiomas</a>
+        <p class="phone"><a href="tel: 1167545374"><i class="fab fa-whatsapp"></i> Whatsapp 116-754-5374</a></p>
+        <p class="phone"><i class="fas fa-phone"></i> Central: 0800-000-000</p>
+    </footer>
+</body>
+</html>

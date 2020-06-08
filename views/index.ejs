@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans&family=Trocchi&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+    <title>Dharma</title>
+</head>
+<body>
+    <header>
+        <a href="/"><img class="logo" src="/img/Copia de Absolute Fashion.png" alt="logo"></a>
+
+        <ul class="ul1">
+            <li><a class="logeo" href="/login">Log in <i class="fas fa-sign-in-alt"></i> | </a></li>
+            <li><a class="logeo" href="/register"> Sign up <i class="fas fa-user"></i></a></li>
+        </ul>
+        <div class="leon">
+        <label for="buscador"></label>
+        <input class="buscador" type="search" id="buscador" name="buscador" placeholder="Buscar">
+        <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="hidden"><i class="fas fa-bars"></i></div>
+
+        <ul class="ul2">
+            <li><a href=""><i class="fas fa-home"></i> home |</a></li>
+            <li><a href="/products"><i class="fas fa-book"></i> cursos |</a></li>
+            <li><a href="/products/cart"><i class="fas fa-shopping-cart"></i> carrito |</a></li>
+            <li><a href=""><i class="fas fa-network-wired"></i> sedes |</a></li>
+            <li><a href=""><i class="fas fa-address-card"></i> contacto</a></li>
+        </ul>
+    </header>
+
+
+    <div class="contenido">
+    <section>
+        <img class="carrusel" src="/img/img-home-banner.jpg" alt="carrusel">
+    </section>
+    <div class="elegi">
+    <p>Elegí entre los más buscados</p>
+    <a href="" class="ver">Ver todos <i class="fas fa-arrow-circle-right"></i></a>
+    </div>
+
+    <section class="categorias"> 
+        <% for (cadaposicion of convierto) { %>
+            <div>
+                <ul class="ul">
+                    <li class="ics"><i class="fab fa-js-square"></i></li>
+                    <li class="aa"><a class="aaa" href="/products/<%= cadaposicion.id %>"><%= cadaposicion.nombre_curso %></a></li>
+                </ul>
+            </div>
+            <% } %>
+    </section>
+
+    <div class="unpocomas">
+        <p><i class="fas fa-play-circle"></i> Conocenos un poco más</p>
+    </div>
+    <section class="videoeinfo">
+        <article>
+            <video width="640" height="354" controls class="video">
+                <source src="">
+            </video>
+    </article>
+    <article class="dale">
+        <div class="informacion">
+        <p class="masinfo"><i class="fas fa-thumbtack"></i> Quiero recibir más info.</p>
+        <div class="info">
+            <div class="nombre">
+            <label for="name"><i class="fas fa-signature"></i> Nombre</label>
+            <input type="text" id="name">
+            </div>
+            <div class="nombre">
+            <label for="mail"><i class="fas fa-envelope"></i> Mail</label>
+            <input type="text" id="mail">
+            </div>
+            <div class="nombre">
+            <label for="curso"><i class="far fa-bookmark"></i> Curso de interés</label>
+            <input type="text" id="curso">
+            </div>
+            <div class="nombre">
+            <label for="cel"><i class="fas fa-mobile-alt"></i> Celular </label>
+            <input type="text" id="cel">
+            </div>
+        </div>
+        <div class="enviar1">
+            <form action="">
+                <label for=""></label>
+                <input class="enviar2" type="submit" placeholder="Enviar">
+            </form>
+        </div>
+    </article>
+    </section>
+
+    <section class="integrantesymapa">
+        <div class="contenedorintegrantes">
+            <div class="eleginos">
+                <p>¿Por qué elegirnos?</p>
+            </div>
+            <div class="ele">
+            <div>
+                <ul class="la">
+                    <li class="le"><i class="far fa-thumbs-up"></i></i>
+                    <li class="ee"><a class="eee">Cuando seas alumno oficialmente, obtendrás asesoramiento y seguimiento personalizado por parte de los profesores</a></li>
+                </ul>
+            </div>
+                <div>
+                    <ul class="la">
+                        <li class="le"><i class="fas fa-credit-card"></i></i>
+                        <li class="ee"><a class="eee">El primer mes de cursada es gratis. Si no te gustó, quedás libre y no debés abonar nada</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="la">
+                        <li class="le"><i class="fas fa-user-graduate"></i></i>
+                        <li class="ee"><a class="eee">Al finalizar el curso elegido, tendrás en tus manos un diploma otorgado por el Ministerio de Educación</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="la">
+                        <li class="le"><i class="far fa-bookmark"></i></i>
+                        <li class="ee"><a class="eee">Durante toda la cursada contarás con material técnico y seleccionado especialmente para una completa formación</a></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+    </section>
+
+    <section class="promos">
+        <article class="promociones0">
+            <p class="pe">Conocé nuestras promociones</p>
+            <a class="color" href="">
+                <div class="promociones">
+                    <p class="promociones2">Obtené un descuento abonando en efectivo <i class="fas fa-chevron-right"></i></p>
+                </div>
+            </a>
+            <a class="color" href="">
+                <div class="promociones">
+                    <p class="promociones2">Obtené un descuento abonando con Mastercard <i class="fas fa-chevron-right"></i></p>
+                </div>
+            </a>
+            <a class="color" href="">
+                <div class="promociones">
+                    <p class="promociones2">Obtené un descuento abonando con Mercadopago <i class="fas fa-chevron-right"></i></p>
+                </div>
+            </a>
+            <a class="color" href="">
+                <div class="promociones">
+                    <p class="promociones2">Obtené un descuento con club Movistar <i class="fas fa-chevron-right"></i></p>
+                </div>
+            </a>
+            <a class="color" href="">
+                <div class="promociones">
+                    <p class="promociones2">Obtené un descuento con banco Galicia <i class="fas fa-chevron-right"></i></p>
+                </div>
+            </a>
+        </article>
+
+        <article>
+            <p class="pe">Encontranos en el mapa</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105112.50638654342!2d-58.551580706606266!3d-34.58479146243764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb791570f7236c962!2sDigital%20House!5e0!3m2!1ses-419!2sar!4v1589162262070!5m2!1ses-419!2sar" width="543" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </article>
+    </section>
+
+    <section>
+        <p class="confian">Algunas empresas que confían en nosotros</p>
+        <div class="titulo">
+        <div class="en">
+            <img class="empresas" src="/img/bbva_logo_portada.jpg" alt="">
+            <img class="empresas" src="/img/1584487204_LOGOCODOS_fondoblanco-01.png" alt="">
+            <img class="empresas" src="/img/descarga.png" alt="">
+            <img class="empresas" src="/img/logo_trivago_antes.jpg" alt="">
+            <img class="empresas" src="/img/Movistar-azul-vertical-thumbnail.jpg" alt="">
+        </div>
+    </div>
+    </section>
+    <a class="fixed" href="mailto:user@server.com"><i class="far fa-envelope"></i></a>
+    <footer>
+        <a href=""><i class="fas fa-question-circle"></i> Preguntas frecuentes</a>
+        <a href=""><i class="fas fa-address-card"></i> Nosotros</a>
+        <a href=""><i class="fas fa-comments"></i> Comentarios</a>
+        <a href=""><i class="fas fa-language"></i> Idiomas</a>
+        <p class="phone"><i class="fab fa-whatsapp"></i> Whatsapp 1111111111</p>
+        <p class="phone"><i class="fas fa-phone"></i> Central: 0800-000-000</p>
+    </footer>
+    </body>
+    </html>

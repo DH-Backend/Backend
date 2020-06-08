@@ -1,0 +1,739 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #ebebeb;
+    width: 1349px;
+}
+.contenido {
+    margin: 0 auto;
+}
+header {
+    background-color: #023750;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+    font-family: 'Inter';
+}
+.hidden {
+    margin: 0 0 15px 0;
+    display: none;
+    visibility: visible;
+}
+.hidden i{
+    font-size: 100px;
+    color: white;
+}
+.logo {
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+    margin: 10px 0 10px 30px;
+}
+input {
+    width: 400px;
+    height: 30px;
+}
+.tigre {
+    display: inline;
+}
+a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+}
+.ul2 {
+    margin-right: 30px;
+}
+.ul1 a:hover {
+    color: rgb(223, 217, 217);
+}
+.ul2 a:hover {
+    color: rgb(223, 217, 217);
+}
+.buscador {
+    border-radius: 3px;
+    border: none;
+}
+button {
+    position: relative;
+    right: 35px;
+    border: none;
+    border-left: 1px solid gray;
+    padding-left: 5px;
+    background-color: white;
+}
+.fixed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 30px;
+    bottom: 10px;
+    height: 60px;
+    width: 60px;
+    background-color: brown;
+    border-radius: 30px;
+    font-size: 30px;
+    color: white;
+}
+.fixed:hover {
+    background-color: black;
+    transform: scale(1.15,1.15);
+}
+footer {
+    background-color: #023750;
+    font-family: 'Inter';
+    height: 120px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 50px;
+}
+footer p {
+    font-size: 20px;
+}
+footer a {
+    font-size: 20px;
+}
+.phone {
+    text-transform: uppercase;
+    color: white;
+}
+.section1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 40px 60px;
+}
+.js {
+    font-size: 40px;
+    font-family: 'Josefin Sans';
+    font-weight: bold;
+}
+.ul1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+}
+.asection1 {
+    color: white;
+    font-size: 20px;
+    font-family: 'Josefin Sans';
+    text-transform: none;
+    padding: 10px 30px;
+    background-color: brown;
+    border-radius: 10px;
+    text-align: center;
+}
+.asection1:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.1,1.1);
+}
+.div {
+    width: 100%;
+    height: 200px;
+    background-color: #c7d0d8;
+}
+.li2 {
+    margin-bottom: 20px;
+}
+.ul3 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    list-style: none;
+    font-family: 'inter';
+}
+.section2 {
+    position: relative;
+}
+.ul4 {
+    font-family: 'inter';
+    position: absolute;
+    top: 20px;
+    left: 900px;
+    border-left: 3px solid brown;
+    padding-left: 10px;
+    list-style: none;
+}
+.li33 {
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+.li4 {
+    margin-top: 50px;
+}
+.li44 {
+    font-family: 'inter';
+    text-transform: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: brown;
+}
+.section3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 40px 60px 40px 20px;
+}
+.contenido0 {
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-family: 'Josefin Sans';
+}
+.contenido {
+    margin-left: 50px;
+    list-style: none;
+    font-family: 'Inter';
+    font-size: 18px;
+}
+.pdf1 {
+    align-self: center;
+}
+.pdf2 {
+    text-transform: none;
+    color: black;
+    font-family: 'Josefin Sans';
+}
+.pdf1:hover {
+    transform: scale(1.1,1.1);
+}
+.fondo {
+    background-color: #0c0a0ed7;
+    margin: 60px 0;
+}
+.otros {
+    font-family: 'Josefin Sans';
+    color: white;
+    font-size: 20px;
+    text-transform: none;
+}
+.otros:hover {
+    border-bottom: 3px brown solid;
+}
+.nose {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style: none;
+    padding: 30px 0;
+}
+.nose li i {
+    color: white;
+    margin-right: 10px;
+    font-size: 20px;
+}
+.carrusel {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 1024px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #ebebeb;
+        width: 1349px;
+    }
+    .contenido {
+        margin: 0 auto;
+    }
+    header {
+        background-color: #023750;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 100px;
+        align-items: center;
+        font-family: 'Inter';
+    }
+    .hidden {
+        margin: 0 0 15px 0;
+        display: none;
+        visibility: visible;
+    }
+    .hidden i{
+        font-size: 100px;
+        color: white;
+    }
+    .logo {
+        height: 80px;
+        width: 80px;
+        border-radius: 40px;
+        margin: 10px 0 10px 30px;
+    }
+    input {
+        width: 400px;
+        height: 30px;
+    }
+    .tigre {
+        display: inline;
+    }
+    a {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+    }
+    .ul2 {
+        margin-right: 30px;
+    }
+    .ul1 a:hover {
+        color: rgb(223, 217, 217);
+    }
+    .ul2 a:hover {
+        color: rgb(223, 217, 217);
+    }
+    .buscador {
+        border-radius: 3px;
+        border: none;
+    }
+    button {
+        position: relative;
+        right: 35px;
+        border: none;
+        border-left: 1px solid gray;
+        padding-left: 5px;
+        background-color: white;
+    }
+    .fixed {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        right: 30px;
+        bottom: 10px;
+        height: 60px;
+        width: 60px;
+        background-color: brown;
+        border-radius: 30px;
+        font-size: 30px;
+        color: white;
+    }
+    .fixed:hover {
+        background-color: black;
+        transform: scale(1.15,1.15);
+    }
+    footer {
+        background-color: #023750;
+        font-family: 'Inter';
+        height: 120px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-bottom: 50px;
+    }
+    .phone {
+        text-transform: uppercase;
+        color: white;
+    }
+    .section1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 40px 60px;
+    }
+    .js {
+        font-size: 40px;
+        font-family: 'Josefin Sans';
+        font-weight: bold;
+    }
+    .ul1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 30px;
+    }
+    .asection1 {
+        color: white;
+        font-size: 25px;
+        font-family: 'Josefin Sans';
+        text-transform: none;
+        padding: 10px 30px;
+        background-color: brown;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .asection1:hover {
+        background-color: black;
+        color: white;
+        transform: scale(1.1,1.1);
+    }
+    .div {
+        width: 100%;
+        height: 250px;
+        background-color: #c7d0d8;
+    }
+    .li2 {
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+    .ul3 {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        list-style: none;
+        font-family: 'inter';
+    }
+    .section2 {
+        position: relative;
+    }
+    .ul4 {
+        font-family: 'inter';
+        position: absolute;
+        top: 20px;
+        left: 900px;
+        border-left: 3px solid brown;
+        padding-left: 10px;
+        list-style: none;
+        font-size: 20px;
+    }
+    .li33 {
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+    .li4 {
+        margin-top: 50px;
+    }
+    .li44 {
+        font-family: 'inter';
+        text-transform: none;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: brown;
+        font-size: 20px;
+    }
+    .section3 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 40px 60px 40px 20px;
+    }
+    .contenido0 {
+        margin-bottom: 10px;
+        font-size: 30px;
+        font-family: 'Josefin Sans';
+    }
+    .contenido {
+        margin-left: 50px;
+        list-style: none;
+        font-family: 'Inter';
+        font-size: 23px;
+    }
+    .pdf1 {
+        align-self: center;
+    }
+    .pdf2 {
+        text-transform: none;
+        color: black;
+        font-family: 'Josefin Sans';
+        font-size: 20px;
+    }
+    .pdf1:hover {
+        transform: scale(1.1,1.1);
+    }
+    .fondo {
+        background-color: #0c0a0ed7;
+        margin: 60px 0;
+    }
+    .otros {
+        font-family: 'Josefin Sans';
+        color: white;
+        font-size: 25px;
+        text-transform: none;
+    }
+    .otros:hover {
+        border-bottom: 3px brown solid;
+    }
+    .nose {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        list-style: none;
+        padding: 30px 0;
+    }
+    .nose li i {
+        color: white;
+        margin-right: 10px;
+        font-size: 20px;
+    }
+    .carrusel {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #ebebeb;
+        width: 1300px;
+    }
+    .contenido {
+        margin: 0 auto;
+    }
+    header {
+        background-color: #023750;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        font-family: 'Inter';
+    }
+    .logo {
+        margin: 30px 0 0 0;
+        height: 200px;
+        width: 200px;
+        border-radius: 100px;
+    }
+    input {
+        width: 400px;
+        height: 30px;
+    }
+    a {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: white;
+    }
+    .hidden {
+        margin: 0 0 15px 0;
+        display: inline;
+        visibility: visible;
+    }
+    .hidden i{
+        font-size: 100px;
+        color: white;
+    }
+    .ul2 {
+        margin-right: 30px;
+        display: none;
+        margin: 0;
+    }
+    .ul11111 {
+        display: none;
+    }
+    .ul1 a:hover {
+        color: rgb(223, 217, 217);
+    }
+    .ul2 a:hover {
+        color: rgb(223, 217, 217);
+    }
+    .buscador {
+        margin: 30px 0;
+        border-radius: 3px;
+        border: none;
+        width: 100%;
+        font-size: 40px;
+    }
+    .leon {
+        width: 900px;
+        position: relative;
+    }
+    .leon input {
+        height: 80px;
+    }
+    button {
+        position: absolute;
+        top: 40px;
+        border: none;
+        border-left: 1px solid gray;
+        padding-left: 5px;
+        background-color: white;
+        font-size: 50px;
+    }
+    .fixed {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        right: 30px;
+        bottom: 10px;
+        height: 90px;
+        width: 90px;
+        background-color: brown;
+        border-radius: 45px;
+        font-size: 50px;
+        color: white;
+    }
+    .fixed:hover {
+        background-color: black;
+        transform: scale(1.15,1.15);
+    }
+    footer {
+        background-color: #023750;
+        font-family: 'Inter';
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding-bottom: 50px;
+        margin-top: 20px;
+    }
+    footer a {
+        font-size: 40px;
+        margin: 15px 0;
+    }
+    footer p {
+        font-size: 40px;
+        margin: 15px 0;
+    }
+    .phone {
+        text-transform: uppercase;
+        color: white;
+    }
+    .section1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 40px 60px;
+    }
+    .ul1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 30px;
+    }
+    .js {
+        font-size: 70px;
+        font-family: 'Josefin Sans';
+        font-weight: bold;
+    }
+    .asection1 {
+        color: white;
+        font-size: 40px;
+        font-family: 'Josefin Sans';
+        text-transform: none;
+        padding: 10px 30px;
+        background-color: brown;
+        border-radius: 10px;
+        text-align: center;
+        align-self: center;
+    }
+    .asection1:hover {
+        background-color: black;
+        color: white;
+        transform: scale(1.1,1.1);
+    }
+    .div {
+        width: 100%;
+        height: 350px;
+        background-color: #c7d0d8;
+    }
+    .li2 {
+        margin-top: 50px;
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+    .ul3 {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        list-style: none;
+        font-family: 'inter';
+    }
+    .section2 {
+        position: relative;
+    }
+    .ul4 {
+        font-family: 'inter';
+        position: absolute;
+        top: 20px;
+        left: 900px;
+        border-left: 3px solid brown;
+        padding-left: 10px;
+        list-style: none;
+        font-size: 30px;
+    }
+    .li33 {
+        margin-bottom: 20px;
+        font-size: 40px;
+    }
+    .li4 {
+        margin-top: 50px;
+    }
+    .li44 {
+        font-family: 'inter';
+        text-transform: none;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: brown;
+        font-size: 30px;
+    }
+    .section3 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 40px 60px 40px 20px;
+    }
+    .contenido0 {
+        margin-bottom: 10px;
+        font-size: 40px;
+        font-family: 'Josefin Sans';
+    }
+    .contenido {
+        margin-left: 50px;
+        list-style: none;
+        font-family: 'Inter';
+        font-size: 35px;
+    }
+    .pdf1 {
+        align-self: center;
+    }
+    .pdf2 {
+        text-transform: none;
+        color: black;
+        font-family: 'Josefin Sans';
+        font-size: 30px;
+    }
+    .pdf1:hover {
+        transform: scale(1.1,1.1);
+    }
+    .fondo {
+        background-color: #0c0a0ed7;
+        margin: 60px 0;
+    }
+    .otros {
+        font-family: 'Josefin Sans';
+        color: white;
+        font-size: 50px;
+        text-transform: none;
+    }
+    .nose li {
+        margin: 20px 0;
+    }
+    .otros:hover {
+        border-bottom: 3px brown solid;
+    }
+    .nose {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: center;
+        list-style: none;
+        padding: 30px 0;
+    }
+    .nose li i {
+        color: white;
+        margin-right: 10px;
+        font-size: 50px;
+    }
+    .carrusel {
+        width: 100%;
+        margin-bottom: 50px;
+        display: none;
+    }
+}

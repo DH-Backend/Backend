@@ -1,0 +1,427 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #ebebeb;
+}
+header {
+    background-color: #023750;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+    font-family: 'Inter';
+}
+.logo {
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+    margin: 10px 0 10px 30px;
+}
+li {
+    display: inline;
+}
+a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+}
+.ul2 {
+    margin-right: 30px;
+}
+footer {
+    background-color: #023750;
+    font-family: 'Inter';
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.carga {
+    text-align: center;
+    margin-top: 40px;
+    font-family: 'Josefin Sans';
+    font-size: 40px;
+}
+.campos {
+    font-family: 'Inter';
+    margin-top: 60px;
+    font-size: 20px;
+}
+.formulario {
+    display: grid;
+    justify-content: center;
+    margin: 30px 0;
+    row-gap: 30px;
+}
+.textarea1 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+.textarea1 textarea {
+    width: 100%;
+}
+.textarea2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+.textarea2 textarea {
+    width: 100%;
+}
+.textarea3 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+.textarea3 textarea {
+    width: 100%;
+}
+.divmodalidad {
+    margin-top: 10px;
+}
+.modalidades {
+    margin-top: 10px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-left: 70px;
+}
+label {
+    font-family: 'Inter';
+    margin-right: 3px;
+}
+article {
+    border: gray 1px solid;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 5px 5px 5px #666;
+}
+.solo2 {
+    margin-left: 25px;
+}
+.pdf {
+    font-family: 'Inter';
+}
+.articulo5 {
+    text-align: center;
+    border: none;
+    background-color: #ebebeb;
+    box-shadow: none
+}
+.articulo5 input {
+    font-size: 20px;
+    color: white;
+    font-family: 'Josefin Sans';
+    text-transform: none;
+    padding: 7px 15px;
+    background-color: brown;
+    border: none;
+    margin: 0 10px;
+}
+.articulo5 input:hover {
+    transform: scale(1.1,1.1);
+}
+input {
+    font-family: 'Inter';
+    font-size: 15px;
+}
+
+@media (max-width: 1024px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #ebebeb;
+    }
+    header {
+        background-color: #023750;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 100px;
+        align-items: center;
+        font-family: 'Inter';
+    }
+    .logo {
+        height: 80px;
+        width: 80px;
+        border-radius: 40px;
+        margin: 10px 0 10px 30px;
+    }
+    li {
+        display: inline;
+    }
+    a {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: white;
+    }
+    .ul2 {
+        margin-right: 30px;
+    }
+    footer {
+        background-color: #023750;
+        font-family: 'Inter';
+        height: 70px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .sess {
+        width: 100%;
+    }
+    .carga {
+        text-align: center;
+        margin-top: 40px;
+        font-family: 'Josefin Sans';
+        font-size: 40px;
+    }
+    .campos {
+        font-family: 'Inter';
+        margin-top: 60px;
+        text-align: center;
+        font-size: 20px;
+    }
+    .formulario {
+        display: grid;
+        justify-content: center;
+        margin: 30px 0;
+        row-gap: 30px;
+    }
+    .textarea1 {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        justify-content: center;
+    }
+    .textarea1 textarea {
+        width: 100%;
+    }
+    .textarea2 {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+    .textarea2 textarea {
+        width: 100%;
+    }
+    .textarea3 {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+    .textarea3 textarea {
+        width: 100%;
+    }
+    .fecha {
+        text-align: center;
+    }
+    .divmodalidad {
+        margin-top: 10px;
+    }
+    .modalidades {
+        margin: 0;
+        margin-top: 10px;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    label {
+        display: block;
+        font-family: 'Inter';
+        margin: 0;
+    }
+    article {
+        border: gray 1px solid;
+        background-color: white;
+        padding: 10px;
+        box-shadow: 5px 5px 5px #666;
+        text-align: center;
+    }
+    .solo2 {
+        margin: 0;
+        margin-top: 10px;
+    }
+    .pdf {
+        font-family: 'Inter';
+    }
+    .articulo5 {
+        text-align: center;
+        border: none;
+        background-color: #ebebeb;
+        box-shadow: none
+    }
+    .articulo5 input {
+        font-size: 20px;
+        color: white;
+        font-family: 'Josefin Sans';
+        text-transform: none;
+        padding: 7px 15px;
+        background-color: brown;
+        border: none;
+        margin: 0 10px;
+    }
+    .articulo5 input:hover {
+        transform: scale(1.1,1.1);
+    }
+    input {
+        font-family: 'Inter';
+        font-size: 15px;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #ebebeb;
+        width: 500px;
+    }
+    header {
+        background-color: #023750;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 100px;
+        align-items: center;
+        font-family: 'Inter';
+    }
+    .logo {
+        height: 80px;
+        width: 80px;
+        border-radius: 40px;
+        margin: 10px 0 10px 30px;
+    }
+    li {
+        display: inline;
+    }
+    a {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: white;
+    }
+    .ul2 {
+        margin-right: 30px;
+    }
+    footer {
+        background-color: #023750;
+        font-family: 'Inter';
+        height: 70px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .sess {
+        width: 100%;
+    }
+    .carga {
+        text-align: center;
+        margin-top: 40px;
+        font-family: 'Josefin Sans';
+        font-size: 40px;
+    }
+    .campos {
+        font-family: 'Inter';
+        margin-top: 60px;
+        text-align: center;
+        font-size: 20px;
+    }
+    .formulario {
+        display: grid;
+        justify-content: center;
+        margin: 30px 0;
+        row-gap: 30px;
+    }
+    .textarea1 {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        justify-content: center;
+    }
+    .textarea1 textarea {
+        width: 100%;
+    }
+    .textarea2 {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+    .textarea2 textarea {
+        width: 100%;
+    }
+    .textarea3 {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+    .textarea3 textarea {
+        width: 100%;
+    }
+    .fecha {
+        text-align: center;
+    }
+    .divmodalidad {
+        margin-top: 10px;
+    }
+    .modalidades {
+        margin: 0;
+        margin-top: 10px;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    label {
+        display: block;
+        font-family: 'Inter';
+        margin: 0;
+    }
+    article {
+        border: gray 1px solid;
+        background-color: white;
+        padding: 10px;
+        box-shadow: 5px 5px 5px #666;
+        text-align: center;
+    }
+    .solo2 {
+        margin: 0;
+        margin-top: 10px;
+    }
+    .pdf {
+        font-family: 'Inter';
+    }
+    .articulo5 {
+        text-align: center;
+        border: none;
+        background-color: #ebebeb;
+        box-shadow: none
+    }
+    .articulo5 input {
+        font-size: 20px;
+        color: white;
+        font-family: 'Josefin Sans';
+        text-transform: none;
+        padding: 7px 15px;
+        background-color: brown;
+        border: none;
+        margin: 0 10px;
+    }
+    .articulo5 input:hover {
+        transform: scale(1.1,1.1);
+    }
+    input {
+        font-family: 'Inter';
+        font-size: 15px;
+    }
+}

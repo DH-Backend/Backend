@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/productAdd.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans&family=Trocchi&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+    <title>Admin</title>
+</head>
+<body>
+    <header>
+        <a href="/"><img class="logo" src="../public/img/Copia de Absolute Fashion.png" alt="logo"></a>
+
+        <ul class="ul2">
+            <li><a href=""><i class="fas fa-home"></i> home |</a></li>
+            <li><a href="/products"><i class="fas fa-book"></i> cursos |</a></li>
+            <li><a href="/products/cart"><i class="fas fa-shopping-cart"></i> carrito |</a></li>
+        </ul>
+
+    </header>
+
+    <section class="sess">
+        <p class="carga">Edicion de <%= filter.lenguaje %></p>
+
+        <form class="formulario" action="/products/<%= filter.id %>/edit?_method=PUT" method="POST">
+            <p class="campos">Todos los campos son obligatorios</p>
+        <article>
+            <label for="lenguaje">Lenguaje</label>
+            <input type="text" name="lenguaje" id="lenguaje" value="<%= filter.lenguaje %>">
+        </article>
+
+        <article>
+                <label for="nombrecurso">Nombre del curso</label>
+                <input type="text" name="nombre_curso" id="nombrecurso" value="<%= filter.nombre_curso%>">
+                <label class="solo2" for="valor">Valor</label>
+                <input type="text" name="valor" id="valor" value="<%= filter.valor %>">
+                <label class="solo2" for="duracion">Duración</label>
+                <input type="text" name="duracion" id="duracion" value="<%= filter.duracion %>">
+                <div class="textarea1">
+                    <label for="brevdesc">Breve descripción</label>
+                    <textarea name="brevedesc" id="brevedesc" cols="30" rows="10"><%= filter.descripcion %></textarea>
+                </div>
+        </article>
+
+        <article>
+            <div class="textarea2">
+                <label for="contenido">Contenido</label>
+                <textarea name="contenido" id="contenido" cols="30" rows="10"><%= filter.contenido %></textarea>
+            </div>
+            <label for="pdf">PDF</label>
+            <input class="pdf" type="file" name="pdf" id="pdf">
+        </article>
+
+        <article>
+            <div class="textarea3">
+                <label for="plan">Plan</label>
+                <textarea name="plan" id="plan" cols="30" rows="10"><%= filter.plan %></textarea>
+            </div>
+                <label for="fechainicio">Fecha de inicio</label>
+                <input class="fecha" type="date" name="fechainicio" id="fechainicio" value="<%= filter.inicio %>">
+            <div class="divmodalidad">
+                <label for="">Modalidad</label>
+                <div class="modalidades">
+                    <select name="modalidad" id="modalidad">
+                        <option value="1" <% if (filter.modalidad == 1) {%> selected <% } %>>Online</option>
+                        <option value="2" <% if (filter.modalidad == 2) {%> selected <% } %>>Presencial</option>
+                        <option value="3" <% if (filter.modalidad == 3) {%> selected <% } %>>Blend</option>
+                    </select>
+                </div>
+            </div>
+        </article>
+
+        <article class="articulo5">
+            <input type="submit" value="Modificar">
+            <input type="reset" value="Reiniciar">
+        </article>
+
+    </form>
+    </section>
+
+    <footer>
+    </footer>
+</body>
+</html>
