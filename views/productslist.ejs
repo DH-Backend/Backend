@@ -3,23 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/productslist.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans&family=Trocchi&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <title>Productos</title>
 </head>
 <body>
-    <h1>LISTADO DE PRODUCTOS</h1>
 
+    <%- include('partials/header'); %>
+    
+<section class="todocarro">
+    <p class="carrito">Todos los productos</p>
+</section>
+<div class="sec">
+    <section class="seccion">
+        <% if (usuario != undefined && usuario.email == 'saezfvet@gmail.com') {%> 
     <% for (cadauno of convierto) {%>
-        <ul>
-            <li><%= cadauno.lenguaje %> </li>
-            <li><%= cadauno.nombre_curso %> </li>
-            <li><%= cadauno.descripcion %> </li>
-        </ul>
-        <form action="/products/<%= cadauno.id %>/edit" method="GET">
-            <input type="submit" value="Editar">
-        </form>
-        <form action="/products/<%= cadauno.id %>/?_method=DELETE" method="POST">
-            <input type="submit" value="Eliminar">
-        </form>
+        <div class="cajas">
+            <div>
+                <ul>
+                    <a class="borra" href="/products/<%= cadauno.id %>">
+                    <li  id="curso"  class="li"><p class="es"></p> <%= cadauno.nombre_curso %> </li></a>
+                    <li class="li"> <p class="es"></p> <%= cadauno.descripcion %> </li>
+                    <li id="lenguaje" class="li"> <p class="es">Lenguaje :</p> <%= cadauno.lenguaje %> </li>
+                    <li class="li"><p class="es">Duración :</p> <%= cadauno.duracion %> meses</li>
+                    <li class="li"><p class="es">Valor :</p> <%= cadauno.valor %> </li>
+                </ul>
+            </div>
+            <div>
+
+                <div>
+                    <form action="/products/<%= cadauno.id %>/edit" method="GET">
+                        <input type="submit" value="Editar">
+                    </form>
+                    <form action="/products/<%= cadauno.id %>/?_method=DELETE" method="POST">
+                        <input type="submit" value="Eliminar">
+                    </form>
+                    <form class="ultimo" action="/products/<%= cadauno.id %>" method="POST">
+                        <input class="agregar" type="submit" value="Agregar">
+                    </form>
+                    <p class="centro"><a class="ver" href="/products/<%= cadauno.id %> ">Ver curso <i class="fas fa-arrow-circle-right"></i></a></p>
+                </div>
+            </div>
+        </div>
+                </ul>
+                </a>
+                <% } %>
+            <% } else {%> 
+                <% for (cadauno of convierto) {%>
+                    <div class="cajas">
+                        <div>
+                            <ul>
+                                <a class="borra" href="/products/<%= cadauno.id %>">
+                                <li  id="curso"  class="li"><p class="es"></p> <%= cadauno.nombre_curso %> </li></a>
+                                <li class="li"> <p class="es"></p> <%= cadauno.descripcion %> </li>
+                                <li id="lenguaje" class="li"> <p class="es">Lenguaje :</p> <%= cadauno.lenguaje %> </li>
+                                <li class="li"><p class="es">Duración :</p> <%= cadauno.duracion %> meses</li>
+                                <li class="li"><p class="es">Valor :</p> <%= cadauno.valor %> </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <form class="ultimo" action="/products/<%= cadauno.id %>" method="POST">
+                                <input class="agregar" type="submit" value="Agregar">
+                            </form>
+                            <p class="centro"><a class="ver" href="/products/<%= cadauno.id %> ">Ver curso <i class="fas fa-arrow-circle-right"></i></a></p>
+                        </div>
+                    </div>
+                        <% } %>
     <% } %>
-</body>
-</html>
+</section>
+</div>  
+<a class="fixed" href="mailto:user@server.com"><i class="far fa-envelope"></i></a>
+    
+<%- include('partials/footer'); %>

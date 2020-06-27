@@ -239,6 +239,12 @@ footer {
     font-size: 15px;
     padding-bottom: 5px;
 }
+.conlogin {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 50px;
+    font-family: 'Inter';
+}
 .flex {
     display: flex;
     flex-wrap: wrap;

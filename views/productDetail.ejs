@@ -9,31 +9,8 @@
     <title>Producto</title>
 </head>
 <body>
-    <header>
 
-        <a href="/"><img class="logo" src="/img/Copia de Absolute Fashion.png" alt="logo"> </a>
-
-        <ul class="ul11111">
-            <li class="tigre"><a href="/login">Log in <i class="fas fa-sign-in-alt"></i> | </a></li>
-            <li class="tigre"><a href="/register"> Sign up <i class="fas fa-user"></i></a></li>
-        </ul>
-
-        <div class="leon">
-        <label for="buscador"></label>
-        <input class="buscador" type="search" id="buscador" name="buscador" placeholder="Buscar">
-        <button><i class="fas fa-search"></i></button>
-        </div>
-
-        <div class="hidden"><i class="fas fa-bars"></i></div>
-
-        <ul class="ul2">
-            <li class="tigre"><a href=""><i class="fas fa-home"></i> home |</a></li>
-            <li class="tigre"><a href="/products"><i class="fas fa-book"></i> cursos |</a></li>
-            <li class="tigre"><a href="/products/cart"><i class="fas fa-shopping-cart"></i> carrito |</a></li>
-            <li class="tigre"><a href=""><i class="fas fa-network-wired"></i> sedes |</a></li>
-            <li class="tigre"><a href=""><i class="fas fa-address-card"></i> contacto</a></li>
-        </ul>
-    </header>
+    <%- include('partials/header'); %>
 
     <section class="section1">
         <div>
@@ -41,33 +18,31 @@
         </div>
         <div class="ul1">
             <a class="asection1" href="">Comprar</a>
-            <a class="asection1" href="">Más información</a>
         </div>
     </section>
     <section class="section2">
         <div class="div">
             <ul class="ul3">
                 <li class="li33"><i class="fas fa-chevron-right"></i> <%= filter.nombre_curso %></li>
-                <li class="li2"><%= filter.descripcion %></li>
-                <li class="li4"><a class="li44" href="">Más info</a></li>
+                <ul class="ul4">
+                    <li >Duración: <%= filter.duracion %> meses</li>
+                    <li>Valor: <%= filter.valor %></li>
+                </ul>
             </ul>
-            <ul class="ul4">
-                <li>Duración: <%= filter.duracion %></li>
-                <li>Valor: <%= filter.valor %></li>
-            </ul>
+            <p class="li2"><%= filter.descripcion %></li>
             </div>
     </section>
     <section class="section3">
         <div>
             <p class="contenido0">Contenido</p>
             <ul class="contenido">
-                <li>- <%= filter.contenido %></li>
-                <li>- <%= filter.contenido %></li>
-                <li>- <%= filter.contenido %></li>
-                <li>- <%= filter.contenido %></li>
-                <li>- <%= filter.contenido %></li>
-                <li>- <%= filter.contenido %></li>
-                <li>- <%= filter.contenido %></li>
+                <li>- <%= filter.contenido %></li><br>
+                <li>- <%= filter.contenido %></li><br>
+                <li>- <%= filter.contenido %></li><br>
+                <li>- <%= filter.contenido %></li><br>
+                <li>- <%= filter.contenido %></li><br>
+                <li>- <%= filter.contenido %></li><br>
+                <li>- <%= filter.contenido %></li><br>
             </ul>
         </div>
         <div class="pdf1">
@@ -90,13 +65,5 @@
 
     <a class="fixed" href="mailto:user@server.com"><i class="far fa-envelope"></i></a>
 
-    <footer>
-        <a href=""><i class="fas fa-question-circle"></i> Preguntas frecuentes</a>
-        <a href=""><i class="fas fa-address-card"></i> Nosotros</a>
-        <a href=""><i class="fas fa-comments"></i> Comentarios</a>
-        <a href=""><i class="fas fa-language"></i> Idiomas</a>
-        <p class="phone"><a href="tel: 1167545374"><i class="fab fa-whatsapp"></i> Whatsapp 116-754-5374</a></p>
-        <p class="phone"><i class="fas fa-phone"></i> Central: 0800-000-000</p>
-    </footer>
-</body>
-</html>
+    
+    <%- include('partials/footer'); %>

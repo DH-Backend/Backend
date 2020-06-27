@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #ebebeb;
+}
+.contenido {
+    margin: 0 auto;
+}
+header {
+    background-color: #023750;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+    font-family: 'Inter';
+}
+.hidden {
+    margin: 0 0 15px 0;
+    display: none;
+    visibility: visible;
+}
+.hidden i{
+    font-size: 100px;
+    color: white;
+}
+.logo {
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+    margin: 10px 0 10px 30px;
+}
+input {
+    width: 400px;
+    height: 30px;
+}
+.tigre {
+    display: inline;
+}
+li {
+    display: inline;
+}
+a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+}
+.ul2 {
+    margin-right: 30px;
+}
+.ul1 a:hover {
+    color: rgb(223, 217, 217);
+}
+.ul2 a:hover {
+    color: rgb(223, 217, 217);
+}
+.buscador {
+    border-radius: 3px;
+    border: none;
+}
+button {
+    position: relative;
+    right: 35px;
+    border: none;
+    border-left: 1px solid gray;
+    padding-left: 5px;
+    background-color: white;
+}
+.fixed {
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    align-items: center;
+    position: fixed;
+    right: 30px;
+    bottom: 10px;
+    height: 60px;
+    width: 60px;
+    background-color: brown;
+    border-radius: 30px;
+    font-size: 30px;
+    color: white;
+}
+.fixed:hover {
+    background-color: black;
+    transform: scale(1.15,1.15);
+}
+footer {
+    background-color: #023750;
+    font-family: 'Inter';
+    height: 120px;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.phone {
+    text-transform: uppercase;
+    color: white;
+}
+img {
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    margin-top: 30px;
+}
+.todocarro {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+.carrito {
+    font-size: 40px;
+    font-family: 'Josefin Sans';
+    font-weight: bold;
+}
+form {
+    text-align: center;
+}
+form input {
+    color: white;
+    font-family: 'Inter';
+    border: none;
+    margin-top: 10px;
+    width: 100px;
+    background-color: brown;
+}
+form input:hover {
+    transform: scale(1.1,1.1);
+    background-color: black;
+}
+.ver {
+    color: black;
+    text-transform: none;
+    font-size: 25px;
+    font-family: 'Inter';
+}
+.margen:hover {
+    transform: scale(1.1,1.1);
+}
+.margen {
+    margin: 15px 0;
+}

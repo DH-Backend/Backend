@@ -36,6 +36,20 @@ footer {
     justify-content: space-around;
     align-items: center;
 }
+.errors1 {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Inter';
+    margin: 10px 0;
+    font-size: 13px;
+}
+.nuevo {
+    display: block;
+    color: red;
+}
+.nuevo2 {
+    margin-bottom: 20px;
+}
 .phone {
     text-transform: uppercase;
     color: white;
@@ -82,6 +96,14 @@ input {
     border: none;
     padding-left: 5px;
     font-size: 15px;
+}
+.recordame {
+    margin: 0;
+    width: 15px;
+    height: 15px;
+}
+.recordamediv {
+    margin-bottom: 10px;
 }
 .contras {
     display: flex;

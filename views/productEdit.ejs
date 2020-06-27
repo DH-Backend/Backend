@@ -11,10 +11,10 @@
 </head>
 <body>
     <header>
-        <a href="/"><img class="logo" src="../public/img/Copia de Absolute Fashion.png" alt="logo"></a>
+        <a href="/"><img class="logo" src="/img/Copia de Absolute Fashion.png" alt="logo"></a>
 
         <ul class="ul2">
-            <li><a href=""><i class="fas fa-home"></i> home |</a></li>
+            <li><a href="/"><i class="fas fa-home"></i> home |</a></li>
             <li><a href="/products"><i class="fas fa-book"></i> cursos |</a></li>
             <li><a href="/products/cart"><i class="fas fa-shopping-cart"></i> carrito |</a></li>
         </ul>
@@ -26,6 +26,10 @@
 
         <form class="formulario" action="/products/<%= filter.id %>/edit?_method=PUT" method="POST">
             <p class="campos">Todos los campos son obligatorios</p>
+            <article>
+                <label>Categoria</label>
+                <input type="text" name="categoria" value="<%= filter.categoria %>">
+            </article>
         <article>
             <label for="lenguaje">Lenguaje</label>
             <input type="text" name="lenguaje" id="lenguaje" value="<%= filter.lenguaje %>">
@@ -40,7 +44,7 @@
                 <input type="text" name="duracion" id="duracion" value="<%= filter.duracion %>">
                 <div class="textarea1">
                     <label for="brevdesc">Breve descripción</label>
-                    <textarea name="brevedesc" id="brevedesc" cols="30" rows="10"><%= filter.descripcion %></textarea>
+                    <textarea name="descripcion" id="brevedesc" cols="30" rows="10"><%= filter.descripcion %></textarea>
                 </div>
         </article>
 
@@ -79,8 +83,5 @@
 
     </form>
     </section>
-
-    <footer>
-    </footer>
 </body>
 </html>

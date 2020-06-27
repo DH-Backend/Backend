@@ -10,37 +10,15 @@
     <title>Carrito</title>
 </head>
 <body>
-    <header>
-        <a href="/"><img class="logo" src="/img/Copia de Absolute Fashion.png" alt="logo"> </a>
 
-        <ul class="ul1">
-            <li><a href="/login">Log in <i class="fas fa-sign-in-alt"></i> | </a></li>
-            <li><a href="/register"> Sign up <i class="fas fa-user"></i></a></li>
-        </ul>
-
-        <div class="leon">
-        <label for="buscador"></label>
-        <input class="buscador" type="search" id="buscador" name="buscador" placeholder="Buscar">
-        <button><i class="fas fa-search"></i></button>
-        </div>
-        <div class="hidden"><i class="fas fa-bars"></i></div>
-
-        <ul class="ul2">
-            <li><a href=""><i class="fas fa-home"></i> home |</a></li>
-            <li><a href="/products"><i class="fas fa-book"></i> cursos |</a></li>
-            <li><a href="/products/cart"><i class="fas fa-shopping-cart"></i> carrito |</a></li>
-            <li><a href=""><i class="fas fa-network-wired"></i> sedes |</a></li>
-            <li><a href=""><i class="fas fa-address-card"></i> contacto</a></li>
-        </ul>
-    </header>
-
+    <%- include('partials/header'); %>
 
         <section class="todocarro">
             <div>
                 <p class="carrito">Carrito</p>
             </div>
             <div class="grid">
-                <a class="vercursos" href=""><i class="fas fa-chevron-right"></i> Seguir viendo cursos</a>
+                <a class="vercursos" href="/products"><i class="fas fa-chevron-right"></i> Seguir viendo cursos</a>
                 <a class="verpromos" href="">Ver promociones</a>
             </div>
         </section>
@@ -50,13 +28,13 @@
                 <article class="articulo">
                     <div class="curso">
                         <div class="nameyplata">
-                            <p class="name"><i class="fas fa-check"></i> Nombre del curso 1</p>
-                            <p class="moni">$$$$$$$</p>
+                            <p class="name"><i class="fas fa-check"></i> Nombre del curso </p>
+                            <p class="moni"> $$$$$$$ </p>
                         </div>
                         <ul class="pollo">
-                            <li class="enlinea">- Fecha inicio: </li>
-                            <li class="enlinea">- Modalidad: </li>
-                            <li class="enlinea">- Sucursal: </li>
+                            <li class="enlinea">- Lenguaje </li>
+                            <li class="enlinea">- Modalidad </li>
+                            <li class="enlinea">- Fecha de inicio </li>
                         </ul>
                         <a class="eliminar" href="">Eliminar</a>
                     </div>
@@ -64,13 +42,13 @@
                 <article class="articulo">
                     <div class="curso">
                         <div class="nameyplata">
-                            <p class="name"><i class="fas fa-check"></i> Nombre del curso 2</p>
-                            <p class="moni">$$$$$$$</p>
+                            <p class="name"><i class="fas fa-check"></i> Nombre del curso </p>
+                            <p class="moni"> $$$$$$$ </p>
                         </div>
                         <ul class="pollo">
-                            <li class="enlinea">- Fecha inicio: </li>
-                            <li class="enlinea">- Modalidad: </li>
-                            <li class="enlinea">- Sucursal: </li>
+                            <li class="enlinea">- Lenguaje </li>
+                            <li class="enlinea">- Modalidad </li>
+                            <li class="enlinea">- Fecha de inicio </li>
                         </ul>
                         <a class="eliminar" href="">Eliminar</a>
                     </div>
@@ -78,13 +56,13 @@
                 <article class="articulo">
                     <div class="curso">
                         <div class="nameyplata">
-                            <p class="name"><i class="fas fa-check"></i> Nombre del curso 3</p>
-                            <p class="moni">$$$$$$$</p>
+                            <p class="name"><i class="fas fa-check"></i> Nombre del curso </p>
+                            <p class="moni"> $$$$$$$ </p>
                         </div>
                         <ul class="pollo">
-                            <li class="enlinea">- Fecha inicio: </li>
-                            <li class="enlinea">- Modalidad: </li>
-                            <li class="enlinea">- Sucursal: </li>
+                            <li class="enlinea">- Lenguaje </li>
+                            <li class="enlinea">- Modalidad </li>
+                            <li class="enlinea">- Fecha de inicio </li>
                         </ul>
                         <a class="eliminar" href="">Eliminar</a>
                     </div>
@@ -128,16 +106,6 @@
                 </article>
             </div>
         </section>
-
         <a class="fixed" href="mailto:user@server.com"><i class="far fa-envelope"></i></a>
 
-    <footer>
-        <a href=""><i class="fas fa-question-circle"></i> Preguntas frecuentes</a>
-        <a href=""><i class="fas fa-address-card"></i> Nosotros</a>
-        <a href=""><i class="fas fa-comments"></i> Comentarios</a>
-        <a href=""><i class="fas fa-language"></i> Idiomas</a>
-        <p class="phone"><a href="tel: 1167545374"><i class="fab fa-whatsapp"></i> Whatsapp 116-754-5374</a></p>
-        <p class="phone"><i class="fas fa-phone"></i> Central: 0800-000-000</p>
-    </footer>
-</body>
-</html>
+        <%- include('partials/footer'); %>

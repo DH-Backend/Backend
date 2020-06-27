@@ -12,36 +12,83 @@
 <body>
     <header>
         <a href="/"><img class="logo" src="/img/Copia de Absolute Fashion.png" alt="logo"> </a>
-
     </header>
     <section class="seccion">
         <div class="div1"> 
             <p class="camposs">Registro</p>
             <p class="campos">Todos los campos son obligatorios</p>
-            <form action="">
-            <div class="nombreyapellido">
-                <input type="text" placeholder="Nombre">
-                <input type="text" placeholder="Apellido">
+
+            <form action="/register" method="POST" enctype="multipart/form-data">
+        <div class="errors1">
+            <div id="uno">
+                <% if (errors.nombre) { %>
+                    <div><i style="color: red;" class="fas fa-exclamation"></i> <%= errors.nombre.msg %> </div>
+                <% } else {
+                    ''
+                }%>
             </div>
-            <div class="mail">
-                <input class="inputmail" type="email" placeholder="Mail">
-            </div>
-            <div class="contras">
-                <input type="password" placeholder="Contraseña">
-                <input type="password" placeholder="Confirmar contraseña">
+            <div id="dos">
+                <% if (errors.apellido) { %>
+                    <div><i style="color: red;" class="fas fa-exclamation"></i> <%= errors.apellido.msg %> </div>
+                <% } else {
+                    ''
+                }%>
             </div>
         </div>
+            <div class="nombreyapellido">
+                <input type="text" name="nombre" placeholder="Nombre" value="<%= body.nombre ? body.nombre : '' %>">
+                <input type="text" name="apellido" placeholder="Apellido" value="<%= body.apellido ? body.apellido : '' %>">
+            </div>
+            <div class="errors1">
+                <div>
+                    <% if (errors.email) { %>
+                        <div><i style="color: red;" class="fas fa-exclamation"></i> <%= errors.email.msg %> </div>
+                    <% } else {
+                        ''
+                    }%>
+                </div>
+            </div>
+            <div>
+                <input class="inputmail" type="email" name="email" placeholder="Mail" value="<%= body.email ? body.email : '' %> ">
+            </div>
+            <div class="errors1">
+                    <% if (errors.contraseña && !errors.confirmarla) { %>
+                        <div><i style="color: red;" class="fas fa-exclamation"></i> <%= errors.contraseña.msg %> </div>
+                    <% } else if (errors.confirmarla && !errors.contraseña) { %>
+                        <div><i style="color: red;" class="fas fa-exclamation"></i> <%= errors.confirmarla.msg %> </div>
+                    <% } else if (errors.contraseña && errors.confirmarla) {%>
+                        <div id="errors4"><i style="color: red;" class="fas fa-exclamation"></i> <%= errors.contraseña.msg %> </div>
+                        <div id="errors3"><i style="color: red;" class="fas fa-exclamation"></i> <%= errors.confirmarla.msg %> </div>
+                        <% } %>
+            </div>
+            <div class="contras">
+                <input type="password" name="contraseña" placeholder="Contraseña">
+                <input type="password" name="confirmarla" placeholder="Confirmar contraseña">
+            </div>
+            <div class="errors1">
+                <div>
+                    <% if (errors.imagen) { %>
+                        <div><i style="color: red;" class="fas fa-exclamation"></i> <%= errors.imagen.msg %> </div>
+                    <% } else {
+                        ''
+                    }%>
+                </div>
+            </div>
+        <div class="imagen">
+            <label for="">Foto de perfil (opcional)</label>
+            <input type="file" name="imagen">
+        </div>
+    </div>
         <div class="terminos"><p>Al hacer clic en crear cuenta, aceptás las <a href="">Condiciones de uso y la Política de privacidad</a> de Dharma.</p></div>
     <div class="otros">
         <div>
             <div class="divcrearcuenta">
-                    <label for=""></label>
                     <input class="crearcuenta" type="submit" value="Crear cuenta">
-                </form>
             </div>
+        </form>
             <div class="grid2">
                     <p class="registrado">¿Ya estás registrado?</p>
-                    <a class="iniciala" href="">Inicia sesión <i class="fas fa-sign-in-alt"></i></a>
+                    <a class="iniciala" href="/login">Inicia sesión <i class="fas fa-sign-in-alt"></i></a>
             </div>
         </div>
             <div class="losdos">
@@ -53,13 +100,4 @@
     </div>
     </section>
 
-    <footer>
-        <a class="afooter" href=""><i class="fas fa-question-circle"></i> Preguntas frecuentes</a>
-        <a class="afooter" href=""><i class="fas fa-address-card"></i> Nosotros</a>
-        <a class="afooter" href=""><i class="fas fa-comments"></i> Comentarios</a>
-        <a class="afooter" href=""><i class="fas fa-language"></i> Idiomas</a>
-        <p class="phone"><a href="tel: 1167545374"><i class="fab fa-whatsapp"></i> Whatsapp 116-754-5374</a></p>
-        <p class="phone"><i class="fas fa-phone"></i> Central: 0800-000-000</p>
-    </footer>
-</body>
-</html>
+    <%- include('partials/footer'); %>

@@ -1,49 +1,67 @@
 const fs = require('fs');
 const path = require('path');
 const todoslosproductos = path.join(__dirname, '../data/todoslosproductos.json');
-const productos = path.join(__dirname, '../data/productos.json');
 module.exports = {
     products: (req, res) => {
+        if (req.session.registro){
+                var usuario = req.session.registro;
+        }
         let leo = fs.readFileSync(todoslosproductos, 'utf-8');
         let convierto = JSON.parse(leo);
-        res.render('productslist', {convierto});
+        res.render('productslist', {convierto, usuario});
     },
+    /*productspp: (req, res) => {
+        let elid = req.params.id;
+        let leo = fs.readFileSync(todoslosproductos, 'utf-8');
+        let convierto = JSON.parse(leo);
+        let filter = convierto.find(x => x.id == elid);
+        if (filter){
+            let leoo = fs.readFileSync(carrito, 'utf-8');
+            let conviertoo = JSON.parse(leoo);
+            let filterr = conviertoo.find(x => x.id == elid);
+            if (filterr) {
+                res.render('productCart', {conviertoo, usuario: ''});
+            } else {
+                conviertoo.push(filter);
+                let transformo = JSON.stringify(conviertoo);
+                fs.writeFileSync(carrito, transformo);
+                res.render('productCart', {conviertoo, usuario: ''});
+            }
+        }
+    },*/
     cart: (req, res) => {
-        res.render('productCart');
+        if (req.session.registro){
+            var usuario = req.session.registro;
+        }
+        res.render('productCart', {usuario, conviertoo: ''});
     },
     create: (req, res) => {
         res.render('productAdd');
     },
     createpp: (req, res) => {
         let uno = req.body;
-        /*req.body.id = function (){
-            let ultimoid = 0;
-            for (cadauno of convierto){
-                if (ultimoid < req.body.id){
-                    ultimoid = req.body.id;
-                }
-            } return ultimoid +1;
-        }*/
         let leo = fs.readFileSync(todoslosproductos, 'utf-8');
         let convierto = JSON.parse(leo);
         let filter = convierto.find(x => x.nombre_curso == req.body.nombre_curso);
         if (filter) {
             res.send('ya estaba creado');
         } else {
-            convierto.push(uno);
+            convierto.unshift(uno);
             let transformo = JSON.stringify(convierto);
             fs.writeFileSync(todoslosproductos, transformo);
-            res.send('creado con exito');
+            res.render('/productslist');
         }
-        res.render('productAdd');
     },
     detail: (req, res) => {
         let dos = req.params;
-        let leo = fs.readFileSync(productos, 'utf-8');
+        if (req.session.registro){
+            var usuario = req.session.registro;
+        }
+        let leo = fs.readFileSync(todoslosproductos, 'utf-8');
         let convierto = JSON.parse(leo);
         let filter = convierto.find(x => x.id == req.params.id);
         if (filter) {
-            res.render('productDetail', {filter});
+            res.render('productDetail', {filter, usuario});
         } else {
             res.send('ese producto no esta en mi base de datos');
         }
@@ -70,10 +88,10 @@ module.exports = {
             filter.modalidad = req.body.modalidad;
 
         let filterdos = convierto.filter(x => x.id != req.params.id);
-        filterdos.push(filter);
+        filterdos.unshift(filter);
         let transformo = JSON.stringify(filterdos);
         fs.writeFileSync(todoslosproductos, transformo);
-        res.send('editado con exito');
+        res.redirect('/products');
     },
     delete: (req, res) => {
         let leo = fs.readFileSync(todoslosproductos, 'utf-8');
@@ -81,6 +99,6 @@ module.exports = {
         let filter = convierto.filter(x => x.id != req.params.id);
         let transformo = JSON.stringify(filter);
         fs.writeFileSync(todoslosproductos, transformo);
-        res.send('eliminado con exito');
+        res.redirect('/products');
     }
 }

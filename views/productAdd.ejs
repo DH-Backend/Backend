@@ -14,9 +14,9 @@
         <a href=""><img class="logo" src="/img/Copia de Absolute Fashion.png" alt="logo"></a>
 
         <ul class="ul2">
-            <li><a href=""><i class="fas fa-home"></i> home |</a></li>
-            <li><a href=""><i class="fas fa-book"></i> cursos |</a></li>
-            <li><a href=""><i class="fas fa-shopping-cart"></i> carrito</a></li>
+            <li><a href="/"><i class="fas fa-home"></i> home |</a></li>
+            <li><a href="/products"><i class="fas fa-book"></i> cursos |</a></li>
+            <li><a href="/products/cart"><i class="fas fa-shopping-cart"></i> carrito</a></li>
         </ul>
 
     </header>
@@ -26,12 +26,12 @@
 
         <form class="formulario" action="/products/create" method="POST">
             <p class="campos">Todos los campos son obligatorios</p>
+            <article>
+                <label>Categoria</label>
+                <input type="text" name="categoria">
+            </article>
         <article>
             <label for="lenguaje">Lenguaje</label>
-            <input type="text" name="lenguaje" id="lenguaje">
-        </article>
-        <article>
-            <label for="lenguaje">Id</label>
             <input type="text" name="lenguaje" id="lenguaje">
         </article>
 
@@ -43,8 +43,8 @@
                 <label class="solo2" for="duracion">Duración</label>
                 <input type="text" name="duracion" id="duracion">
                 <div class="textarea1">
-                    <label for="brevdesc">Breve descripción</label>
-                    <textarea name="brevedesc" id="brevedesc" cols="30" rows="10"></textarea>
+                    <label for="">Breve descripción</label>
+                    <textarea name="descripcion" cols="30" rows="10"></textarea>
                 </div>
         </article>
 
@@ -68,15 +68,15 @@
                 <label for="">Modalidad</label>
                 <div class="modalidades">
                     <div>
-                        <input type="radio" name="modalidad1" id="modalidad1">
+                        <input type="radio" name="modalidad" id="modalidad1" value="1">
                         <label for="modalidad1">Online</label>
                     </div>
                     <div>
-                        <input type="radio" name="modalidad2" id="modalidad2">
+                        <input type="radio" name="modalidad" id="modalidad2" value="2">
                         <label for="modalidad1">Presencial</label>
                     </div>
                     <div>
-                        <input type="radio" name="modalidad3" id="modalidad3">
+                        <input type="radio" name="modalidad" id="modalidad3" value="3">
                         <label for="modalidad3">Blend</label>
                     </div>
                 </div>
@@ -90,8 +90,5 @@
 
     </form>
     </section>
-
-    <footer>
-    </footer>
 </body>
 </html>

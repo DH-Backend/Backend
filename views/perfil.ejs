@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans&family=Trocchi&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <title>Perfil</title>
+</head>
+<body>
+    <%- include('partials/header'); %>
+    <section class="todocarro">
+        <div>
+            <h1 class="carrito">Bienvenido <%= usuario.nombre %></h1>
+        </div>
+        <div>
+            <% if(usuario.imagen) {%>
+                <img src="/images/<%= usuario.imagen %>" alt="imagen">
+            <% } else {%> 
+                <img src="/img/undefined.jpg" alt="imagen">
+            <% } %> 
+        </div>
+        <div class="margen">
+            <a class="ver" href="/products">Ver cursos <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+    </section>
+    <form action="/profile" method="POST">
+        <input type="submit" value="Cerrar sesión">
+    </form>
+    <a class="fixed" href="mailto:user@server.com"><i class="far fa-envelope"></i></a>
+<%- include('partials/footer'); %>

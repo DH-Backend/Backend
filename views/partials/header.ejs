@@ -1,22 +1,26 @@
-<header>
-    <a href=""><img class="logo" src="/img/Copia de Absolute Fashion.png" alt="logo"> </a>
+    <header>
+        <a href="/"><img class="logo" src="/img/Copia de Absolute Fashion.png" alt="logo"></a>
 
-    <ul class="ul1">
-        <li><a href="">Log in <i class="fas fa-sign-in-alt"></i> | </a></li>
-        <li><a href=""> Sign up <i class="fas fa-user"></i></a></li>
-    </ul>
+        <ul class="ul11111">
+            <% if(usuario == undefined) {%> 
+            <li class="tigre"><a href="/login">Log in <i class="fas fa-sign-in-alt"></i> | </a></li>
+            <li class="tigre"><a href="/register"> Sign up <i class="fas fa-user"></i></a></li>
+            <% } else { %>
+                <li class="tigre"><a href="/profile"> <%= usuario.nombre %></a></li>
+                <% } %> 
+        </ul>
+        <div class="leon">
+        <label for="buscador"></label>
+        <input class="buscador" type="search" id="buscador" name="buscador" placeholder="Buscar">
+        <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="hidden"><i class="fas fa-bars"></i></div>
 
-    <div>
-    <label for="buscador"></label>
-    <input class="buscador" type="search" id="buscador" name="buscador" placeholder="Buscar">
-    <button><i class="fas fa-search"></i></button>
-    </div>
-
-    <ul class="ul2">
-        <li><a href=""><i class="fas fa-home"></i> home |</a></li>
-        <li><a href=""><i class="fas fa-book"></i> cursos |</a></li>
-        <li><a href=""><i class="fas fa-shopping-cart"></i> carrito |</a></li>
-        <li><a href=""><i class="fas fa-network-wired"></i> sedes |</a></li>
-        <li><a href=""><i class="fas fa-address-card"></i> contacto</a></li>
-    </ul>
-</header>
+        <ul class="ul2">
+            <li><a href="/"><i class="fas fa-home"></i> home |</a></li>
+            <li><a href="/products"><i class="fas fa-book"></i> cursos |</a></li>
+            <li><a href="/products/cart"><i class="fas fa-shopping-cart"></i> carrito |</a></li>
+            <li><a href=""><i class="fas fa-network-wired"></i> sedes |</a></li>
+            <li><a href=""><i class="fas fa-address-card"></i> contacto</a></li>
+        </ul>
+    </header>

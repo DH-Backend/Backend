@@ -10,37 +10,16 @@
     <title>Dharma</title>
 </head>
 <body>
-    <header>
-        <a href="/"><img class="logo" src="/img/Copia de Absolute Fashion.png" alt="logo"></a>
 
-        <ul class="ul1">
-            <li><a class="logeo" href="/login">Log in <i class="fas fa-sign-in-alt"></i> | </a></li>
-            <li><a class="logeo" href="/register"> Sign up <i class="fas fa-user"></i></a></li>
-        </ul>
-        <div class="leon">
-        <label for="buscador"></label>
-        <input class="buscador" type="search" id="buscador" name="buscador" placeholder="Buscar">
-        <button><i class="fas fa-search"></i></button>
-        </div>
-        <div class="hidden"><i class="fas fa-bars"></i></div>
-
-        <ul class="ul2">
-            <li><a href=""><i class="fas fa-home"></i> home |</a></li>
-            <li><a href="/products"><i class="fas fa-book"></i> cursos |</a></li>
-            <li><a href="/products/cart"><i class="fas fa-shopping-cart"></i> carrito |</a></li>
-            <li><a href=""><i class="fas fa-network-wired"></i> sedes |</a></li>
-            <li><a href=""><i class="fas fa-address-card"></i> contacto</a></li>
-        </ul>
-    </header>
-
+    <%- include('partials/header'); %>
 
     <div class="contenido">
     <section>
-        <img class="carrusel" src="/img/img-home-banner.jpg" alt="carrusel">
+        <img class="carrusel" src="/img/1.png" alt="carrusel">
     </section>
     <div class="elegi">
     <p>Elegí entre los más buscados</p>
-    <a href="" class="ver">Ver todos <i class="fas fa-arrow-circle-right"></i></a>
+    <a href="/products" class="ver">Ver todos <i class="fas fa-arrow-circle-right"></i></a>
     </div>
 
     <section class="categorias"> 
@@ -48,19 +27,22 @@
             <div>
                 <ul class="ul">
                     <li class="ics"><i class="fab fa-js-square"></i></li>
-                    <li class="aa"><a class="aaa" href="/products/<%= cadaposicion.id %>"><%= cadaposicion.nombre_curso %></a></li>
+                    <li class="aa"><a class="aaa" href="/products/<%= cadaposicion.id %>"><%= cadaposicion.lenguaje %></a></li>
                 </ul>
             </div>
-            <% } %>
+            <% if (cadaposicion.nombre_curso == 'Godbert') { %>
+                <% break; %> 
+                <% } %> 
+            <%  } %>
     </section>
+
 
     <div class="unpocomas">
         <p><i class="fas fa-play-circle"></i> Conocenos un poco más</p>
     </div>
     <section class="videoeinfo">
         <article>
-            <video width="640" height="354" controls class="video">
-                <source src="">
+            <iframe src="https://player.vimeo.com/video/225252392" width="640" height="360" frameborder="0" allow="autoplay"></iframe>
             </video>
     </article>
     <article class="dale">
@@ -176,13 +158,5 @@
     </div>
     </section>
     <a class="fixed" href="mailto:user@server.com"><i class="far fa-envelope"></i></a>
-    <footer>
-        <a href=""><i class="fas fa-question-circle"></i> Preguntas frecuentes</a>
-        <a href=""><i class="fas fa-address-card"></i> Nosotros</a>
-        <a href=""><i class="fas fa-comments"></i> Comentarios</a>
-        <a href=""><i class="fas fa-language"></i> Idiomas</a>
-        <p class="phone"><i class="fab fa-whatsapp"></i> Whatsapp 1111111111</p>
-        <p class="phone"><i class="fas fa-phone"></i> Central: 0800-000-000</p>
-    </footer>
-    </body>
-    </html>
+    
+    <%- include('partials/footer'); %>

@@ -5,7 +5,6 @@
 }
 body {
     background-color: #ebebeb;
-    width: 1349px;
 }
 .contenido {
     margin: 0 auto;
@@ -39,6 +38,9 @@ input {
     height: 30px;
 }
 .tigre {
+    display: inline;
+}
+li {
     display: inline;
 }
 a {
@@ -94,12 +96,6 @@ footer {
     align-items: center;
     padding-bottom: 50px;
 }
-footer p {
-    font-size: 20px;
-}
-footer a {
-    font-size: 20px;
-}
 .phone {
     text-transform: uppercase;
     color: white;
@@ -136,38 +132,44 @@ footer a {
     transform: scale(1.1,1.1);
 }
 .div {
+    display: block;
     width: 100%;
     height: 200px;
     background-color: #c7d0d8;
 }
 .li2 {
-    margin-bottom: 20px;
+    font-family: 'Inter';
+    margin: 0 20px;
+    margin-top: 20px;
 }
 .ul3 {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    list-style: none;
-    font-family: 'inter';
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Inter';
+    justify-content: space-between;
+    margin: 0 20px;
+    margin-right: 100px;
+    padding-top: 20px;
 }
 .section2 {
     position: relative;
 }
 .ul4 {
     font-family: 'inter';
-    position: absolute;
-    top: 20px;
-    left: 900px;
     border-left: 3px solid brown;
     padding-left: 10px;
     list-style: none;
+    align-self: center;
+}
+.ul4 li {
+    display: block;
 }
 .li33 {
     margin-bottom: 20px;
     font-size: 25px;
 }
 .li4 {
-    margin-top: 50px;
+    margin-top: 40px;
 }
 .li44 {
     font-family: 'inter';
