@@ -22,14 +22,10 @@ module.exports = {
                     }
                     res.redirect('/profile');
                 } else {
-                    res.render('login', {errors : [
-                        {msg: 'contraseña incorrecta'}
-                    ]});
+                    res.render('login', {errors : validation.mapped()});
                 }
             } else {
-                res.render('login', {errors : [
-                    {msg: 'usuario no registrado'}
-                ]});
+                res.render('login', {errors : validation.mapped()});
             }
         } else {
             res.render('login', {errors : validation.mapped()});
