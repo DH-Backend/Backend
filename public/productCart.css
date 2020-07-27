@@ -4,18 +4,16 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #ebebeb;
-    width: 1349px;
+    width: 100%;
 }
 .contenido {
-    margin: 0 auto;
+    margin: 0 70px;
 }
 header {
-    background-color: #023750;
+    background-color: white;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    height: 100px;
+    height: 60px;
     align-items: center;
     font-family: 'Inter';
 }
@@ -29,38 +27,58 @@ header {
     color: white;
 }
 .ver {
-    font-size: 18px;
+    font-size: 21px;
     font-weight: bold;
-    font-family: 'Inter';
-    color: brown;
+    font-family: 'Source Sans Pro';
+    color: black;
     text-transform: none;
 }
+.elegi a i {
+    color: #4e7ad9;
+}
 .logo {
-    height: 80px;
-    width: 80px;
-    border-radius: 40px;
-    margin: 10px 0 10px 30px;
+    margin: 0 40px 0px 30px;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Varela round';
 }
 li {
     display: inline;
 }
 a {
-    text-transform: uppercase;
     text-decoration: none;
-    color: white;
+    color: black;
+}
+#conborde {
+    border: #4e7ad9 solid 2px;
+    padding: 5px 5px;
+    border-radius: 10px;
+}
+.tigre {
+    margin-right: 20px;
+}
+.tigre2 {
+    margin-left: 40px;
 }
 .ul2 {
     margin-right: 30px;
 }
-.ul1 a:hover {
-    color: rgb(223, 217, 217);
+.underline {
+    margin: 0 10px
 }
-.ul2 a:hover {
-    color: rgb(223, 217, 217);
+.underline:hover {
+    border-bottom: solid #4e7ad9 2px;
+    transform: scale(1.2,1.2);
+}
+.tigre:hover {
+    border-bottom: solid #4e7ad9 2px;
 }
 .buscador {
-    border-radius: 3px;
-    border: none;
+    border: 1px solid #d9dfe6;
+    border-radius: 15px;
+    width: 400px;
+    height: 40px;
+    padding-left: 10px;
 }
 button {
     position: relative;
@@ -79,7 +97,7 @@ button {
     bottom: 10px;
     height: 60px;
     width: 60px;
-    background-color: brown;
+    background-color: #4e7ad9;
     border-radius: 30px;
     font-size: 30px;
     color: white;
@@ -95,18 +113,30 @@ input {
     width: 400px;
     height: 30px;
 }
+.vermas {
+    position: absolute;
+    top: 350px;
+    left: 150px;
+    font-family: 'Fira Sans';
+    font-size: 20px;
+    padding: 5px 10px;
+    background-color: #c7d0d8bb;
+    border-radius: 8px;
+}
+.vermas:hover {
+    background-color: #c7d0d8;
+}
 footer {
-    background-color: #023750;
-    font-family: 'Inter';
+    background-color: #d9dfe6;
     height: 120px;
+    padding-bottom: 50px;
+}
+footer div {
+    font-family: 'Inter';
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-bottom: 50px;
-}
-.phone {
-    text-transform: uppercase;
-    color: white;
+    padding-top: 15px;
 }
 .todocarro {
     display: flex;
@@ -114,11 +144,6 @@ footer {
     justify-content: space-between;
     margin: 40px 60px;
     align-items: center;
-}
-.carrito {
-    font-size: 40px;
-    font-family: 'Josefin Sans';
-    font-weight: bold;
 }
 .grid {
     display: grid;
@@ -149,36 +174,46 @@ footer {
     border-radius: 10px;
     text-align: center;
 }
-.cajas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 40px 0;
-    background-color: #c7d0d8;
-}
-.nameyplata {
+.caja {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+    margin: 25px 50px;
+    padding-bottom: 20px;
+}
+.carrusel {
+    width: 100%;
+    height: 400px;
+}
+.botoneliminar {
+    color: rgba(255, 0, 0, 0.705);
+    font-size: 20px;
+    right: 0;
+    border: none;
+    padding-left: 180;
+    background-color: white;
 }
 .articulo {
-    border: gray 1px solid;
-    border-radius: 5px;
     position: relative;
-    width: 600px;
-    height: 170px;
-    background-color: white;
     margin: 20px 0;
-    box-shadow: 5px 5px 5px  #666;
+}
+.micarrito {
+    border-bottom: 1px solid grey;
+    padding: 10px 0;
+    padding-left: 70px;
+    font-family: 'Source Sans Pro';
+    font-size: 25px;
 }
 .curso {
-    margin: 10px;
+    margin: 30px 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 .enlinea {
     display: block;
-    font-family: 'josefin sans';
+    font-family: 'Source Sans Pro';
     font-size: 17px;
-    margin-bottom: 5px;
 }
 .eliminar {
     position: absolute;
@@ -199,44 +234,44 @@ footer {
     text-transform: none;
 }
 .name {
-    font-size: 20px;
-    font-family: 'Inter';
-    padding-bottom: 5px;
-    width: 450px;
-    border-bottom: 2px gray solid;
+    font-size: 23px;
+    font-family: 'Source Sans Pro';
 }
 .pollo {
     margin-left: 20px;
     margin-top: 10px;
 }
 .moni {
-    color: brown;
+    color: black;
     font-weight: bold;
     margin-right: 15px;
     margin-top: 5px;
-    font-size: 17px;
-    font-family: 'Inter';
+    font-size: 20px;
+    font-family: 'Source Sans Pro';
 }
 .articulo2 {
-    margin: 20px 0;
-    border: 2px solid brown;
+    margin: 50px 0;
+    border: 1px solid #d9dfe6;
     border-radius: 5px;
     background-color: white;
+}
+.probar2 {
+    margin: 0 400px;
 }
 .interno {
     margin: 10px;
 }
 .resumen {
     text-align: center;
-    font-family: 'Inter';
-    font-size: 20px;
+    font-family: 'Source Sans Pro';
+    font-size: 25px;
     margin-bottom: 50px;
 }
 .cursocarrito {
     display: block;
     margin-bottom: 30px;
-    font-family: 'Inter';
-    font-size: 15px;
+    font-family: 'Source Sans Pro';
+    font-size: 20px;
     padding-bottom: 5px;
 }
 .conlogin {
@@ -258,32 +293,39 @@ footer {
 .solomargin {
     margin-top: 5px;
 }
+.formdescuento {
+    text-align: center;
+}
 .descuento {
     text-align: center;
     margin-top: 20px;
     text-transform: uppercase;
-    width: 400px;
+    width: auto;
     height: 30px;
 }
 .flex2 {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: center;
     margin-top: 30px;
     align-items: center;
 }
 .total {
     font-size: 30px;
-    font-family: 'Josefin Sans';
+    font-family: 'Source Sans Pro';
 }
 .ultimo {
     font-size: 20px;
-    font-family: 'Josefin Sans';
+    font-family: 'Source Sans Pro';
     margin-left: 30px;
 }
 .ultimo2 {
     margin: 30px 0 20px 0;
     text-align: center;
+}
+.ul11111 {
+    display: flex;
+    align-items: center;
 }
 .comprar {
     color: white;

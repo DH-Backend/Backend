@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+}
+.contenido {
+    margin: 0 70px;
+}
+header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+    font-family: 'Inter';
+}
+.hidden {
+    margin: 0 0 15px 0;
+    display: none;
+    visibility: visible;
+}
+.ul11111 {
+    display: flex;
+    align-items: center;
+}
+.hidden i{
+    font-size: 100px;
+    color: white;
+}
+.tigre {
+    margin-right: 20px;
+}
+.tigre2 {
+    margin-left: 40px;
+}
+.logo {
+    margin: 0 40px 0px 30px;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Varela round';
+}
+input {
+    width: 400px;
+    height: 30px;
+}
+.tigre {
+    display: inline;
+}
+li {
+    display: inline;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.ul2 {
+    margin-right: 30px;
+}
+.underline {
+    margin: 0 10px
+}
+.underline:hover {
+    border-bottom: solid #4e7ad9 2px;
+    transform: scale(1.2,1.2);
+}
+.tigre:hover {
+    border-bottom: solid #4e7ad9 2px;
+}
+.buscador {
+    border: 1px solid #d9dfe6;
+    border-radius: 15px;
+    width: 400px;
+    height: 40px;
+    padding-left: 10px;
+}
+button {
+    position: relative;
+    right: 35px;
+    border: none;
+    border-left: 1px solid gray;
+    padding-left: 5px;
+    background-color: white;
+}
+.fixed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 30px;
+    bottom: 10px;
+    height: 60px;
+    width: 60px;
+    background-color: #4e7ad9;
+    border-radius: 30px;
+    font-size: 30px;
+    color: white;
+    z-index: 10;
+}
+.fixed:hover {
+    background-color: black;
+    transform: scale(1.15,1.15);
+}
+footer {
+    background-color: #d9dfe6;
+    height: 120px;
+    padding-bottom: 50px;
+}
+footer div {
+    font-family: 'Inter';
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 15px;
+}
+img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+.form {
+    width: 500px;
+    height: auto;
+    text-align: center;
+    margin: 50px 0;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 10px;
+    background-color: white;
+    color: black;
+}
+label {
+    font-family: 'Varela Round';
+    font-size: 17px;
+}
+.p {
+    display: inline;
+    font-family: 'Varela Round';
+    font-size: 17px;
+}
+.linombre {
+    margin-right: 132px;
+}
+.liapellido {
+    margin-right: 175px;
+}
+.elinput {
+    display: none;
+}
+.p2 {
+    display: none;
+}
+.elinput2 {
+    display: block;
+    font-family: 'Varela Round';
+    font-size: 17px;
+}
+.alcostado {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+#labelimagen {
+    text-align: left;
+    font-family: 'Varela Round';
+    font-size: 17px;
+}
+#imgavatar {
+    margin: 15px 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 0;
+}
+#archivo {
+    margin: 15px 0;
+}
+.loscambios {
+    font-family: 'Varela Round';
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+#contra {
+    font-family: 'Varela Round';
+    font-size: 13px;
+}
+#contra:hover {
+    border-bottom: 1px solid black;
+}
+#guardar {
+    color: white;
+    text-transform: none;
+    padding: 5px 10px;
+    background-color: black;
+    border: none;
+    font-family: 'Varela Round';
+    font-size: 17px;
+    width: auto;
+    height: auto;
+}
+#guardar:hover {
+    transform: scale(1.1,1.1);
+    background-color: black;
+}
+.divcontra {
+    margin-bottom: 15px;
+}
+.soloborde {
+    margin: 15px;
+}
+.div {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}

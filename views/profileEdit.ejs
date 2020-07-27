@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/profileEdit.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Fira+Sans&family=Inter&family=Source+Sans+Pro&family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link style="background-color: transparent;" rel="icon" href="img/apple-icon-180x180.png" type="image/png" />
+    <title>Edit profile</title>
+</head>
+<body>
+    <script src="/js front/profileEdit.js"></script>
+    <%- include('partials/header'); %>
+
+<div class="div">
+    <form class="form" action="/profile/edit/<%= valor.id %> " method="POST" enctype="multipart/form-data">
+        <div class="soloborde">
+        <div class="alcostado">
+            <div>
+                <label for="">Nombre: </label>
+            </div>
+            <div class="linombre">
+                <li id="li" class="p"><%= valor.name %></li>
+            </div>
+            <div class="soloinput">
+                <input id="nombreinput" class="elinput" type="text" name="nombre" value="<%= valor.name %>">
+            </div>
+            <div id="errornombre">
+                <p style="color: red;"><%= errors.nombre ? errors.nombre.msg : '' %> </p>
+            </div>
+            <div>
+                <i class="fas fa-pen"></i>
+            </div>
+        </div>
+
+        <div class="alcostado">
+            <div>
+                <label for="">Apellido: </label>
+            </div>
+            <div class="liapellido">
+                <li id="li" class="p"><%= valor.last_name %></li>
+            </div>
+            <div class="paraeljs">
+                <input id="apellidoinput" class="elinput" type="text" name="apellido" value="<%= valor.last_name %>">
+            </div>
+            <div id="errorapellido">
+                <p style="color: red;"><%= errors.apellido ? errors.apellido.msg : '' %> </p>
+            </div>
+            <div>
+                <i class="fas fa-pen"></i>
+            </div>
+        </div>
+
+        <div class="alcostado">
+            <div>
+                <label for="">Email: </label>
+            </div>
+            <div>
+                <li id="li" class="p"><%= valor.email %></li>
+            </div>
+            <div class="paraeljsdos">
+                <input id="emailinput" class="elinput" type="text" name="email" value="<%= valor.email %>">
+            </div>
+            <div id="erroremail">
+                <p style="color: red;"><%= errors.email ? errors.email.msg : '' %> </p>
+            </div>
+            <div>
+                <i class="fas fa-pen"></i>
+            </div>
+        </div>
+        
+        <div>
+            <div>
+                <p id="labelimagen" for="">Imágen </p>
+            </div>
+            <div>
+                <img id="imgavatar" src="/images/<%= valor.avatar %> " alt="imagen_perfil">
+            </div>
+            <div>
+                <input id="archivo" type="file" name="imagen">
+            </div>
+            <div class="divcontra">
+                <a id="contra" href="/profile/password" style="color: black;">Cambiar contraseña</a>
+            </div>
+        </div>
+        <p class="loscambios">Los cambios se aplicarán una vez vuelvas a iniciar sesión</p>
+        <input id="guardar" type="submit" value="Guardar">
+    </div>
+    </form>
+</div>
+
+    <a class="fixed" href="mailto:user@server.com"><i class="far fa-envelope"></i></a>
+    <%- include('partials/footer'); %>

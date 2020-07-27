@@ -1,8 +1,8 @@
 function noinvitado (req, res, next) {
-    if (req.session.registro != undefined){
+    if (res.locals.logeado != null){
         next ();
     } else {
-        res.send('pagina solo para logeados');
+        res.redirect('/login');
     }
 }
 module.exports = noinvitado;

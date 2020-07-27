@@ -4,84 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/productAdd.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans&family=Trocchi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Fira+Sans&family=Inter&family=Source+Sans+Pro&family=Varela+Round&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link style="background-color: transparent;" rel="icon" href="img/apple-icon-180x180.png" type="image/png" />
 
-    <title>Admin</title>
+    <title>Edit</title>
 </head>
 <body>
-    <header>
-        <a href="/"><img class="logo" src="/img/Copia de Absolute Fashion.png" alt="logo"></a>
-
-        <ul class="ul2">
-            <li><a href="/"><i class="fas fa-home"></i> home |</a></li>
-            <li><a href="/products"><i class="fas fa-book"></i> cursos |</a></li>
-            <li><a href="/products/cart"><i class="fas fa-shopping-cart"></i> carrito |</a></li>
-        </ul>
-
-    </header>
-
-    <section class="sess">
-        <p class="carga">Edicion de <%= filter.lenguaje %></p>
-
-        <form class="formulario" action="/products/<%= filter.id %>/edit?_method=PUT" method="POST">
-            <p class="campos">Todos los campos son obligatorios</p>
+    <%- include('partials/header'); %>
+    <div class="contenido">
+        <section class="sess">
+            <p class="carga">Edición de <%= filter.name %></p>
+            <form class="formulario" action="/products/<%= filter.id %>/edit?_method=PUT " method="POST">
             <article>
-                <label>Categoria</label>
-                <input type="text" name="categoria" value="<%= filter.categoria %>">
-            </article>
-        <article>
-            <label for="lenguaje">Lenguaje</label>
-            <input type="text" name="lenguaje" id="lenguaje" value="<%= filter.lenguaje %>">
-        </article>
-
-        <article>
+                <div id="errornombre">
+                    <p style="color: red;"><%= errors.nombre ? errors.nombre.msg : '' %></p>
+                </div>
                 <label for="nombrecurso">Nombre del curso</label>
-                <input type="text" name="nombre_curso" id="nombrecurso" value="<%= filter.nombre_curso%>">
-                <label class="solo2" for="valor">Valor</label>
-                <input type="text" name="valor" id="valor" value="<%= filter.valor %>">
-                <label class="solo2" for="duracion">Duración</label>
-                <input type="text" name="duracion" id="duracion" value="<%= filter.duracion %>">
-                <div class="textarea1">
-                    <label for="brevdesc">Breve descripción</label>
-                    <textarea name="descripcion" id="brevedesc" cols="30" rows="10"><%= filter.descripcion %></textarea>
+                <input type="text" name="nombre" id="nombre" value="<%= filter.name %> ">
+            </article>
+            <article>
+                <div id="errormodalidad">
+                    <p style="color: red;"><%= errors.modalidad ? errors.modalidad.msg : '' %></p>
                 </div>
-        </article>
-
-        <article>
-            <div class="textarea2">
-                <label for="contenido">Contenido</label>
-                <textarea name="contenido" id="contenido" cols="30" rows="10"><%= filter.contenido %></textarea>
-            </div>
-            <label for="pdf">PDF</label>
-            <input class="pdf" type="file" name="pdf" id="pdf">
-        </article>
-
-        <article>
-            <div class="textarea3">
-                <label for="plan">Plan</label>
-                <textarea name="plan" id="plan" cols="30" rows="10"><%= filter.plan %></textarea>
-            </div>
-                <label for="fechainicio">Fecha de inicio</label>
-                <input class="fecha" type="date" name="fechainicio" id="fechainicio" value="<%= filter.inicio %>">
-            <div class="divmodalidad">
-                <label for="">Modalidad</label>
-                <div class="modalidades">
-                    <select name="modalidad" id="modalidad">
-                        <option value="1" <% if (filter.modalidad == 1) {%> selected <% } %>>Online</option>
-                        <option value="2" <% if (filter.modalidad == 2) {%> selected <% } %>>Presencial</option>
-                        <option value="3" <% if (filter.modalidad == 3) {%> selected <% } %>>Blend</option>
-                    </select>
+                <label id="labelmodalidad" for="lenguaje">Id de la modalidad</label>
+                <input class = "chico" type="text" name="modalidad" id="modalidad" value="<%= filter.modalityId %> ">
+            </article>
+            <article>
+                <div id="errordescripcion">
+                    <p style="color: red;"><%= errors.descripcion ? errors.descripcion.msg : '' %></p>
                 </div>
-            </div>
-        </article>
-
-        <article class="articulo5">
-            <input type="submit" value="Modificar">
-            <input type="reset" value="Reiniciar">
-        </article>
-
-    </form>
-    </section>
-</body>
-</html>
+                <div id="errorcontenido">
+                    <p style="color: red;"><%= errors.contenido ? errors.contenido.msg : '' %></p>
+                </div>
+                <div class="textarea2">
+                    <label for="contenido">Descripción</label>
+                    <textarea name="descripcion" id="descripcion" cols="30" rows="10"><%= filter.description %> </textarea>
+    
+                    <label for="contenido">Contenido</label>
+                    <textarea name="contenido" id="contenido" cols="30" rows="10"><%= filter.content %></textarea>
+                </div>
+            </article>
+    
+            <article>
+                <div id="errorinicio">
+                    <p style="color: red;"><%= errors.fechainicio ? errors.fechainicio.msg : '' %></p>
+                </div>
+                <div id="errorduracion">
+                    <p style="color: red;"><%= errors.duracion ? errors.duracion.msg : '' %></p>
+                </div>
+                <div id="errorvalor">
+                    <p style="color: red;"><%= errors.valor ? errors.valor.msg : '' %></p>
+                </div>
+                    <label for="fechainicio">Fecha de inicio</label>
+                    <input class="chico" type="date" name="fechainicio" id="fechainicio" value="<%= filter.date %>">
+                    
+                    <label class="solo2" for="">Duración (en meses)</label>
+                    <input class = "chico" type="text" name="duracion" id="duracion" value="<%= filter.duration %>">
+                    <label class="solo2" for="">Valor ($)</label>
+                    <input class = "chico" type="text" name="valor" id="valor" value="<%= filter.value %>">
+            </article>
+    
+            <article class="articulo5">
+                <input type="submit" value="Guardar">
+            </article>
+            <a class="fixed" href="mailto:user@server.com"><i class="far fa-envelope"></i></a>
+        </form>
+        </section>
+    </div>
+    <%- include('partials/footer'); %>

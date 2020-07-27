@@ -13,6 +13,8 @@ const registerRouter = require ('./routes/register');
 const loginRouter = require ('./routes/login');
 const profileRouter = require ('./routes/profile');
 const recordame = require('./middlewares/cookierecordame');
+const cartRouter = require ('./routes/cart');
+const locals = require ('./middlewares/session');
 
 
 var app = express();
@@ -25,7 +27,9 @@ app.use(session({
   secret: 'keyboard wrf',
   resave: false,
   saveUninitialized: true
-}))
+}));
+
+app.use(locals);
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -42,6 +46,7 @@ app.use('/products', productsRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/profile', profileRouter);
+app.use('/cart', cartRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

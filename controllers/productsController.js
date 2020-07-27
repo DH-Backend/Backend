@@ -1,104 +1,109 @@
-const fs = require('fs');
-const path = require('path');
-const todoslosproductos = path.join(__dirname, '../data/todoslosproductos.json');
+const db = require('../database/models');
+const {validationResult} = require('express-validator');
 module.exports = {
     products: (req, res) => {
-        if (req.session.registro){
-                var usuario = req.session.registro;
+        if (req.body.id) {
+            db.Language.findByPk({
+                include: ['languagesproducts']
+            })
+            .then ((valor) => {
+                res.render('productlist', {valor});
+            });
         }
-        let leo = fs.readFileSync(todoslosproductos, 'utf-8');
-        let convierto = JSON.parse(leo);
-        res.render('productslist', {convierto, usuario});
+        db.Products.findAll({
+            include: ['productslanguages']
+        }).then((convierto) => {
+            res.render('productslist', {convierto});
+        })
     },
-    /*productspp: (req, res) => {
-        let elid = req.params.id;
-        let leo = fs.readFileSync(todoslosproductos, 'utf-8');
-        let convierto = JSON.parse(leo);
-        let filter = convierto.find(x => x.id == elid);
-        if (filter){
-            let leoo = fs.readFileSync(carrito, 'utf-8');
-            let conviertoo = JSON.parse(leoo);
-            let filterr = conviertoo.find(x => x.id == elid);
-            if (filterr) {
-                res.render('productCart', {conviertoo, usuario: ''});
-            } else {
-                conviertoo.push(filter);
-                let transformo = JSON.stringify(conviertoo);
-                fs.writeFileSync(carrito, transformo);
-                res.render('productCart', {conviertoo, usuario: ''});
+    productspp: (req, res) => {
+            db.Language.findByPk(req.params.id, {
+                include: ['languagesproducts']
+            })
+            .then ((valor) => {
+                res.render('productlistdos', {valor});
+            });
+    },
+    cart: async (req, res) => {
+        let uno = await db.Users.findByPk(res.locals.logeado.id, {include: ['productsusers']});
+        res.render('productCart', {uno});
+        /*db.Users.findByPk(res.locals.logeado.id, {
+            include: ['productsusers']
+        }).then ((uno) => {
+            function (){
+                let dos = 0;
+                for (cadauno of uno.productsusers) {
+                    cadauno.value + dos;
+                }
+                return dos;
             }
-        }
-    },*/
-    cart: (req, res) => {
-        if (req.session.registro){
-            var usuario = req.session.registro;
-        }
-        res.render('productCart', {usuario, conviertoo: ''});
+            res.render('productCart', {uno, dos});
+        })*/
     },
     create: (req, res) => {
-        res.render('productAdd');
+        res.render('productAdd', {errors:''});
     },
     createpp: (req, res) => {
-        let uno = req.body;
-        let leo = fs.readFileSync(todoslosproductos, 'utf-8');
-        let convierto = JSON.parse(leo);
-        let filter = convierto.find(x => x.nombre_curso == req.body.nombre_curso);
-        if (filter) {
-            res.send('ya estaba creado');
-        } else {
-            convierto.unshift(uno);
-            let transformo = JSON.stringify(convierto);
-            fs.writeFileSync(todoslosproductos, transformo);
-            res.render('/productslist');
+        let validation = validationResult(req);
+        if (validation.isEmpty()) {
+        let producto = {
+            name: req.body.nombre,
+            languageId: req.body.lenguaje,
+            modalityId: req.body.modalidad,
+            description: req.body.descripcion,
+            content: req.body.contenido,
+            date: req.body.fechainicio,
+            duration: req.body.duracion,
+            value: req.body.valor
         }
-    },
+            db.Products.create(producto).then(() => {
+                res.redirect('/products');
+                });
+            res.render('productAdd', {errors : validation.mapped()});
+        }},
     detail: (req, res) => {
-        let dos = req.params;
-        if (req.session.registro){
-            var usuario = req.session.registro;
-        }
-        let leo = fs.readFileSync(todoslosproductos, 'utf-8');
-        let convierto = JSON.parse(leo);
-        let filter = convierto.find(x => x.id == req.params.id);
-        if (filter) {
-            res.render('productDetail', {filter, usuario});
-        } else {
-            res.send('ese producto no esta en mi base de datos');
-        }
+        db.Products.findByPk(req.params.id, {
+            include: ['productslanguages']
+        }).then((filter) => {
+                res.render('productDetail', {filter});
+        });
     },
     edit: (req, res) => {
-        let leo = fs.readFileSync(todoslosproductos, 'utf-8');
-        let convierto = JSON.parse(leo);
-        let filter = convierto.find(x => x.id == req.params.id);
-        res.render('productEdit', {filter});
+        db.Products.findByPk(req.params.id, {
+            include: ['productslanguages', 'productsmodality']
+        }).then((filter) => {
+            req.session.filtro = filter;
+            res.render('productEdit', {filter, errors: ''});
+        });
     },
     editpp: (req, res) => {
-        let leo = fs.readFileSync(todoslosproductos, 'utf-8');
-        let convierto = JSON.parse(leo);
-        let filter = convierto.find(x => x.id == req.params.id);
-
-            filter.lenguaje = req.body.lenguaje;
-            filter.nombre_curso = req.body.nombre_curso;
-            filter.valor = req.body.valor;
-            filter.duracion = req.body.duracion;
-            filter.descripcion = req.body.descripcion;
-            filter.contenido = req.body.contenido;
-            filter.plan = req.body.plan;
-            filter.inicio = req.body.inicio;
-            filter.modalidad = req.body.modalidad;
-
-        let filterdos = convierto.filter(x => x.id != req.params.id);
-        filterdos.unshift(filter);
-        let transformo = JSON.stringify(filterdos);
-        fs.writeFileSync(todoslosproductos, transformo);
-        res.redirect('/products');
+        let validation = validationResult(req);
+        if (validation.isEmpty()){
+            db.Products.update({
+                name : req.body.nombre,
+                value : req.body.valor,
+                duration : req.body.duracion,
+                description : req.body.descripcion,
+                content : req.body.contenido,
+                date : req.body.inicio,
+                languageId : req.body.lenguaje,
+                modalityId : req.body.modalidad
+            }, {
+                where: {id:req.params.id}
+            });
+            res.redirect('/products');
+        } else {
+            db.Products.findByPk(req.params.id, {
+                include: ['productslanguages', 'productsmodality']
+            }).then((filter) => {
+                res.render('productEdit', {errors: validation.mapped(), filter});
+            });
+        }
     },
     delete: (req, res) => {
-        let leo = fs.readFileSync(todoslosproductos, 'utf-8');
-        let convierto = JSON.parse(leo);
-        let filter = convierto.filter(x => x.id != req.params.id);
-        let transformo = JSON.stringify(filter);
-        fs.writeFileSync(todoslosproductos, transformo);
-        res.redirect('/products');
+        db.Products.destroy({
+            where: {id:req.params.id}
+        });
+        res.redirect('/products')
     }
 }

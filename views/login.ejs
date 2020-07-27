@@ -4,45 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/login.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans&family=Trocchi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Fira+Sans&family=Inter&family=Source+Sans+Pro&family=Varela+Round&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link style="background-color: transparent;" rel="icon" href="img/apple-icon-180x180.png" type="image/png" />
 
     <title>Login</title>
 </head>
 <body>
-    <header>
-        <a href="/"><img class="logo" src="/img/Copia de Absolute Fashion.png" alt="logo"> </a>
+    <script src="/js front/login.js"></script>
+        <%- include('partials/header'); %>
 
-    </header>
     <section class="seccion">
         <div class="div1">
-            <form action="/login" method="POST">
-            <p class="campos">Ingresar</p>
-            <div class="errors1">
-                <% if (errors.email) { %>
-                    <div><i style="color: red;" class="fas fa-exclamation"></i> <%= errors.email.msg %> </div>
-                <% } else { 
-                    ''
-                }%>
-            </div>
+            <form id="elformulario" action="/login" method="POST">
             <div class="mail">
-                <input class="inputmail" type="email" name="email" placeholder="Mail">
+                <label for="">Email</label>
+                <div class="errors1">
+                    <% if (errors.email) { %>
+                        <div class="invalid"><i style="color: red;" class="fas fa-exclamation"></i> <%= errors.email.msg %> </div>
+                    <% } else { 
+                        ''
+                    }%>
+                </div>
+                <input class="inputmail" type="text" name="email">
             </div>
-            <div class="errors1">
-                <% if (errors.contraseña) { %>
-                    <div><i style="color: red;" class="fas fa-exclamation"></i> <%= errors.contraseña.msg %> </div>
-                <% } else {
-                    ''
-                }%>
-            </div>
-            <div class="contras">
-                <input type="password" name="contraseña"  placeholder="Contraseña">
+
+            <div class="mail">
+                <label for="">Contraseña</label>
+                <div id="errorscontra" class="errors1">
+                    <% if (errors.contraseña) { %>
+                        <div><i style="color: red;" class="fas fa-exclamation"></i> <%= errors.contraseña.msg %> </div>
+                    <% } else {
+                        ''
+                    }%>
+                </div>
+                <input id="inputcontra" class="inputmail" type="password" name="contraseña">
             </div>
             <div class="recordamediv">
                 <input class="recordame" type="checkbox" name="recordame">
-                <label for="">Recordame</label>
+                <label id="recordame" for="">Recordame</label>
             </div>
-                <input class="crearcuenta" type="submit"value="Enviar">
+            <div class="divdeboton">
+                <input class="crearcuenta" type="submit"value="Ingresar">
+            </div>
+            <div class="divdelaolvide">
+                <a class="laolvide" href="">Olvidé mi contraseña</a>
+            </div>
         </div>
     </form>
     <div class="centrar">

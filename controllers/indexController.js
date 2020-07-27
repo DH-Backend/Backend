@@ -1,14 +1,35 @@
-const fs = require('fs');
-const path = require('path');
-const productos = path.join(__dirname, '../data/todoslosproductos.json');
-module.exports = {
-    index: (req, res) => {
-        if (req.session.registro){
-            var usuario = req.session.registro;
-        }
-        let leo = fs.readFileSync(productos, 'utf-8');
-        let convierto = JSON.parse(leo);
+let db = require('../database/models')
 
-        res.render ('index', {convierto, usuario});
+module.exports = {
+    index: async (req, res) => {
+
+        let uno = await db.Language.findAll();
+        let dos = await db.Products.findOne({
+            where: {id:35}
+        });
+        let tres = await db.Products.findOne({
+            where: {id:40}
+        });
+        let cuatro = await db.Products.findOne({
+            where: {id:44}
+        });
+        let cinco = await db.Products.findOne({
+            where: {id:42}
+        });
+
+        res.render ('index', {uno, dos, tres, cuatro, cinco});
+    }, 
+    indexpp: (req, res) => {
+        console.log(req.body);
+        if (req.body.buscador) {
+            db.Products.findAll({include: ['productslanguages'],
+            where: {name: {[db.Sequelize.Op.substring]: '%' + req.body.buscador + '%'}}
+        }).then((convierto) => {
+            res.render('resultadoBusqueda', {convierto});
+        });
+        } else {
+            
+            res.redirect('/');
+        }
     }
 }

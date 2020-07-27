@@ -1,26 +1,31 @@
+    <script src="../js front/header.js"></script>
     <header>
-        <a href="/"><img class="logo" src="/img/Copia de Absolute Fashion.png" alt="logo"></a>
-
         <ul class="ul11111">
-            <% if(usuario == undefined) {%> 
-            <li class="tigre"><a href="/login">Log in <i class="fas fa-sign-in-alt"></i> | </a></li>
-            <li class="tigre"><a href="/register"> Sign up <i class="fas fa-user"></i></a></li>
+            <li class="logo"> <a id="backend" href="/">Backend</a></li>
+            <div>
+            <% if(!locals.logeado) {%> 
+            <li class="tigre"><a href="/login">Log in</a></li>
+            <li class="tigre" id="conborde"><a href="/register">Sign up</a></li>
             <% } else { %>
-                <li class="tigre"><a href="/profile"> <%= usuario.nombre %></a></li>
+                <li class="tigre2"><a href="/profile">Hola <%= locals.logeado.name %>!</a></li>
                 <% } %> 
+            </div>
         </ul>
+
         <div class="leon">
-        <label for="buscador"></label>
-        <input class="buscador" type="search" id="buscador" name="buscador" placeholder="Buscar">
-        <button><i class="fas fa-search"></i></button>
+            <form action="/" method="POST">
+                <input class="buscador" type="search" id="buscador" name="buscador" placeholder="Buscar">
+                <button><i class="fas fa-search"></i></button>
+            </form>
         </div>
+        
         <div class="hidden"><i class="fas fa-bars"></i></div>
 
         <ul class="ul2">
-            <li><a href="/"><i class="fas fa-home"></i> home |</a></li>
-            <li><a href="/products"><i class="fas fa-book"></i> cursos |</a></li>
-            <li><a href="/products/cart"><i class="fas fa-shopping-cart"></i> carrito |</a></li>
-            <li><a href=""><i class="fas fa-network-wired"></i> sedes |</a></li>
-            <li><a href=""><i class="fas fa-address-card"></i> contacto</a></li>
+            <li><a class="underline" href="/">Home</a></li>
+            <li><a class="underline" href="/products">Cursos</a></li>
+            <li><a class="underline" href="/products/cart">Carrito</a></li>
+            <li><a class="underline" href="">Sedes</a></li>
+            <li><a class="underline" href="">Contacto</a></li>
         </ul>
     </header>

@@ -4,55 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/productDetail.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans&family=Trocchi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Fira+Sans&family=Inter&family=Source+Sans+Pro&family=Varela+Round&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <title>Producto</title>
+    <link style="background-color: transparent;" rel="icon" href="img/apple-icon-180x180.png" type="image/png" />
+    <title><%= filter.name %> </title>
 </head>
 <body>
 
     <%- include('partials/header'); %>
+    <div class="contenido">
 
     <section class="section1">
         <div>
-            <div><p class="js"><%= filter.lenguaje %></p></div>
+            <div><p class="js"><%= filter.productslanguages.name %></p></div>
         </div>
         <div class="ul1">
             <a class="asection1" href="">Comprar</a>
         </div>
     </section>
+    </div>
+
     <section class="section2">
         <div class="div">
             <ul class="ul3">
-                <li class="li33"><i class="fas fa-chevron-right"></i> <%= filter.nombre_curso %></li>
+                <ul class="ul33">
+                    <li class="li33"><i class="fas fa-chevron-right"></i> <%= filter.name %></li>
+                </ul>
                 <ul class="ul4">
-                    <li >Duración: <%= filter.duracion %> meses</li>
-                    <li>Valor: <%= filter.valor %></li>
+                    <li >Duración: <%= filter.duration %> meses</li>
+                </ul>
+                <ul class="ul4">
+                    <li id="id3">Valor: $<%= filter.value %></li>
                 </ul>
             </ul>
-            <p class="li2"><%= filter.descripcion %></li>
+            <p class="li2"><%= filter.description %></li>
             </div>
     </section>
+
+    <div id="centrar" class="contenido">
     <section class="section3">
         <div>
-            <p class="contenido0">Contenido</p>
-            <ul class="contenido">
-                <li>- <%= filter.contenido %></li><br>
-                <li>- <%= filter.contenido %></li><br>
-                <li>- <%= filter.contenido %></li><br>
-                <li>- <%= filter.contenido %></li><br>
-                <li>- <%= filter.contenido %></li><br>
-                <li>- <%= filter.contenido %></li><br>
-                <li>- <%= filter.contenido %></li><br>
+            <p class="contenido0">Principales contenidos</p>
+            <ul class="elcontenido">
+                <li><%= filter.content %></li><br>
             </ul>
         </div>
-        <div class="pdf1">
-            <a href="" class="pdf2"><i class="far fa-file-pdf"></i> Descargar programa en PDF</a>
+        <div id="id2">
+            <a href="" class="pdf2"><i class="far fa-file-pdf"></i> Descargar programa completo</a>
         </div>
+
     </section>
     <section class="fondo">
             <ul class="nose">
                 <li><i class="fas fa-chevron-down"></i><a class="otros" href="">Plan de estudios</a></li>
-                <li><i class="fas fa-chevron-down"></i><a class="otros" href="">Descripción</a></li>
                 <li><i class="fas fa-chevron-down"></i><a class="otros" href="">Fechas de inicio</a></li>
                 <li><i class="fas fa-chevron-down"></i><a class="otros" href="">Modalidad de cursada</a></li>
                 <li><i class="fas fa-chevron-down"></i><a class="otros" href="">Requisitos</a></li>
@@ -60,10 +64,14 @@
     </section>
     
     <section>
-        <img class="carrusel" src="/img/img-home-banner.jpg" alt="carrusel">
+        <p id="id" class="contenido0">Próximos cursos</p>
+        <div class="divcarrusel">
+            <img class="carrusel" src="/img/4.png" alt="carrusel">
+        </div>
     </section>
 
     <a class="fixed" href="mailto:user@server.com"><i class="far fa-envelope"></i></a>
+</div>
 
     
     <%- include('partials/footer'); %>

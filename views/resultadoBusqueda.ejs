@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/productslist.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Fira+Sans&family=Inter&family=Source+Sans+Pro&family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link style="background-color: transparent;" rel="icon" href="img/apple-icon-180x180.png" type="image/png" />
+    <title>Search</title>
+</head>
+<body>
+
+    <%- include('partials/header'); %>
+    <script src="/js front/productlist.js"></script>
+    <div class="grid">
+        <div>
+                <section class="seccion">
+                    <% if (locals.logeado && locals.logeado.email == 'saezfvet@gmail.com') {%> 
+                <% for (cadauno of convierto) {%>
+                    <div class="cajas">
+                        <div class="ancho">
+                            <ul>
+                                <div class="nombreyver">
+                                    <li  id="curso"><a href="/products/<%= cadauno.id %>"><%= cadauno.name %></a></li>
+                                    <li class="centro"><a class="ver" href="/products/<%= cadauno.id %> ">Ver curso <i class="fas fa-arrow-right"></i></a></li>
+                                </div>
+                                <li class="li"> <p class="es"></p> <%= cadauno.description %> </li>
+                                <div class="liyboton">
+                                    <div>
+                                        <li id="lenguaje" class="li">Lenguaje : <%= cadauno.productslanguages.name %> </li>
+                                        <li class="li">Duración : <%= cadauno.duration %> meses</li>
+                                        <li class="li">Valor : $<%= cadauno.value %></li>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+                        <div> 
+                            <div>
+                                <% if (locals.logeado.email == 'saezfvet@gmail.com') {%>
+                                    <form action="/products/<%= cadauno.id %>/edit" method="GET">
+                                        <input class="input" type="submit" value="Editar">
+                                    </form>
+                                    <form action="/products/<%= cadauno.id %>/?_method=DELETE" method="POST">
+                                        <input class="input" type="submit" value="Eliminar">
+                                    </form>
+                                <% } %> 
+                                <form action="/cart/<%= cadauno.id %> " class="divdela" method="POST">
+                                    <input class="input" type="submit" name="carrito" value="Agregar">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                            </ul>
+                            </a>
+                            <% } %>
+                        <% } else {%> 
+                            <% for (cadauno of convierto) {%>
+                                <div class="cajas">
+                                    <div>
+                                        <ul>
+                                            <div class="nombreyver">
+                                            <li  id="curso"><a href="/products/<%= cadauno.id %>"><%= cadauno.name %></a></li>
+                                            <li class="centro"><a class="ver" href="/products/<%= cadauno.id %> ">Ver curso <i class="fas fa-arrow-right"></i></a></li>
+                                            </div>
+                                            <li class="li"> <%= cadauno.description %> </li>
+                                            <div class="liyboton">
+                                                <div>
+                                                    <li id="lenguaje" class="li">Lenguaje : <%= cadauno.productslanguages.name %> </li>
+                                                    <li class="li">Duración : <%= cadauno.duration %> meses</li>
+                                                    <li class="li">Valor : $<%= cadauno.value %></li>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                                    <% } %>
+                <% } %>
+            </section>
+        </div>
+    </div>
+<a class="fixed" href="mailto:user@server.com"><i class="far fa-envelope"></i></a>
+    
+<%- include('partials/footer'); %>

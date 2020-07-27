@@ -4,100 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/productCart.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans&family=Trocchi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Fira+Sans&family=Inter&family=Source+Sans+Pro&family=Varela+Round&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link style="background-color: transparent;" rel="icon" href="img/apple-icon-180x180.png" type="image/png" />
 
-    <title>Carrito</title>
+    <title>Shop</title>
 </head>
 <body>
-
+    <script src="/js front/cart.js"></script>
     <%- include('partials/header'); %>
+    <a class="vermas" href="">Ver más</a>
 
-        <section class="todocarro">
-            <div>
-                <p class="carrito">Carrito</p>
-            </div>
-            <div class="grid">
-                <a class="vercursos" href="/products"><i class="fas fa-chevron-right"></i> Seguir viendo cursos</a>
-                <a class="verpromos" href="">Ver promociones</a>
-            </div>
-        </section>
+    <section>
+        <img class="carrusel" src="/img/fewfew.jpg" alt="carrusel">
+    </section>
 
-        <section class="cajas">
-            <div class="probar">
-                <article class="articulo">
-                    <div class="curso">
-                        <div class="nameyplata">
-                            <p class="name"><i class="fas fa-check"></i> Nombre del curso </p>
-                            <p class="moni"> $$$$$$$ </p>
-                        </div>
-                        <ul class="pollo">
-                            <li class="enlinea">- Lenguaje </li>
-                            <li class="enlinea">- Modalidad </li>
-                            <li class="enlinea">- Fecha de inicio </li>
-                        </ul>
-                        <a class="eliminar" href="">Eliminar</a>
-                    </div>
-                </article>
-                <article class="articulo">
-                    <div class="curso">
-                        <div class="nameyplata">
-                            <p class="name"><i class="fas fa-check"></i> Nombre del curso </p>
-                            <p class="moni"> $$$$$$$ </p>
-                        </div>
-                        <ul class="pollo">
-                            <li class="enlinea">- Lenguaje </li>
-                            <li class="enlinea">- Modalidad </li>
-                            <li class="enlinea">- Fecha de inicio </li>
-                        </ul>
-                        <a class="eliminar" href="">Eliminar</a>
-                    </div>
-                </article>
-                <article class="articulo">
-                    <div class="curso">
-                        <div class="nameyplata">
-                            <p class="name"><i class="fas fa-check"></i> Nombre del curso </p>
-                            <p class="moni"> $$$$$$$ </p>
-                        </div>
-                        <ul class="pollo">
-                            <li class="enlinea">- Lenguaje </li>
-                            <li class="enlinea">- Modalidad </li>
-                            <li class="enlinea">- Fecha de inicio </li>
-                        </ul>
-                        <a class="eliminar" href="">Eliminar</a>
-                    </div>
-                </article>
+    <div class="micarrito">
+        <p>Mi Carrito</p>
+    </div>
+
+    <div class="contenido">
+        <% var suma = 0; %> 
+        <% for (cadauno of uno.productsusers) {%>
+            <div class="caja">
+            <div class="nameyplata">
+                <p class="name"><%= cadauno.name %></p>
+                <p class="enlinea">Inicio: <%= cadauno.date %></p>
+                <p class="moni">$ <%= cadauno.value %></p>
             </div>
+                <form action="/cart/<%- cadauno.id %>/delete" method="POST">
+                    <button class="botoneliminar"><i class="fas fa-trash"></i></button>
+                </form>
+                <% suma + cadauno.value; %> 
+            </div>
+        <% } %>
+
             <div class="probar2">
                 <article class="articulo2">
                     <div class="interno">
                         <p class="resumen">Resumen de compra</p>
                         <ul>
+                            <% for (valores of uno.productsusers) {%>
                             <li class="cursocarrito">
                                 <div class="flex">
-                                    <p class="soloborde">Nombre del curso</p>
-                                    <p class="solomargin">$$$$$$$</p>
+                                    <p class="soloborde"><%= valores.name %></p>
+                                    <p class="solomargin">$ <%= valores.value %></p>
                                 </div>
                             </li>
-                            <li class="cursocarrito">
-                                <div class="flex">
-                                    <p class="soloborde">Nombre del curso</p>
-                                    <p class="solomargin">$$$$$$$</p>
-                                </div>
-                            </li>
-                            <li class="cursocarrito">
-                                <div class="flex">
-                                    <p class="soloborde">Nombre del curso</p>
-                                    <p class="solomargin">$$$$$$$</p>
-                                </div>
-                            </li>
+                            <% } %> 
+                           
                         </ul>
-                        <form action="">
+                        <form class="formdescuento" action="">
                     <input class="descuento" type="text" placeholder="coloca aqui tu cupon de descuento">
                 </form>
                     <div class="flex2">
                         <div class="total">Total</div>
-                        <div class="ultimo">$$$$$$$</div>
+                        <div class="ultimo">$<%= suma %> </div>
                     </div>
                     <div class="ultimo2">
                         <a class="comprar" href="">Comprar</a>
@@ -105,7 +67,6 @@
                     </div>
                 </article>
             </div>
-        </section>
         <a class="fixed" href="mailto:user@server.com"><i class="far fa-envelope"></i></a>
-
+    </div>
         <%- include('partials/footer'); %>

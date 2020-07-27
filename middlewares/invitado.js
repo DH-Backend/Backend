@@ -1,8 +1,9 @@
 function invitado (req, res, next) {
-    if (req.session.registro == undefined){
+    if (res.locals.logeado == null){
         next ();
     } else {
-        res.send('pagina solo para invitados');
+        let error = 'Lo sentimos, no puedes acceder a esa ruta';
+        res.render('errors', {error});
     }
 }
 module.exports = invitado;

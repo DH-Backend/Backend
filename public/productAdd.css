@@ -3,58 +3,145 @@
     padding: 0;
     box-sizing: border-box;
 }
+.contenido {
+    margin: 0 70px;
+}
 body {
-    background-color: #ebebeb;
+    width: 100%;
 }
 header {
-    background-color: #023750;
+    background-color: white;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    height: 100px;
+    height: 60px;
     align-items: center;
     font-family: 'Inter';
 }
+.ver {
+    font-size: 21px;
+    font-weight: bold;
+    font-family: 'Source Sans Pro';
+    color: black;
+    text-transform: none;
+}
+.elegi a i {
+    color: #4e7ad9;
+}
 .logo {
-    height: 80px;
-    width: 80px;
-    border-radius: 40px;
-    margin: 10px 0 10px 30px;
+    margin: 0 40px 0px 30px;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Varela round';
 }
 li {
     display: inline;
 }
 a {
-    text-transform: uppercase;
     text-decoration: none;
+    color: black;
+}
+.ul11111 {
+    display: flex;
+    align-items: center;
+}
+#conborde {
+    border: #4e7ad9 solid 2px;
+    padding: 5px 5px;
+    border-radius: 10px;
+}
+.hidden {
+    margin: 0 0 15px 0;
+    display: none;
+    visibility: visible;
+}
+.hidden i{
+    font-size: 100px;
     color: white;
+}
+.tigre {
+    margin-right: 20px;
+}
+.tigre2 {
+    margin-left: 40px;
 }
 .ul2 {
     margin-right: 30px;
 }
+.underline {
+    margin: 0 10px
+}
+.underline:hover {
+    border-bottom: solid #4e7ad9 2px;
+    transform: scale(1.2,1.2);
+}
+.tigre:hover {
+    border-bottom: solid #4e7ad9 2px;
+}
+.buscador {
+    border: 1px solid #d9dfe6;
+    border-radius: 15px;
+    width: 400px;
+    height: 40px;
+    padding-left: 10px;
+}
+button {
+    position: relative;
+    right: 35px;
+    border: none;
+    border-left: 1px solid gray;
+    padding-left: 5px;
+    background-color: white;
+}
+input {
+    width: 400px;
+    height: 30px;
+}
+.fixed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 30px;
+    bottom: 10px;
+    height: 60px;
+    width: 60px;
+    background-color: #4e7ad9;
+    border-radius: 30px;
+    font-size: 30px;
+    color: white;
+}
+.fixed:hover {
+    background-color: black;
+    transform: scale(1.15,1.15);
+}
 footer {
-    background-color: #023750;
+    background-color: #d9dfe6;
+    height: 120px;
+    padding-bottom: 50px;
+}
+footer div {
     font-family: 'Inter';
-    height: 70px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding-top: 15px;
 }
 .carga {
     text-align: center;
-    margin-top: 40px;
-    font-family: 'Josefin Sans';
-    font-size: 40px;
+    margin-top: 50px;
+    font-family: 'Cabin';
+    font-size: 30px;
 }
 .campos {
-    font-family: 'Inter';
-    margin-top: 60px;
+    font-family: 'Cabin';
+    margin-top: 40px;
     font-size: 20px;
+    text-align: center;
 }
 .formulario {
     display: grid;
     justify-content: center;
-    margin: 30px 0;
+    margin: 30px 50px;
     row-gap: 30px;
 }
 .textarea1 {
@@ -91,14 +178,19 @@ footer {
     margin-left: 70px;
 }
 label {
-    font-family: 'Inter';
+    font-family: 'source sans pro';
     margin-right: 3px;
 }
 article {
-    border: gray 1px solid;
-    background-color: white;
+    border: 1px solid black;
     padding: 10px;
-    box-shadow: 5px 5px 5px #666;
+    box-shadow: 2px 2px 2px #666;
+}
+#labelmodalidad {
+    margin-left: 15px;
+}
+.chico {
+    width: 150px;
 }
 .solo2 {
     margin-left: 25px;
@@ -109,13 +201,14 @@ article {
 .articulo5 {
     text-align: center;
     border: none;
-    background-color: #ebebeb;
     box-shadow: none
 }
 .articulo5 input {
+    height: auto;
+    width: auto;
     font-size: 20px;
     color: white;
-    font-family: 'Josefin Sans';
+    font-family: 'Cabin';
     text-transform: none;
     padding: 7px 15px;
     background-color: brown;

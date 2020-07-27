@@ -1,5 +1,5 @@
 function agregar (req, res, next) {
-    if (req.session.registro == undefined){
+    if (res.locals.logeado == null){
         res.redirect('/login');
     } else {
         next();

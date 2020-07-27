@@ -4,77 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans&family=Trocchi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Fira+Sans&family=Inter&family=Source+Sans+Pro&family=Varela+Round&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link style="background-color: transparent;" rel="icon" href="img/apple-icon-180x180.png" type="image/png" />
 
-    <title>Dharma</title>
+    <title>Backend | Home</title>
 </head>
 <body>
-
+    <script src="/js front/index.js"></script>
     <%- include('partials/header'); %>
-
-    <div class="contenido">
+    <% if(!locals.logeado) {%> 
+        <a class="elboton" href="/register">Registrate</a>
+    <% } %> 
     <section>
-        <img class="carrusel" src="/img/1.png" alt="carrusel">
+        <img class="carrusel" src="/img/Untitled-Project.jpg" alt="carrusel">
     </section>
+    <div class="contenido">
     <div class="elegi">
     <p>Elegí entre los más buscados</p>
     <a href="/products" class="ver">Ver todos <i class="fas fa-arrow-circle-right"></i></a>
     </div>
 
     <section class="categorias"> 
-        <% for (cadaposicion of convierto) { %>
+        <% for (cadauno of uno) { %>
             <div>
                 <ul class="ul">
-                    <li class="ics"><i class="fab fa-js-square"></i></li>
-                    <li class="aa"><a class="aaa" href="/products/<%= cadaposicion.id %>"><%= cadaposicion.lenguaje %></a></li>
+                    <form action="/products/languages/<%= cadauno.id %> " method="GET">
+                        <input class="aa" type="submit" value="<%= cadauno.name %> ">
+                    </form>
                 </ul>
+                <!--<ul class="ul">
+                    <li class="aa"><a class="aaa" href="/products/<%= cadauno.id %>"><%=cadauno.name%></a></li>
+                </ul><!-->
             </div>
-            <% if (cadaposicion.nombre_curso == 'Godbert') { %>
-                <% break; %> 
-                <% } %> 
-            <%  } %>
+        <%  } %>
     </section>
-
-
-    <div class="unpocomas">
-        <p><i class="fas fa-play-circle"></i> Conocenos un poco más</p>
     </div>
-    <section class="videoeinfo">
-        <article>
-            <iframe src="https://player.vimeo.com/video/225252392" width="640" height="360" frameborder="0" allow="autoplay"></iframe>
-            </video>
-    </article>
-    <article class="dale">
-        <div class="informacion">
-        <p class="masinfo"><i class="fas fa-thumbtack"></i> Quiero recibir más info.</p>
-        <div class="info">
-            <div class="nombre">
-            <label for="name"><i class="fas fa-signature"></i> Nombre</label>
-            <input type="text" id="name">
-            </div>
-            <div class="nombre">
-            <label for="mail"><i class="fas fa-envelope"></i> Mail</label>
-            <input type="text" id="mail">
-            </div>
-            <div class="nombre">
-            <label for="curso"><i class="far fa-bookmark"></i> Curso de interés</label>
-            <input type="text" id="curso">
-            </div>
-            <div class="nombre">
-            <label for="cel"><i class="fas fa-mobile-alt"></i> Celular </label>
-            <input type="text" id="cel">
-            </div>
-        </div>
-        <div class="enviar1">
-            <form action="">
-                <label for=""></label>
-                <input class="enviar2" type="submit" placeholder="Enviar">
-            </form>
-        </div>
-    </article>
-    </section>
-
     <section class="integrantesymapa">
         <div class="contenedorintegrantes">
             <div class="eleginos">
@@ -84,69 +49,76 @@
             <div>
                 <ul class="la">
                     <li class="le"><i class="far fa-thumbs-up"></i></i>
-                    <li class="ee"><a class="eee">Cuando seas alumno oficialmente, obtendrás asesoramiento y seguimiento personalizado por parte de los profesores</a></li>
+                    <li class="ee">Cuando seas alumno oficialmente, obtendrás asesoramiento y seguimiento personalizado por parte de los profesores</li>
                 </ul>
             </div>
                 <div>
                     <ul class="la">
                         <li class="le"><i class="fas fa-credit-card"></i></i>
-                        <li class="ee"><a class="eee">El primer mes de cursada es gratis. Si no te gustó, quedás libre y no debés abonar nada</a></li>
+                        <li class="ee">El primer mes de cursada es gratis. Si no te gustó, quedás libre y no debés abonar nada</li>
                     </ul>
                 </div>
                 <div>
                     <ul class="la">
                         <li class="le"><i class="fas fa-user-graduate"></i></i>
-                        <li class="ee"><a class="eee">Al finalizar el curso elegido, tendrás en tus manos un diploma otorgado por el Ministerio de Educación</a></li>
+                        <li class="ee">Al finalizar el curso elegido, tendrás en tus manos un diploma otorgado por el Ministerio de Educación</li>
                     </ul>
                 </div>
                 <div>
                     <ul class="la">
                         <li class="le"><i class="far fa-bookmark"></i></i>
-                        <li class="ee"><a class="eee">Durante toda la cursada contarás con material técnico y seleccionado especialmente para una completa formación</a></li>
+                        <li class="ee">Durante toda la cursada contarás con material técnico y seleccionado especialmente para una completa formación</li>
                     </ul>
                 </div>
             </div>
             </div>
     </section>
 
-    <section class="promos">
-        <article class="promociones0">
-            <p class="pe">Conocé nuestras promociones</p>
-            <a class="color" href="">
-                <div class="promociones">
-                    <p class="promociones2">Obtené un descuento abonando en efectivo <i class="fas fa-chevron-right"></i></p>
-                </div>
+    <div class="container">
+    <section class="seccionvendidos">
+        <p class="masvendidos">Cursos más vendidos</p>
+        <article class="articulo">
+            <a class="a" href="/products/<%= dos.id %> ">
+                <ul class="ulvendidos">
+                    <li id="eltitulo" class="cursos1"><%= dos.name %> </li>
+                    <li id="eltexto" class="cursos1"><%= dos.description %> </li>
+                    <li id="lafecha" class="cursos1">Fecha de inicio: <%= dos.date %> </li>
+                </ul>
             </a>
-            <a class="color" href="">
-                <div class="promociones">
-                    <p class="promociones2">Obtené un descuento abonando con Mastercard <i class="fas fa-chevron-right"></i></p>
-                </div>
+            <a  class="a" href="/products/<%= tres.id %> ">
+            <ul class="ulvendidos">
+                <li id="eltitulo" class="cursos1"><%= tres.name %> </li>
+                <li id="eltexto" class="cursos1"><%= tres.description %> </li>
+                <li id="lafecha" class="cursos1">Fecha de inicio: <%= tres.date %> </li>
+            </ul>
             </a>
-            <a class="color" href="">
-                <div class="promociones">
-                    <p class="promociones2">Obtené un descuento abonando con Mercadopago <i class="fas fa-chevron-right"></i></p>
-                </div>
+            <a  class="a" href="/products/<%= cuatro.id %> ">
+            <ul class="ulvendidos">
+                <li id="eltitulo" class="cursos1"><%= cuatro.name %> </li>
+                <li id="eltexto" class="cursos1"><%= cuatro.description %> </li>
+                <li id="lafecha" class="cursos1">Fecha de inicio: <%= cuatro.date %> </li>
+            </ul>
             </a>
-            <a class="color" href="">
-                <div class="promociones">
-                    <p class="promociones2">Obtené un descuento con club Movistar <i class="fas fa-chevron-right"></i></p>
-                </div>
+            <a  class="a" href="/products/<%= cinco.id %> ">
+            <ul class="ulvendidos">
+                <li id="eltitulo" class="cursos1"><%= cinco.name %> </li>
+                <li id="eltexto" class="cursos1"><%= cinco.description %> </li>
+                <li id="lafecha" class="cursos1">Fecha de inicio: <%= cinco.date %> </li>
+            </ul>
             </a>
-            <a class="color" href="">
-                <div class="promociones">
-                    <p class="promociones2">Obtené un descuento con banco Galicia <i class="fas fa-chevron-right"></i></p>
-                </div>
-            </a>
-        </article>
-
-        <article>
-            <p class="pe">Encontranos en el mapa</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105112.50638654342!2d-58.551580706606266!3d-34.58479146243764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb791570f7236c962!2sDigital%20House!5e0!3m2!1ses-419!2sar!4v1589162262070!5m2!1ses-419!2sar" width="543" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-        </article>
+    </article>
     </section>
 
+            <div class="article">
+                <article>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/X5Wkp1gsNik?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </article>
+            </div>
+
     <section>
-        <p class="confian">Algunas empresas que confían en nosotros</p>
+        <div class="divconfian">
+            <p class="confian">Algunas empresas que confían en nosotros</p>
+        </div>
         <div class="titulo">
         <div class="en">
             <img class="empresas" src="/img/bbva_logo_portada.jpg" alt="">
@@ -156,7 +128,8 @@
             <img class="empresas" src="/img/Movistar-azul-vertical-thumbnail.jpg" alt="">
         </div>
     </div>
+</div>
     </section>
     <a class="fixed" href="mailto:user@server.com"><i class="far fa-envelope"></i></a>
-    
+    </div>
     <%- include('partials/footer'); %>

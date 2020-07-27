@@ -4,29 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/profile.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans&family=Trocchi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Fira+Sans&family=Inter&family=Source+Sans+Pro&family=Varela+Round&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <title>Perfil</title>
+    <link style="background-color: transparent;" rel="icon" href="img/apple-icon-180x180.png" type="image/png" />
+    <title><%= locals.logeado.name %>´s Profile </title>
 </head>
 <body>
     <%- include('partials/header'); %>
+    
     <section class="todocarro">
         <div>
-            <h1 class="carrito">Bienvenido <%= usuario.nombre %></h1>
+            <h1 class="carrito"><%= locals.logeado.name %></h1>
+            <h4 class="carrito2"><%= locals.logeado.email %></h4>
         </div>
         <div>
-            <% if(usuario.imagen) {%>
-                <img src="/images/<%= usuario.imagen %>" alt="imagen">
+            <% if(locals.logeado.avatar) {%>
+                <img src="/images/<%= locals.logeado.avatar %>" alt="imagen">
             <% } else {%> 
-                <img src="/img/undefined.jpg" alt="imagen">
+                <img src="/img/images.png" alt="imagen">
             <% } %> 
         </div>
         <div class="margen">
-            <a class="ver" href="/products">Ver cursos <i class="fas fa-arrow-circle-right"></i></a>
+            <a class="ver" href="/products">Ver todos los cursos</a>
         </div>
+        <div class="margen">
+            <a class="ver" href="">Cursos realizados</a>
+        </div>
+        <!--<div class="margen">
+            <a class="ver" href="">Favoritos</a>
+        </div><-->
+        <div class="margen">
+            <a class="ver" href="/profile/edit/<%= locals.logeado.id %> ">Editar mi perfil</a>
+        </div>
+        <% if (locals.logeado.email == 'saezfvet@gmail.com') {%>
+            <div class="margen">
+                <a class="ver" href="/products/create">Agregar producto</a>
+            </div>
+        <% } %>
     </section>
     <form action="/profile" method="POST">
-        <input type="submit" value="Cerrar sesión">
+        <input class="sesion" type="submit" value="Cerrar sesión">
     </form>
     <a class="fixed" href="mailto:user@server.com"><i class="far fa-envelope"></i></a>
 <%- include('partials/footer'); %>

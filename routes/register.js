@@ -5,6 +5,7 @@ const invitado = require('../middlewares/invitado');
 const { check, validationResult, body } = require('express-validator');
 const multer = require ('multer');
 const path = require ('path');
+const db = require('../database/models');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -33,8 +34,15 @@ router.get('/' , invitado ,controller.register);
 router.post('/' , upload.single('imagen'), [
     check('nombre').isLength({min: 2}).withMessage('El nombre debe tener al menos dos letras'),
     check('apellido').isLength({min: 2}).withMessage('El apellido debe tener al menos dos letras'),
-    check('email').isEmail().withMessage('El email es incorrecto'),
-    check('contraseña', 'La contraseña debe tener entre 5 y 15 caracteres').isLength({min: 5, max: 15}),
+    check('email').isEmail().withMessage('El email es incorrecto')
+    .custom((valor) => {
+      return db.Users.findOne({
+        where: {email: valor}
+      }).then((valor) => {if (valor != null) {
+        return Promise.reject('Usuario ya registrado');
+      }});
+    }),
+    check('contraseña', 'La contraseña debe tener entre 8 y 15 caracteres').isLength({min: 8, max: 15}),
     check('confirmarla', 'Las contraseñas no coinciden')
       .custom((valor, {req}) => {
         return valor == req.body.contraseña;
