@@ -23,7 +23,7 @@
                 <p style="color: red;"><%= errors.nombre ? errors.nombre.msg : '' %></p>
             </div>
             <label for="nombrecurso">Nombre del curso</label>
-            <input type="text" name="nombre" id="nombre">
+            <input type="text" name="nombre" id="nombre" value="<%= body.nombre ? body.nombre : '' %> ">
         </article>
         <article>
             <div id="errorlenguaje">
@@ -33,9 +33,19 @@
                 <p style="color: red;"><%= errors.modalidad ? errors.modalidad.msg : '' %></p>
             </div>
             <label for="lenguaje">Id del lenguaje</label>
-            <input class = "chico" type="text" name="lenguaje" id="lenguaje">
+            <select id="selectlenguaje" name="lenguaje" id="">
+                <option value="">-Seleccione-</option>
+                <% for (cadauno of uno) {%>
+                    <option value="<%= cadauno.id %>"><%= cadauno.name %> </option>
+                <% } %>
+            </select>
             <label id="labelmodalidad" for="lenguaje">Id de la modalidad</label>
-            <input class = "chico" type="text" name="modalidad" id="modalidad">
+            <select id="selectmodalidad" name="modalidad" id="">
+                <option value="">-Seleccione-</option>
+                    <% for (uno of dos) {%>
+                        <option value="<%= uno.id %>"><%= uno.name %> </option>
+                    <% } %>
+            </select>
         </article>
         <article>
             <div id="errordescripcion">
@@ -46,10 +56,10 @@
             </div>
             <div class="textarea2">
                 <label for="contenido">Descripción</label>
-                <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+                <textarea name="descripcion" id="descripcion" cols="30" rows="10"><%= body.descripcion ? body.descripcion : '' %> </textarea>
 
                 <label for="contenido">Contenido</label>
-                <textarea name="contenido" id="contenido" cols="30" rows="10"></textarea>
+                <textarea name="contenido" id="contenido" cols="30" rows="10"><%= body.contenido ? body.contenido : '' %> </textarea>
             </div>
         </article>
 
@@ -64,12 +74,12 @@
                 <p style="color: red;"><%= errors.valor ? errors.valor.msg : '' %></p>
             </div>
                 <label for="fechainicio">Fecha de inicio</label>
-                <input class="chico" type="date" name="fechainicio" id="fechainicio">
+                <input class="chico" type="date" name="fechainicio" id="fechainicio" value="<%= body.fechainicio ? body.fechainicio : '' %>" >
                 
                 <label class="solo2" for="">Duración (en meses)</label>
-                <input class = "chico" type="text" name="duracion" id="duracion">
+                <input class = "chico" type="text" name="duracion" id="duracion" value="<%= body.duracion ? body.duracion : '' %>" >
                 <label class="solo2" for="">Valor ($)</label>
-                <input class = "chico" type="text" name="valor" id="valor">
+                <input class = "chico" type="text" name="valor" id="valor" value="<%= body.valor ? body.valor : '' %> ">
         </article>
 
         <article class="articulo5">

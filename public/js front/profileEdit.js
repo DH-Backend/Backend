@@ -1,18 +1,5 @@
 window.onload = () => {
-    let iconos = document.querySelectorAll('i');
-    let p = document.querySelectorAll('#li');
-    let input = document.querySelectorAll('.elinput');
 
-    for (const cadauno of iconos) {
-        cadauno.onclick = () => {
-            for (const cadados of p) {
-                    cadados.classList.toggle('p2');
-            };
-            for (const cadatres of input) {
-                cadatres.classList.toggle('elinput2');
-                }
-        }
-    }
     let formulario = document.querySelector('.form');
     formulario.onsubmit = (ev) => {
         let nombreinput = formulario.querySelector('#nombreinput');
@@ -20,7 +7,7 @@ window.onload = () => {
         errornombre.innerHTML = '';
         if (nombreinput.value.length < 2) {
             ev.preventDefault();
-            errornombre.innerHTML = '<p style="color: red;"> El nombre debe tener al menos 2 caracteres </p>'
+            errornombre.innerHTML = '<p class = "perror"> El nombre debe tener al menos 2 caracteres </p>'
         }
 
         let apellidoinput = formulario.querySelector('#apellidoinput');
@@ -28,7 +15,7 @@ window.onload = () => {
         errorapellido.innerHTML = '';
         if (apellidoinput.value.length < 2) {
             ev.preventDefault();
-            errorapellido.innerHTML = '<p style="color: red;"> El apellido debe tener al menos 2 caracteres </p>'
+            errorapellido.innerHTML = '<p class = "perror"> El apellido debe tener al menos 2 caracteres </p>'
         }
 
         let emailinput = formulario.querySelector('#emailinput');
@@ -37,7 +24,7 @@ window.onload = () => {
         let expresionregular = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
         if (!expresionregular.test(emailinput.value)) {
             ev.preventDefault();
-            erroremail.innerHTML = '<p style="color: red;"> Email inválido </p>'
+            erroremail.innerHTML = '<p class="emailerror"> Email inválido </p>'
         }
     }
     }

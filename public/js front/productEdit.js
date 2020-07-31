@@ -9,14 +9,6 @@ window.onload = () => {
             errornombre.innerHTML = '<p style="color: red;"> El nombre del curso debe tener al menos 5 caracteres </p>'
         }
 
-        /*let inputlenguaje = formulario.querySelector('#lenguaje');
-        let errorlenguaje = formulario.querySelector('#errorlenguaje');
-        errorlenguaje.innerHTML = '';
-        if (inputnombre.value == '') {
-            evento.preventDefault();
-            errorlenguaje.innerHTML = '<p style="color: red;"> El id del lenguaje debe ser un numero </p>'
-        }*/
-
         let inputmodalidad = formulario.querySelector('#modalidad');
         let errormodalidad = formulario.querySelector('#errormodalidad');
         errormodalidad.innerHTML = '';

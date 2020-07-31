@@ -4,8 +4,7 @@
     box-sizing: border-box;
 }
 body {
-    background-color: white;
-    width: 100%
+    width: 100%;
 }
 .contenido {
     margin: 0 70px;
@@ -80,6 +79,9 @@ a {
 .tigre:hover {
     border-bottom: solid #4e7ad9 2px;
 }
+.buscador:focus {
+    outline: none;
+}
 .buscador {
     border: 1px solid #d9dfe6;
     border-radius: 15px;
@@ -132,7 +134,7 @@ button {
     align-items: center;
     font-size: 40px;
 }
-.ul:hover {
+.aa:hover {
     transform: scale(1.2,1.2);
 }
 .elboton {
@@ -158,6 +160,7 @@ button {
     margin-left: 10px;
     background-color: white;
     border: none;
+    cursor: pointer;
 }
 .aa:hover {
     border-bottom: #4e7ad9 solid 2px;

@@ -16,60 +16,52 @@
 <div class="div">
     <form class="form" action="/profile/edit/<%= valor.id %> " method="POST" enctype="multipart/form-data">
         <div class="soloborde">
-        <div class="alcostado">
-            <div>
-                <label for="">Nombre: </label>
+            <div class="lostresinput">
+            <div id="errornombre">
+                <p><%= errors.nombre ? errors.nombre.msg : '' %> </p>
             </div>
-            <div class="linombre">
-                <li id="li" class="p"><%= valor.name %></li>
+        <div class="alcostado">
+            <div class="divlabel">
+                <label for="">Nombre: </label>
             </div>
             <div class="soloinput">
                 <input id="nombreinput" class="elinput" type="text" name="nombre" value="<%= valor.name %>">
             </div>
-            <div id="errornombre">
-                <p style="color: red;"><%= errors.nombre ? errors.nombre.msg : '' %> </p>
-            </div>
-            <div>
+            <div class="divicono">
                 <i class="fas fa-pen"></i>
             </div>
         </div>
 
+        <div id="errorapellido">
+            <p><%= errors.apellido ? errors.apellido.msg : '' %> </p>
+        </div>
         <div class="alcostado">
-            <div>
+            <div class="divlabel">
                 <label for="">Apellido: </label>
-            </div>
-            <div class="liapellido">
-                <li id="li" class="p"><%= valor.last_name %></li>
             </div>
             <div class="paraeljs">
                 <input id="apellidoinput" class="elinput" type="text" name="apellido" value="<%= valor.last_name %>">
             </div>
-            <div id="errorapellido">
-                <p style="color: red;"><%= errors.apellido ? errors.apellido.msg : '' %> </p>
-            </div>
-            <div>
+            <div class="divicono">
                 <i class="fas fa-pen"></i>
             </div>
         </div>
 
+        <div id="erroremail">
+            <p><%= errors.email ? errors.email.msg : '' %> </p>
+        </div>
         <div class="alcostado">
-            <div>
+            <div class="divlabel">
                 <label for="">Email: </label>
-            </div>
-            <div>
-                <li id="li" class="p"><%= valor.email %></li>
             </div>
             <div class="paraeljsdos">
                 <input id="emailinput" class="elinput" type="text" name="email" value="<%= valor.email %>">
             </div>
-            <div id="erroremail">
-                <p style="color: red;"><%= errors.email ? errors.email.msg : '' %> </p>
-            </div>
-            <div>
+            <div class="divicono">
                 <i class="fas fa-pen"></i>
             </div>
         </div>
-        
+    </div>
         <div>
             <div>
                 <p id="labelimagen" for="">Imágen </p>

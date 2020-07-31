@@ -36,7 +36,7 @@
                 </div>
                 <div> 
                     <div>
-                        <% if (locals.logeado.email == 'saezfvet@gmail.com') {%>
+                        <% if (locals.logeado.admin == 1) {%>
                             <form action="/products/<%= cadauno.id %>/edit" method="GET">
                                 <input class="input" type="submit" value="Editar">
                             </form>

@@ -20,7 +20,6 @@ module.exports = {
     }, 
     edit: (req, res) => {
         db.Users.findByPk(req.params.id).then((valor) => {
-            req.session.valores = valor;
             res.render('profileEdit', {valor, errors: ''});
         });
     },
@@ -28,6 +27,7 @@ module.exports = {
         let validation = validationResult(req);
         if (validation.isEmpty()){
             let usuario = {
+                id: res.locals.logeado.id,
                 name: req.body.nombre,
                 last_name: req.body.apellido,
                 email: req.body.email
@@ -39,6 +39,8 @@ module.exports = {
                 db.Users.update(usuario, {
                     where: {id: req.params.id}
                 });
+            res.locals.logeado = usuario;
+            req.session.registro = usuario;
                 res.redirect('/profile');
         } else {
             db.Users.findByPk(req.params.id).then((valor) => {

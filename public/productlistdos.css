@@ -55,6 +55,9 @@ a {
     text-decoration: none;
     color: black;
 }
+.buscador:focus {
+    outline: none;
+}
 .tigre {
     margin-right: 20px;
 }
@@ -131,6 +134,7 @@ footer div {
     justify-content: center;
     grid-template-columns: 1fr 1fr;
     margin: 50px 70px;
+    min-height: 58vh;
 }
 .seccion {
     display: flex;

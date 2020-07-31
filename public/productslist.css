@@ -14,6 +14,9 @@ header {
     align-items: center;
     font-family: 'Inter';
 }
+.buscador:focus {
+    outline: none;
+}
 .hidden {
     margin: 0 0 15px 0;
     display: none;
@@ -102,6 +105,7 @@ button {
     border-radius: 30px;
     font-size: 30px;
     color: white;
+    z-index: 10;
 }
 .fixed:hover {
     background-color: black;
@@ -131,11 +135,13 @@ footer div {
     justify-content: center;
     grid-template-columns: 1fr 1fr;
     margin: 50px 70px;
+    min-height: 58vh;
 }
 .seccion {
     display: flex;
     flex-wrap: wrap;
     width: 950px;
+    margin-top: 30px;
 }
 .input {
     border: none;
@@ -147,6 +153,7 @@ footer div {
     border-left: 4px solid #4e7ad9;
     padding-bottom: 3px;
     border-radius: 3px;
+    cursor: pointer;
 }
 .input:hover {
     transform: scale(1.1,1.1);
@@ -163,6 +170,7 @@ footer div {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     border-bottom: 1px black solid;
 }
 li {
@@ -185,10 +193,15 @@ form {
     font-size: 20px;
     font-family: 'Source Sans Pro';
     padding-bottom: 5px;
+    padding-top: 5px;
 }
 .cajas {
     width: 100%;
     margin-bottom: 50px;
+    border: 1px gray solid;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: gray 3px 3px 3px;
 }
 .ultimo {
     text-align: center;

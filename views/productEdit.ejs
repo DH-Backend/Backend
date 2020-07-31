@@ -28,7 +28,14 @@
                     <p style="color: red;"><%= errors.modalidad ? errors.modalidad.msg : '' %></p>
                 </div>
                 <label id="labelmodalidad" for="lenguaje">Id de la modalidad</label>
-                <input class = "chico" type="text" name="modalidad" id="modalidad" value="<%= filter.modalityId %> ">
+                <!--<input class = "chico" type="text" name="modalidad" id="modalidad" value="<%= filter.modalityId %> "><!-->
+                    <select name="modalidad" id="">
+                        <% for (cadauno of dos) {%>
+                            <option value="<%= cadauno.id %>"<% if (cadauno.id == filter.productsmodality.id) {%> selected <% } %>>
+                                <%= cadauno.name %> 
+                            </option>
+                        <% } %> 
+                    </select>
             </article>
             <article>
                 <div id="errordescripcion">

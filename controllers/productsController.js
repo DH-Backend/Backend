@@ -27,23 +27,13 @@ module.exports = {
     cart: async (req, res) => {
         let uno = await db.Users.findByPk(res.locals.logeado.id, {include: ['productsusers']});
         res.render('productCart', {uno});
-        /*db.Users.findByPk(res.locals.logeado.id, {
-            include: ['productsusers']
-        }).then ((uno) => {
-            function (){
-                let dos = 0;
-                for (cadauno of uno.productsusers) {
-                    cadauno.value + dos;
-                }
-                return dos;
-            }
-            res.render('productCart', {uno, dos});
-        })*/
     },
-    create: (req, res) => {
-        res.render('productAdd', {errors:''});
+    create: async (req, res) => {
+        let uno = await db.Language.findAll();
+        let dos = await db.Modality.findAll();
+        res.render('productAdd', {errors:'', uno, dos, body: {}});
     },
-    createpp: (req, res) => {
+    createpp: async (req, res) => {
         let validation = validationResult(req);
         if (validation.isEmpty()) {
         let producto = {
@@ -59,7 +49,10 @@ module.exports = {
             db.Products.create(producto).then(() => {
                 res.redirect('/products');
                 });
-            res.render('productAdd', {errors : validation.mapped()});
+        } else {
+            let uno = await db.Language.findAll();
+            let dos = await db.Modality.findAll();
+            res.render('productAdd', {errors : validation.mapped(), uno, dos, body: req.body});
         }},
     detail: (req, res) => {
         db.Products.findByPk(req.params.id, {
@@ -68,15 +61,14 @@ module.exports = {
                 res.render('productDetail', {filter});
         });
     },
-    edit: (req, res) => {
-        db.Products.findByPk(req.params.id, {
-            include: ['productslanguages', 'productsmodality']
-        }).then((filter) => {
-            req.session.filtro = filter;
-            res.render('productEdit', {filter, errors: ''});
+    edit: async (req, res) => {
+        let filter = await db.Products.findByPk(req.params.id,{
+            include: ['productsmodality']
         });
+        let dos = await db.Modality.findAll();
+        res.render('productEdit', {dos, filter, errors: ''});
     },
-    editpp: (req, res) => {
+    editpp: async (req, res) => {
         let validation = validationResult(req);
         if (validation.isEmpty()){
             db.Products.update({
@@ -86,18 +78,18 @@ module.exports = {
                 description : req.body.descripcion,
                 content : req.body.contenido,
                 date : req.body.inicio,
-                languageId : req.body.lenguaje,
                 modalityId : req.body.modalidad
             }, {
                 where: {id:req.params.id}
             });
             res.redirect('/products');
         } else {
-            db.Products.findByPk(req.params.id, {
-                include: ['productslanguages', 'productsmodality']
-            }).then((filter) => {
-                res.render('productEdit', {errors: validation.mapped(), filter});
+            let filter = await db.Products.findByPk(req.params.id,{
+                include: ['productsmodality']
             });
+            let dos = await db.Modality.findAll();
+            res.render('productEdit', {dos, filter, errors: ''});
+                res.render('productEdit', {errors: validation.mapped(), filter, dos});
         }
     },
     delete: (req, res) => {

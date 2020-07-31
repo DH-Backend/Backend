@@ -9,20 +9,20 @@ window.onload = () => {
             errornombre.innerHTML = '<p style="color: red;"> El nombre del curso debe tener al menos 5 caracteres </p>'
         }
 
-        let inputlenguaje = formulario.querySelector('#lenguaje');
+        let inputlenguaje = formulario.querySelector('#selectlenguaje');
         let errorlenguaje = formulario.querySelector('#errorlenguaje');
         errorlenguaje.innerHTML = '';
-        if (inputnombre.value == '') {
+        if (inputlenguaje.value == '') {
             evento.preventDefault();
-            errorlenguaje.innerHTML = '<p style="color: red;"> El id del lenguaje debe ser un numero </p>'
+            errorlenguaje.innerHTML = '<p style="color: red;"> Debes elegir algún lenguaje </p>'
         }
 
-        let inputmodalidad = formulario.querySelector('#modalidad');
+        let inputmodalidad = formulario.querySelector('#selectmodalidad');
         let errormodalidad = formulario.querySelector('#errormodalidad');
         errormodalidad.innerHTML = '';
         if (inputmodalidad.value == '') {
             evento.preventDefault();
-            errormodalidad.innerHTML = '<p style="color: red;"> Valores aptos para modalidad: 1 para online, 2 para presencial </p>'
+            errormodalidad.innerHTML = '<p style="color: red;"> Debes elegir alguna modalidad </p>'
         }
 
         let inputdescripcion = formulario.querySelector('#descripcion');
@@ -55,7 +55,7 @@ window.onload = () => {
         let inputduracion = formulario.querySelector('#duracion');
         let errorduracion = formulario.querySelector('#errorduracion');
         errorduracion.innerHTML = '';
-        if (inputduracion.value == '') {
+        if (isNaN(inputduracion.value) == true) {
             evento.preventDefault();
             errorduracion.innerHTML = '<p style="color: red;"> La duración debe ser un número </p>'
         }
@@ -63,7 +63,7 @@ window.onload = () => {
         let inputvalor = formulario.querySelector('#valor');
         let errorvalor = formulario.querySelector('#errorvalor');
         errorvalor.innerHTML = '';
-        if (inputvalor.value == '') {
+        if (parseInt(inputvalor.value)== NaN) {
             evento.preventDefault();
             errorvalor.innerHTML = '<p style="color: red;"> El valor debe ser un número </p>'
         }

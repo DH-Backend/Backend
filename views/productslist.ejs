@@ -37,7 +37,7 @@
                         </div>
                         <div> 
                             <div>
-                                <% if (locals.logeado.email == 'saezfvet@gmail.com') {%>
+                                <% if (locals.logeado.admin == 1) {%>
                                     <form action="/products/<%= cadauno.id %>/edit" method="GET">
                                         <input class="input" type="submit" value="Editar">
                                     </form>
@@ -45,9 +45,10 @@
                                         <input class="input" type="submit" value="Eliminar">
                                     </form>
                                 <% } %> 
-                                <form action="/cart/<%= cadauno.id %> " class="divdela" method="POST">
-                                    <input class="input" type="submit" name="carrito" value="Agregar">
-                                </form>
+                                <!--<form action="/cart/<%= cadauno.id %> " class="divdela" method="POST">
+                                    <input data-AgregarId="<%= cadauno.id %> " id="inputagregar" class="input" type="submit" name="carrito" value="Agregar">
+                                </form><-->
+                                <a data-AgregarId="<%= cadauno.id %>" id="inputagregar" class="botonagregar"  href="/cart/<%= cadauno.id %> ">Agregar</a>
                             </div>
                         </div>
                     </div>

@@ -24,7 +24,6 @@
     </div>
 
     <div class="contenido">
-        <% var suma = 0; %> 
         <% for (cadauno of uno.productsusers) {%>
             <div class="caja">
             <div class="nameyplata">
@@ -35,20 +34,26 @@
                 <form action="/cart/<%- cadauno.id %>/delete" method="POST">
                     <button class="botoneliminar"><i class="fas fa-trash"></i></button>
                 </form>
-                <% suma + cadauno.value; %> 
             </div>
         <% } %>
-
+            <% if (uno.productsusers == '') {%>
+                <div class="divdelif">
+                    <p>Tu carrito está vacío</p>
+                    <a href="/products">Ver todos los cursos</a>
+                </div>
+            <% } else {%> 
             <div class="probar2">
                 <article class="articulo2">
                     <div class="interno">
                         <p class="resumen">Resumen de compra</p>
+                        <% let suma = 0; %> 
                         <ul>
                             <% for (valores of uno.productsusers) {%>
                             <li class="cursocarrito">
                                 <div class="flex">
                                     <p class="soloborde"><%= valores.name %></p>
                                     <p class="solomargin">$ <%= valores.value %></p>
+                                    <% suma = suma + valores.value %> 
                                 </div>
                             </li>
                             <% } %> 
@@ -58,8 +63,8 @@
                     <input class="descuento" type="text" placeholder="coloca aqui tu cupon de descuento">
                 </form>
                     <div class="flex2">
-                        <div class="total">Total</div>
-                        <div class="ultimo">$<%= suma %> </div>
+                        <p class="total">Total</p>
+                        <p class="ultimo">$<%= suma %> </p>
                     </div>
                     <div class="ultimo2">
                         <a class="comprar" href="">Comprar</a>
@@ -67,6 +72,7 @@
                     </div>
                 </article>
             </div>
+            <% } %>
         <a class="fixed" href="mailto:user@server.com"><i class="far fa-envelope"></i></a>
     </div>
         <%- include('partials/footer'); %>

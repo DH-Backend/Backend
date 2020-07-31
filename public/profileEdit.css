@@ -76,6 +76,9 @@ a {
     height: 40px;
     padding-left: 10px;
 }
+i {
+    cursor: pointer;
+}
 button {
     position: relative;
     right: 35px;
@@ -134,23 +137,13 @@ img {
 label {
     font-family: 'Varela Round';
     font-size: 17px;
+    text-align: left;
 }
-.p {
-    display: inline;
-    font-family: 'Varela Round';
-    font-size: 17px;
-}
-.linombre {
-    margin-right: 132px;
-}
-.liapellido {
-    margin-right: 175px;
+.divlabel {
+    width: 70px;
 }
 .elinput {
-    display: none;
-}
-.p2 {
-    display: none;
+    width: 300px;
 }
 .elinput2 {
     display: block;
@@ -161,12 +154,27 @@ label {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 15px;
 }
 #labelimagen {
     text-align: left;
     font-family: 'Varela Round';
     font-size: 17px;
+}
+.perror {
+    font-family: 'Varela Round';
+    color: red;
+    font-size: 13px;
+    margin-left: 35px;
+    margin-bottom: 10px;
+}
+.emailerror {
+    font-family: 'Varela Round';
+    color: red;
+    font-size: 13px;
+    margin-left: 35px;
+    margin-bottom: 10px;
 }
 #imgavatar {
     margin: 15px 0;
@@ -199,6 +207,7 @@ label {
     font-size: 17px;
     width: auto;
     height: auto;
+    cursor: pointer;
 }
 #guardar:hover {
     transform: scale(1.1,1.1);
@@ -214,4 +223,7 @@ label {
     display: flex;
     justify-content: center;
     align-self: center;
+}
+.divicono {
+    width: 20px;
 }

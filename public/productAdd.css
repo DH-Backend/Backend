@@ -9,6 +9,9 @@
 body {
     width: 100%;
 }
+.buscador:focus {
+    outline: none;
+}
 header {
     background-color: white;
     display: flex;
@@ -214,6 +217,7 @@ article {
     background-color: brown;
     border: none;
     margin: 0 10px;
+    cursor: pointer;
 }
 .articulo5 input:hover {
     transform: scale(1.1,1.1);

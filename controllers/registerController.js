@@ -4,7 +4,7 @@ const db = require('../database/models');
 
 module.exports = {
     register: (req, res) => {
-        res.render ('register', {usuario: '', errors : {}, body : {}});
+        res.render ('register', {errors : {}, body : {}});
 },
     registerpp: async (req, res) => {
         let validation = validationResult(req);
@@ -24,11 +24,14 @@ module.exports = {
                 avatar: avatar
             }
                 db.Users.create(usuarioNuevo).then((valor) => {
-                    res.redirect('/login');
+                    console.log(valor);
+                    res.locals.logeado = valor;
+                    req.session.registro = valor;
+                    res.redirect('/');
                 });
         })
         } else {
-            res.render('register', {usuario: '', errors : validation.mapped(), body : req.body});
+            res.render('register', {errors : validation.mapped(), body : req.body});
         }
 }
 }

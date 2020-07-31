@@ -15,8 +15,8 @@ router.get('/cart', paraelcarrito, controller.cart);
 router.get('/create', admin, controller.create);
 router.post('/create', [
     check('nombre', 'El nombre del curso debe tener al menos 5 caracteres').isLength({min:5}),
-    check('lenguaje', 'El id del lenguaje debe ser un numero').isNumeric(),
-    check('modalidad', 'Valores aptos para modalidad: 1 para online, 2 para presencial').isNumeric(),
+    check('lenguaje', 'Debes elegir algún lenguaje').isNumeric(),
+    check('modalidad', 'Debes elegir alguna modalidad').isNumeric(),
     check('descripcion', 'La descripción debe tener al menos 20 caracteres').isLength({min: 20}),
     check('contenido', 'El contenido debe tener al menos 20 caracteres').isLength({min: 20}),
     check('fechainicio', 'Esa fecha de inicio es incorrecta')
@@ -38,8 +38,6 @@ router.get('/:id', controller.detail);
 router.get('/:id/edit', admin , controller.edit);
 router.put('/:id/edit',[
     check('nombre', 'El nombre del curso debe tener al menos 5 caracteres').isLength({min:5}),
-    check('lenguaje', 'El id del lenguaje debe ser un numero').isNumeric(),
-    check('modalidad', 'Valores aptos para modalidad: 1 para online, 2 para presencial').isNumeric(),
     check('descripcion', 'La descripción debe tener al menos 20 caracteres').isLength({min: 20}),
     check('contenido', 'El contenido debe tener al menos 20 caracteres').isLength({min: 20}),
     check('fechainicio', 'Esa fecha de inicio es incorrecta')

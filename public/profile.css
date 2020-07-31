@@ -6,6 +6,9 @@
 body {
     width: 100%;
 }
+.buscador:focus {
+    outline: none;
+}
 .contenido {
     margin: 0 70px;
 }
@@ -150,6 +153,7 @@ form {
     margin-bottom: 30px;
     width: 100px;
     background-color: black;
+    cursor: pointer;
 }
 .cuadro {
     border: 1px solid black;
