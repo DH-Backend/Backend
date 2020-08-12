@@ -30,7 +30,9 @@ module.exports = {
                 id: res.locals.logeado.id,
                 name: req.body.nombre,
                 last_name: req.body.apellido,
-                email: req.body.email
+                email: req.body.email,
+                avatar: res.locals.logeado.avatar,
+                admin: res.locals.logeado.admin
             }
 
             if (req.file) {
@@ -66,5 +68,19 @@ module.exports = {
                 res.redirect('/profile');
         }
         res.render('profilePassword', {errores : validation.mapped()});
+    },
+    favourites: async (req, res) => {
+        let uno = await db.Products.findByPk(req.body.favorito);
+        let dos = await db.Users.findByPk(res.locals.logeado.id);
+        //sequelize associations
+        uno.addFavoritos(dos);
+        return res.send({true:true});
+    },
+    deleteFavoutires: async (req, res) => {
+        let uno = await db.Products.findByPk(req.body.boton);
+        let dos = await db.Users.findByPk(res.locals.logeado.id);
+        //sequelize associations
+        uno.removeFavoritos(dos);
+        return res.send({true:true});
     }
 }

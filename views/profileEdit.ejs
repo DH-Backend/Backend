@@ -67,7 +67,11 @@
                 <p id="labelimagen" for="">Imágen </p>
             </div>
             <div>
-                <img id="imgavatar" src="/images/<%= valor.avatar %> " alt="imagen_perfil">
+                <% if (valor.avatar) {%>
+                    <img id="imgavatar" src="/images/<%= valor.avatar %> " alt="imagen_perfil">
+                <% } else {%>
+                    <img id="imgavatar" src="/img/images.png" alt="imagen_perfil">
+                <% } %> 
             </div>
             <div>
                 <input id="archivo" type="file" name="imagen">
@@ -76,7 +80,6 @@
                 <a id="contra" href="/profile/password" style="color: black;">Cambiar contraseña</a>
             </div>
         </div>
-        <p class="loscambios">Los cambios se aplicarán una vez vuelvas a iniciar sesión</p>
         <input id="guardar" type="submit" value="Guardar">
     </div>
     </form>

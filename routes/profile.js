@@ -56,5 +56,9 @@ router.post('/password', [
             return true;
         }})], controller.passwordpp);
 
+router.post('/favourites', controller.favourites);
+
+router.post('/delete', controller.deleteFavoutires);
+
 
 module.exports = router;

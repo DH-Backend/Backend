@@ -11,12 +11,15 @@
 </head>
 <body>
 
-    <%- include('partials/header'); %>
     <script src="/js front/productlist.js"></script>
+    <%- include('partials/header'); %>
     <div class="grid">
         <div>
+            <% if (convierto == '') {%>
+                <p class="error">No encontramos lo que estás buscando</p>
+            <% } else {%> 
                 <section class="seccion">
-                    <% if (locals.logeado && locals.logeado.email == 'saezfvet@gmail.com') {%> 
+                    <% if (locals.logeado) {%>
                 <% for (cadauno of convierto) {%>
                     <div class="cajas">
                         <div class="ancho">
@@ -36,7 +39,7 @@
                             </ul>
                         </div>
                         <div> 
-                            <div>
+                            <div class="relative">
                                 <% if (locals.logeado.admin == 1) {%>
                                     <form action="/products/<%= cadauno.id %>/edit" method="GET">
                                         <input class="input" type="submit" value="Editar">
@@ -45,14 +48,11 @@
                                         <input class="input" type="submit" value="Eliminar">
                                     </form>
                                 <% } %> 
-                                <form action="/cart/<%= cadauno.id %> " class="divdela" method="POST">
-                                    <input class="input" type="submit" name="carrito" value="Agregar">
-                                </form>
+                                <p class="pdela"><a href="" data-AgregarId="<%= cadauno.id %>" id="inputagregar" class="botonagregar">Agregar</a></p>
+                                <a href="" class="favoritoss" data-favouriteId="<%= cadauno.id %> "><i style="color: red;" class="fas fa-heart"></i> Agregar a favoritos</a>
                             </div>
                         </div>
                     </div>
-                            </ul>
-                            </a>
                             <% } %>
                         <% } else {%> 
                             <% for (cadauno of convierto) {%>
@@ -75,6 +75,7 @@
                                     </div>
                                 </div>
                                     <% } %>
+                <% } %>
                 <% } %>
             </section>
         </div>

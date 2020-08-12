@@ -30,13 +30,10 @@
         <div class="margen">
             <a class="ver" href="">Cursos realizados</a>
         </div>
-        <!--<div class="margen">
-            <a class="ver" href="">Favoritos</a>
-        </div><-->
         <div class="margen">
             <a class="ver" href="/profile/edit/<%= locals.logeado.id %> ">Editar mi perfil</a>
         </div>
-        <% if (locals.logeado.email == 'saezfvet@gmail.com') {%>
+        <% if (locals.logeado.admin == 1) {%>
             <div class="margen">
                 <a class="ver" href="/products/create">Agregar producto</a>
             </div>

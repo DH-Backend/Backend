@@ -20,7 +20,6 @@ module.exports = {
         res.render ('index', {uno, dos, tres, cuatro, cinco});
     }, 
     indexpp: (req, res) => {
-        console.log(req.body);
         if (req.body.buscador) {
             db.Products.findAll({include: ['productslanguages'],
             where: {name: {[db.Sequelize.Op.substring]: '%' + req.body.buscador + '%'}}
@@ -28,8 +27,7 @@ module.exports = {
             res.render('resultadoBusqueda', {convierto});
         });
         } else {
-            
-            res.redirect('/');
+            res.render('resultadoBusqueda', {convierto: ''});
         }
     }
 }

@@ -12,13 +12,19 @@
 </head>
 <body>
     <script src="/js front/index.js"></script>
+
     <%- include('partials/header'); %>
     <% if(!locals.logeado) {%> 
         <a class="elboton" href="/register">Registrate</a>
-    <% } %> 
+        <section>
+            <img class="carrusel" src="/img/nuevofondo2.jpg" alt="carrusel">
+        </section>
+    <% } else {%>
+    <a class="elbotondos" href="/products">Todos los cursos</a>
     <section>
-        <img class="carrusel" src="/img/Untitled-Project.jpg" alt="carrusel">
+        <img class="carrusel" src="/img/fondoregistrado.jpg" alt="carrusel">
     </section>
+    <% } %> 
     <div class="contenido">
     <div class="elegi">
     <p>Los lenguajes más buscados</p>

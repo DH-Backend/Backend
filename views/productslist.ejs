@@ -11,10 +11,113 @@
 </head>
 <body>
 
-    <%- include('partials/header'); %>
     <script src="/js front/productlist.js"></script>
+    <%- include('partials/header'); %>
     <div class="grid">
+
+
+    <% if (categorias) {%>
         <div>
+
+        <div class="divcategorias">
+            <div class="divcategorias2">
+                <p class="titulocategorias">Lenguajes</p>
+            </div>
+            <% for (eldato of dos) {%>
+            <a class="lengujecategoria" href="?lenguaje=<%= eldato.id %>">
+                <div class="costado">
+                    <div class="divdelanclaje">
+                        <%= eldato.name %>
+                    </div>
+                    <div class="divdeli">
+                        <i class="fas fa-angle-right"></i>
+                    </div>
+                </div></a>
+                <% } %>
+        </div>
+
+        <section class="seccion">
+            <% if (locals.logeado) {%> 
+                <% for (cadauno of categorias.languagesproducts) {%>
+            <div class="cajas">
+                <div class="ancho">
+                    <ul>
+                        <div class="nombreyver">
+                            <li  id="curso"><a href="/products/<%= cadauno.id %>"><%= cadauno.name %></a></li>
+                            <li class="centro"><a class="ver" href="/products/<%= cadauno.id %> ">Ver curso <i class="fas fa-arrow-right"></i></a></li>
+                        </div>
+                        <li class="li"> <p class="es"></p> <%= cadauno.description %> </li>
+                        <div class="liyboton">
+                            <div>
+                                <li id="lenguaje" class="li">Lenguaje : <%= categorias.name %> </li>
+                                <li class="li">Duración : <%= cadauno.duration %> meses</li>
+                                <li class="li">Valor : $<%= cadauno.value %></li>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+                <div> 
+                    <div class="relative">
+                        <% if (locals.logeado.admin == 1) {%>
+                            <form action="/products/<%= cadauno.id %>/edit" method="GET">
+                                <input class="input" type="submit" value="Editar">
+                            </form>
+                            <form class="eliminarformulario" action="/products/<%= cadauno.id %>/?_method=DELETE" method="POST">
+                                <input id="botoneliminar" class="eliminar" type="submit" value="Eliminar">
+                            </form>
+                        <% } %>
+                        <p class="pdela"><a href="" data-AgregarId="<%= cadauno.id %>" id="inputagregar" class="botonagregar">Agregar</a></p>
+                        <a href="" class="favoritoss" data-favouriteId="<%= cadauno.id %> "><i style="color: red;" class="fas fa-heart"></i> Agregar a favoritos</a>
+                    </div>
+                </div>
+            </div>
+                    <% } %>
+                <% } else {%> 
+                    <% for (cadauno of categorias.languagesproducts) {%>
+                        <div class="cajas">
+                            <div>
+                                <ul>
+                                    <div class="nombreyver">
+                                    <li  id="curso"><a href="/products/<%= cadauno.id %>"><%= cadauno.name %></a></li>
+                                    <li class="centro"><a class="ver" href="/products/<%= cadauno.id %> ">Ver curso <i class="fas fa-arrow-right"></i></a></li>
+                                    </div>
+                                    <li class="li"> <%= cadauno.description %> </li>
+                                    <div class="liyboton">
+                                        <div>
+                                            <li id="lenguaje" class="li">Lenguaje : <%= categorias.name %> </li>
+                                            <li class="li">Duración : <%= cadauno.duration %> meses</li>
+                                            <li class="li">Valor : $<%= cadauno.value %></li>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                            <% } %>
+        <% } %>
+    </section>
+</div>
+
+
+
+    <% } else { %>
+        <div>
+            <div class="divcategorias">
+                <div class="divcategorias2">
+                    <p class="titulocategorias">Lenguajes</p>
+                </div>
+                <% for (eldato of dos) {%>
+                <a class="lengujecategoria" href="?lenguaje=<%= eldato.id %>">
+                    <div class="costado">
+                        <div class="divdelanclaje">
+                            <%= eldato.name %>
+                        </div>
+                        <div class="divdeli">
+                            <i class="fas fa-angle-right"></i>
+                        </div>
+                    </div></a>
+                    <% } %>
+            </div>
+
                 <section class="seccion">
                     <% if (locals.logeado) {%> 
                 <% for (cadauno of convierto) {%>
@@ -36,24 +139,20 @@
                             </ul>
                         </div>
                         <div> 
-                            <div>
+                            <div class="relative">
                                 <% if (locals.logeado.admin == 1) {%>
                                     <form action="/products/<%= cadauno.id %>/edit" method="GET">
                                         <input class="input" type="submit" value="Editar">
                                     </form>
-                                    <form action="/products/<%= cadauno.id %>/?_method=DELETE" method="POST">
-                                        <input class="input" type="submit" value="Eliminar">
+                                    <form class="eliminarformulario" action="/products/<%= cadauno.id %>/?_method=DELETE" method="POST">
+                                        <input id="botoneliminar" class="eliminar" type="submit" value="Eliminar">
                                     </form>
-                                <% } %> 
-                                <form action="/cart/<%= cadauno.id %> " class="divdela" method="POST">
-                                    <input data-AgregarId="<%= cadauno.id %> " id="inputagregar" class="input" type="submit" name="carrito" value="Agregar">
-                                </form>
-                                
+                                <% } %>
+                                <p class="pdela"><a href="" data-AgregarId="<%= cadauno.id %>" id="inputagregar" class="botonagregar">Agregar</a></p>
+                                <a href="" class="favoritoss" data-favouriteId="<%= cadauno.id %> "><i style="color: red;" class="fas fa-heart"></i> Agregar a favoritos</a>
                             </div>
                         </div>
                     </div>
-                            </ul>
-                            </a>
                             <% } %>
                         <% } else {%> 
                             <% for (cadauno of convierto) {%>
@@ -79,7 +178,13 @@
                 <% } %>
             </section>
         </div>
+    <% } %> 
+    <div class="paginado">
+        <% for (let i = 1; i <= totalproductos; i ++) {%>
+            <a class="paginadonumero" href="?page=<%= i %> "><%= i %> </a>
+        <% } %> 
     </div>
+</div>
 <a class="fixed" href="mailto:user@server.com"><i class="far fa-envelope"></i></a>
     
 <%- include('partials/footer'); %>

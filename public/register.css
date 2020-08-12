@@ -189,11 +189,14 @@ input {
 #dos {
     margin-right: 50px;
 }
+.centra {
+    text-align: center;
+}
 #errorcontra {
-    margin-right: 100px;
+    width: 100%;
 }
 #errorccontra {
-    padding-right: 50px;
+    width: 100%;
 }
 .nombreyapellido {
     display: flex;

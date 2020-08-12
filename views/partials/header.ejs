@@ -1,4 +1,3 @@
-    <script src="../js front/header.js"></script>
     <header>
         <ul class="ul11111">
             <li class="logo"> <a id="backend" href="/">Backend</a></li>
@@ -7,20 +6,49 @@
             <li class="tigre"><a href="/login">Log in</a></li>
             <li class="tigre" id="conborde"><a href="/register">Sign up</a></li>
             <% } else { %>
-                <li class="tigre2"><a href="/profile">Hola <%= locals.logeado.name %>!</a></li>
+                <li class="tigre2"><a href="/profile">Hola <%= locals.logeado.name %>!</a><a class="botonfavoritos" href=""><i class="far fa-heart"></i></a></li>
                 <% } %> 
             </div>
         </ul>
+        
+        <% if (locals.favourites) {%>
+            <div class="divdefavoritos">
+                <ul class="favoritos">
+                    <p class="pdefavs">Mis favoritos</p>
+                    <% if (locals.favourites == '') {%>
+                        <p class="todavia">Todavía no agregaste nada favoritos</p>
+                        <p class="iracursos"><a href="/products">Ver cursos</a></p>
+                    <% } else {%> 
+                    <% for (datos of locals.favourites) {%>
+                    <li class="lidefav">
+                        <div class="ede">
+                            <div class="nose">
+                                <i class="fas fa-angle-right"></i>
+                                <a class="afavoritos" href="/products/<%= datos.id %> "><%= datos.name %></a>
+                            </div>
+                            <div>
+                                <a class="nose2" data-eliminarfav="<%= datos.id %> " href=""><i class="fas fa-trash"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                    <% }} %>
+                </ul>
+            </div>
+        <% } %>
 
         <div class="leon">
             <form id="formulariobuscador" action="/" method="POST">
-                <input class="buscador" type="search" id="buscador" name="buscador" placeholder="Buscar">
+                <input class="buscador" type="text" id="buscador" name="buscador" placeholder="Buscar">
                 <button><i class="fas fa-search"></i></button>
             </form>
         </div>
         
         <div class="hidden"><i class="fas fa-bars"></i></div>
 
+        <% if (locals.contador) {%>
+                <p class="cuantos"><%= locals.contador %> </p>
+        <% } %>
+        
         <ul class="ul2">
             <li><a class="underline" href="/">Home</a></li>
             <li><a class="underline" href="/products">Cursos</a></li>

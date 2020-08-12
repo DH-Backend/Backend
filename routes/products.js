@@ -29,8 +29,7 @@ router.post('/create', [
         }
         return false;
     }),
-    check('duracion', 'La duración debe ser un número').isNumeric(),
-    check('valor', 'El valor debe ser un número').isNumeric(),
+    check('duracion', 'La duración debe ser un número').isNumeric()
 ] ,controller.createpp);
 
 router.get('/:id', controller.detail);
@@ -56,6 +55,8 @@ router.put('/:id/edit',[
 ], controller.editpp);
 
 router.delete('/:id', controller.delete);
+
+router.post('/categories', controller.categories);
 
 
 

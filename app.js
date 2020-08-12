@@ -14,8 +14,9 @@ const loginRouter = require ('./routes/login');
 const profileRouter = require ('./routes/profile');
 const recordame = require('./middlewares/cookierecordame');
 const cartRouter = require ('./routes/cart');
-const locals = require ('./middlewares/session');
-
+const locales = require ('./middlewares/session');
+const favourites = require ('./middlewares/favourites');
+const contador = require ('./middlewares/contador');
 
 var app = express();
 
@@ -29,7 +30,9 @@ app.use(session({
   saveUninitialized: true
 }));
 
-app.use(locals);
+app.use(locales);
+app.use(favourites);
+app.use(contador);
 
 app.use(logger('dev'));
 app.use(express.json());

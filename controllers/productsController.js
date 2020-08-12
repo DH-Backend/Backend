@@ -1,20 +1,28 @@
 const db = require('../database/models');
 const {validationResult} = require('express-validator');
 module.exports = {
-    products: (req, res) => {
-        if (req.body.id) {
-            db.Language.findByPk({
-                include: ['languagesproducts']
-            })
-            .then ((valor) => {
-                res.render('productlist', {valor});
-            });
+    products: async (req, res) => {
+        let offset = 0;
+        let limit = 7;
+        if (req.query.page) {
+            offset = (req.query.page - 1) * 7
         }
-        db.Products.findAll({
-            include: ['productslanguages']
-        }).then((convierto) => {
-            res.render('productslist', {convierto});
-        })
+        if (req.query.lenguaje) {
+            let categorias = await db.Language.findByPk(req.query.lenguaje, {include:['languagesproducts']});
+            let dos = await db.Language.findAll();
+            res.render('productslist', {categorias, dos, totalproductos: '', valor: '', convierto: ''});
+        } else {
+            let dos = await db.Language.findAll();
+            db.Products.findAndCountAll({
+                include: ['productslanguages', 'productsmodality'], 
+                limit: limit, 
+                offset:offset}).then((datos) => {
+                    let convierto = datos.rows;
+                    let productosnumero = datos.count;
+                    let totalproductos = Math.ceil(productosnumero / limit);
+                    res.render('productslist', {convierto, dos, totalproductos, valor: '', categorias: ''});
+                });
+        }
     },
     productspp: (req, res) => {
             db.Language.findByPk(req.params.id, {
@@ -26,6 +34,8 @@ module.exports = {
     },
     cart: async (req, res) => {
         let uno = await db.Users.findByPk(res.locals.logeado.id, {include: ['productsusers']});
+        let dos = uno.productsusers.length;
+        res.locals.contador = dos;
         res.render('productCart', {uno});
     },
     create: async (req, res) => {
@@ -78,7 +88,8 @@ module.exports = {
                 description : req.body.descripcion,
                 content : req.body.contenido,
                 date : req.body.inicio,
-                modalityId : req.body.modalidad
+                modalityId : req.body.modalidad,
+                avatar: ''
             }, {
                 where: {id:req.params.id}
             });
@@ -97,5 +108,13 @@ module.exports = {
             where: {id:req.params.id}
         });
         res.redirect('/products')
+    },
+    categories: (req, res) => {
+        db.Products.findAll({include : ['productslanguages'],
+            where: {languageId: req.body.botoncategorialenguaje}
+        }).then ((valor) => {
+            return res.json({valor:valor});
+            //res.render('productslist', {valor, convierto: '', dos: ''});
+        })
     }
 }

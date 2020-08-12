@@ -31,7 +31,7 @@ window.onload = () => {
         diverrorc.innerHTML = '';
         if (inputcontra.value.length < 8 || inputcontra.value.length > 15) {
             ev.preventDefault();
-            diverrorc.innerHTML = '<div><i style="color: red;" class="fas fa-exclamation"></i> La contraseña debe tener entre 8 y 15 caracteres </div>'
+            diverrorc.innerHTML = '<p class="centra"><i style="color: red;" class="fas fa-exclamation"></i> La contraseña debe tener entre 8 y 15 caracteres </p>'
         }
 
         let inputccontra = formulario.querySelector('#inputccontra');
@@ -39,7 +39,7 @@ window.onload = () => {
         diverrorcc.innerHTML = '';
         if (inputcontra.value != inputccontra.value) {
             ev.preventDefault();
-            diverrorcc.innerHTML = '<div><i style="color: red;" class="fas fa-exclamation"></i> Las contraseñas no coinciden </div>'
+            diverrorcc.innerHTML = '<p class="centra"><i style="color: red;" class="fas fa-exclamation"></i> Las contraseñas no coinciden </p>'
         }
     }
 }

@@ -10,18 +10,14 @@
     <title><%= filter.name %> </title>
 </head>
 <body>
-
+    <script src="/js front/productDetail.js"></script>
     <%- include('partials/header'); %>
     <div class="contenido">
 
     <section class="section1">
-        <div>
-            <div><p class="js"><%= filter.productslanguages.name %></p></div>
-        </div>
+        <p class="js"><%= filter.productslanguages.name %></p>
         <% if (locals.logeado) {%>
-            <form action="/cart/<%= filter.id %> " class="ul1" method="POST">
-                <input class="asection1" type="submit" name="carrito" value="Agregar">
-            </form>
+            <p class="pdelboton"><a class="botonagregar" href="" data-botonagregar="<%= filter.id %>">Agregar </a></p>
         <% } %>
     </section>
     </div>
@@ -52,17 +48,9 @@
             </ul>
         </div>
         <div id="id2">
-            <a href="" class="pdf2"><i class="far fa-file-pdf"></i> Descargar programa completo</a>
+            <a href="" class="pdf2">Descargar programa completo</a>
         </div>
 
-    </section>
-    <section class="fondo">
-            <ul class="nose">
-                <li><i class="fas fa-chevron-down"></i><a class="otros" href="">Plan de estudios</a></li>
-                <li><i class="fas fa-chevron-down"></i><a class="otros" href="">Fechas de inicio</a></li>
-                <li><i class="fas fa-chevron-down"></i><a class="otros" href="">Modalidad de cursada</a></li>
-                <li><i class="fas fa-chevron-down"></i><a class="otros" href="">Requisitos</a></li>
-            </ul>
     </section>
     
     <section>

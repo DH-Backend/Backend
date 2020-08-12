@@ -24,7 +24,6 @@ module.exports = {
                 avatar: avatar
             }
                 db.Users.create(usuarioNuevo).then((valor) => {
-                    console.log(valor);
                     res.locals.logeado = valor;
                     req.session.registro = valor;
                     res.redirect('/');

@@ -53,19 +53,18 @@
             <div id="parajs" class="errors1">
                 <div id="errorcontra">
                     <% if (errors.contraseña && !errors.confirmarla) { %>
-                        <div><i style="color: red;" class="fas fa-exclamation"></i> <%= errors.contraseña.msg %> </div>
+                        <div class="flex"><i style="color: red;" class="fas fa-exclamation"></i><p class="centra"><%= errors.contraseña.msg %></p> </div>
                     <% } %> 
                 </div>
                 <div id="errorccontra">
                     <%  if (errors.confirmarla && !errors.contraseña) { %>
-                        <div><i style="color: red;" class="fas fa-exclamation"></i> <%= errors.confirmarla.msg %> </div>
+                        <div class="flex"><i style="color: red;" class="fas fa-exclamation"></i><p class="centra"><%= errors.confirmarla.msg %></p> </div>
                     <% } %> 
                 </div>
                 <div class="margen">
                     <%  if (errors.contraseña && errors.confirmarla) {%>
                         <div id="errors4"><i style="color: red;" class="fas fa-exclamation"></i> <%= errors.contraseña.msg %> </div>
                         <div id="errors3"><i style="color: red;" class="fas fa-exclamation"></i> <%= errors.confirmarla.msg %> </div>
-
                         <% } %>
                 </div>
             </div>

@@ -55,7 +55,7 @@ window.onload = () => {
         let inputduracion = formulario.querySelector('#duracion');
         let errorduracion = formulario.querySelector('#errorduracion');
         errorduracion.innerHTML = '';
-        if (isNaN(inputduracion.value) == true) {
+        if (inputduracion.value == '') {
             evento.preventDefault();
             errorduracion.innerHTML = '<p style="color: red;"> La duración debe ser un número </p>'
         }
@@ -63,7 +63,7 @@ window.onload = () => {
         let inputvalor = formulario.querySelector('#valor');
         let errorvalor = formulario.querySelector('#errorvalor');
         errorvalor.innerHTML = '';
-        if (parseInt(inputvalor.value)== NaN) {
+        if (inputvalor.value == '') {
             evento.preventDefault();
             errorvalor.innerHTML = '<p style="color: red;"> El valor debe ser un número </p>'
         }

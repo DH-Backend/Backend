@@ -22,7 +22,6 @@
     <div class="micarrito">
         <p>Mi Carrito</p>
     </div>
-
     <div class="contenido">
         <% for (cadauno of uno.productsusers) {%>
             <div class="caja">
@@ -31,11 +30,10 @@
                 <p class="enlinea">Inicio: <%= cadauno.date %></p>
                 <p class="moni">$ <%= cadauno.value %></p>
             </div>
-                <form action="/cart/<%- cadauno.id %>/delete" method="POST">
-                    <button class="botoneliminar"><i class="fas fa-trash"></i></button>
-                </form>
-            </div>
+            <a href="" data-botoneliminar="<%= cadauno.id %> " class="botoneliminar"><i class="fas fa-trash"></i></a>
+        </div>
         <% } %>
+
             <% if (uno.productsusers == '') {%>
                 <div class="divdelif">
                     <p>Tu carrito está vacío</p>
